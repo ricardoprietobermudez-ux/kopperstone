@@ -13,51 +13,37 @@
       --blue: #02245a;
       --black: #000000;
       --lightgray: #cccccc;
-
-      --text: #011028;
-      --muted: #555;
-      --border: #e6e6e6;
-      --shadow: 0 18px 40px rgba(0,0,0,0.12);
+      --text-soft: #d6dbe6;
+      --shadow: 0 18px 40px rgba(0,0,0,0.22);
       --radius: 18px;
       --max: 1180px;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    @keyframes softFadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(18px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    * {
+      box-sizing: border-box;
     }
 
-    
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    html {
+      scroll-behavior: smooth;
     }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       color: var(--white);
       background: linear-gradient(135deg, #011028 0%, #02245a 100%);
       line-height: 1.6;
-      animation: softFadeUp 0.9s ease-out;
     }
 
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
     .container {
       width: min(var(--max), calc(100% - 32px));
@@ -68,8 +54,7 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      background: linear-gradient(135deg,#011028,#02245a);
-      backdrop-filter: blur(10px);
+      background: linear-gradient(135deg, #011028, #02245a);
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
@@ -82,35 +67,19 @@
     }
 
     .brand {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 12px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      color: var(--white);
     }
 
-    .brand-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--navy), #174f90);
-      color: var(--white);
-      display: grid;
-      place-items: center;
-      font-weight: 700;
-      box-shadow: var(--shadow);
-    }
-
-    .text-logo{
+    .text-logo {
       font-family: Georgia, "Times New Roman", serif;
-      font-size:32px;
-      letter-spacing:1px;
-      color:#ffffff;
-      border:3px solid #ffffff;
-      padding:6px 18px;
-      line-height:1.1;
-      display:inline-block;
+      font-size: 32px;
+      letter-spacing: 1px;
+      color: #ffffff;
+      border: 3px solid #ffffff;
+      padding: 6px 18px;
+      line-height: 1.1;
+      display: inline-block;
     }
 
     .nav-links {
@@ -121,7 +90,9 @@
       font-size: 15px;
     }
 
-    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover {
+      color: var(--white);
+    }
 
     .btn {
       display: inline-flex;
@@ -141,7 +112,6 @@
       color: var(--white);
       border: 2px solid var(--white);
       box-shadow: 0 0 0 4px rgba(255,255,255,0.15);
-      border-radius: 999px;
     }
 
     .btn-primary:hover {
@@ -149,17 +119,15 @@
       box-shadow: 0 0 0 6px rgba(255,255,255,0.25);
     }
 
-    .btn-primary:hover { transform: translateY(-1px); }
-
     .btn-secondary {
       background: transparent;
-      border-color: var(--border);
+      border-color: rgba(255,255,255,0.35);
       color: var(--white);
     }
 
     .hero {
       background:
-        linear-gradient(rgba(1,16,40,0.85), rgba(1,16,40,0.9)),
+        linear-gradient(rgba(1,16,40,0.82), rgba(1,16,40,0.88)),
         url("hero.jpg");
       background-size: cover;
       background-position: center;
@@ -173,14 +141,11 @@
       align-items: center;
     }
 
-    
-    }
-
     .eyebrow {
       display: inline-block;
       padding: 8px 14px;
       border-radius: 999px;
-      background: rgba(11,58,110,0.08);
+      background: rgba(255,255,255,0.10);
       color: var(--white);
       font-weight: 700;
       font-size: 13px;
@@ -213,34 +178,25 @@
       display: flex;
       flex-wrap: wrap;
       gap: 18px;
-      color: var(--slate);
+      color: var(--white);
       font-size: 14px;
       font-weight: 700;
     }
 
     .hero-image {
-      background: var(--gray);
       border-radius: 28px;
-      min-height: 420px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      border:1px solid var(--lightgray);
+      height: 420px;
+      overflow: hidden;
       box-shadow: var(--shadow);
-      overflow:hidden;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
     }
 
-    .hero-image img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-
-    .hero-image span{
-      color:var(--dark);
-      font-weight:700;
-      font-size:18px;
-      opacity:0.6;
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     section {
@@ -262,7 +218,7 @@
 
     .section-head p {
       margin: 0;
-      color: #d6dbe6;
+      color: var(--text-soft);
       font-size: 17px;
     }
 
@@ -281,26 +237,15 @@
       box-shadow: 0 8px 22px rgba(0,0,0,0.4);
     }
 
-    .card-icon {
-      width: 54px;
-      height: 54px;
-      display: grid;
-      place-items: center;
-      border-radius: 16px;
-      background: rgba(11,58,110,0.08);
-      color: var(--white);
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-
     .card h3 {
       margin: 0 0 10px;
       font-size: 22px;
       color: var(--white);
     }
 
-    .card p, .card li {
-      color: #d6dbe6;
+    .card p,
+    .card li {
+      color: var(--text-soft);
       font-size: 15px;
     }
 
@@ -326,6 +271,10 @@
       font-size: 24px;
     }
 
+    .panel p {
+      color: var(--text-soft);
+    }
+
     .checklist {
       list-style: none;
       padding: 0;
@@ -336,7 +285,7 @@
       padding-left: 28px;
       position: relative;
       margin-bottom: 12px;
-      color: var(--slate);
+      color: var(--text-soft);
     }
 
     .checklist li::before {
@@ -344,16 +293,17 @@
       position: absolute;
       left: 0;
       top: 0;
-      color: var(--copper);
+      color: var(--white);
       font-weight: 700;
     }
 
     .contact-box {
-      background: linear-gradient(135deg, var(--navy), #164f92);
+      background: linear-gradient(135deg, #011028, #02245a);
       color: var(--white);
       border-radius: 28px;
       padding: 36px;
       box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.10);
     }
 
     .contact-box h2 {
@@ -361,6 +311,10 @@
       margin-top: 0;
       margin-bottom: 10px;
       font-size: clamp(30px, 4vw, 42px);
+    }
+
+    .contact-box p {
+      color: var(--text-soft);
     }
 
     .contact-grid {
@@ -417,6 +371,10 @@
       .nav-links {
         flex-wrap: wrap;
       }
+
+      .hero-image {
+        height: 360px;
+      }
     }
 
     @media (max-width: 640px) {
@@ -433,6 +391,15 @@
         flex-direction: column;
         align-items: flex-start;
       }
+
+      .text-logo {
+        font-size: 26px;
+        padding: 6px 14px;
+      }
+
+      .hero-image {
+        height: 300px;
+      }
     }
   </style>
 </head>
@@ -442,6 +409,7 @@
       <a class="brand" href="#home">
         <span class="text-logo">Kopperstone</span>
       </a>
+
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#services">Services</a>
@@ -457,15 +425,19 @@
       <div class="container hero-grid">
         <div>
           <div class="eyebrow">Canada • North America • Latin America</div>
+
           <h1>Reliable international trade and supply solutions for growing businesses.</h1>
+
           <p>
             Kopperstone connects suppliers, buyers, and opportunities across borders with a practical focus on sourcing,
             trade coordination, and commercial relationships in construction and industrial markets.
           </p>
+
           <div class="hero-actions">
             <a class="btn btn-primary" href="#contact">Request a Consultation</a>
             <a class="btn btn-secondary" href="#services">Explore Services</a>
           </div>
+
           <div class="hero-points">
             <span>✔ Supplier sourcing</span>
             <span>✔ Cross-border coordination</span>
@@ -474,7 +446,7 @@
         </div>
 
         <div class="hero-image">
-            <img src="hero.jpg" alt="International trade logistics">
+          <img src="hero.jpg" alt="International trade logistics">
         </div>
       </div>
     </section>
@@ -488,6 +460,7 @@
             Our objective is to support efficient sourcing, dependable communication, and practical deal flow in international markets.
           </p>
         </div>
+
         <div class="split">
           <div class="panel">
             <h3>What we stand for</h3>
@@ -498,6 +471,7 @@
               <li>Opportunities in construction, materials, and industrial supply</li>
             </ul>
           </div>
+
           <div class="panel">
             <h3>Our approach</h3>
             <p>
@@ -521,23 +495,23 @@
             A professional front-facing website for clients, suppliers, and strategic partners.
           </p>
         </div>
+
         <div class="cards-3">
           <div class="card">
-            
             <h3>Supplier Sourcing</h3>
             <p>
               Identification of potential manufacturers and supply partners aligned with commercial and product needs.
             </p>
           </div>
+
           <div class="card">
-            
             <h3>Trade Coordination</h3>
             <p>
               Support with business communication, initial alignment, and opportunity follow-up between parties.
             </p>
           </div>
+
           <div class="card">
-            
             <h3>Market Development</h3>
             <p>
               Positioning products and supply opportunities for cross-border commercial growth.
@@ -555,15 +529,18 @@
             This section can be customized as your final product focus becomes clearer. For now, it positions Kopperstone in a professional way.
           </p>
         </div>
+
         <div class="cards-3">
           <div class="card">
             <h3>Construction Materials</h3>
             <p>Solutions for building-related supply chains, commercial materials, and sourcing support.</p>
           </div>
+
           <div class="card">
             <h3>Industrial Supply</h3>
             <p>Coordination for industrial products, components, and business-to-business procurement opportunities.</p>
           </div>
+
           <div class="card">
             <h3>Custom Trade Opportunities</h3>
             <p>Flexible representation for new product lines, market entry, and strategic supplier relationships.</p>
@@ -580,24 +557,29 @@
             Whether you are looking for supply options, trade representation, or cross-border business support,
             Kopperstone is ready to start the conversation.
           </p>
+
           <div class="contact-grid">
             <div class="contact-item">
               <strong>Email</strong>
               <span>info@kopperstone.com</span>
             </div>
+
             <div class="contact-item">
               <strong>Region</strong>
               <span>Toronto, Canada</span>
             </div>
+
             <div class="contact-item">
               <strong>Focus</strong>
               <span>International Trade & Supply</span>
             </div>
+
             <div class="contact-item">
               <strong>Call to action</strong>
               <span>Request an introductory meeting</span>
             </div>
           </div>
+
           <div style="margin-top:24px; display:flex; gap:14px; flex-wrap:wrap;">
             <a class="btn btn-primary" href="mailto:info@kopperstone.com?subject=Kopperstone%20Inquiry">Email Kopperstone</a>
             <a class="btn btn-secondary" href="#home" style="background:rgba(255,255,255,0.1); color:white; border-color:rgba(255,255,255,0.16);">Back to top</a>
@@ -613,6 +595,7 @@
         <strong style="display:block; color:white; margin-bottom:4px;">Kopperstone</strong>
         <span class="small">International Trade & Supply</span>
       </div>
+
       <div class="small">© 2026 Kopperstone. All rights reserved.</div>
     </div>
   </footer>
