@@ -16,7 +16,6 @@
       --radius:0;
       --max: 1180px;
     }
-
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -26,15 +25,12 @@
       background: linear-gradient(135deg, #011028 0%, #02245a 100%);
       line-height: 1.6;
     }
-
     a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
-
     .container {
       width: min(var(--max), calc(100% - 32px));
       margin: 0 auto;
     }
-
     .topbar {
       position: sticky;
       top: 0;
@@ -42,7 +38,6 @@
       background: linear-gradient(135deg, #011028, #02245a);
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
-
     .nav {
       display: flex;
       align-items: center;
@@ -50,12 +45,10 @@
       padding: 16px 0;
       gap: 18px;
     }
-
     .brand {
       display: inline-flex;
       align-items: center;
     }
-
     .text-logo {
       font-family: Georgia, "Times New Roman", serif;
       font-size: 32px;
@@ -66,7 +59,6 @@
       line-height: 1.1;
       display: inline-block;
     }
-
     .nav-links {
       display: flex;
       gap: 22px;
@@ -74,7 +66,6 @@
       color: var(--white);
       font-size: 15px;
     }
-
     .btn {
       display: inline-flex;
       align-items: center;
@@ -87,25 +78,21 @@
       transition: 0.2s ease;
       cursor: pointer;
     }
-
     .btn-primary {
       background: var(--blue);
       color: var(--white);
       border: 2px solid var(--white);
       box-shadow: 0 0 0 4px rgba(255,255,255,0.15);
     }
-
     .btn-primary:hover {
       transform: translateY(-1px);
       box-shadow: 0 0 0 6px rgba(255,255,255,0.25);
     }
-
     .btn-secondary {
       background: transparent;
       border-color: rgba(255,255,255,0.35);
       color: var(--white);
     }
-
     .hero {
       background:
         linear-gradient(rgba(1,16,40,0.82), rgba(1,16,40,0.88)),
@@ -114,14 +101,12 @@
       background-position: center;
       padding: 84px 0 52px;
     }
-
     .hero-grid {
       display: grid;
       grid-template-columns: 1.05fr 0.95fr;
       gap: 40px;
       align-items: center;
     }
-
     .eyebrow {
       display: inline-block;
       padding: 8px 14px;
@@ -132,7 +117,6 @@
       font-size: 13px;
       margin-bottom: 18px;
     }
-
     h1 {
       font-size: clamp(34px, 5.6vw, 68px);
       line-height: 1.06;
@@ -141,21 +125,18 @@
       letter-spacing: -1.5px;
       max-width: 760px;
     }
-
     .hero p {
       font-size: 18px;
       color: #e6e6e6;
       max-width: 680px;
       margin: 0 0 28px;
     }
-
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
       margin-bottom: 24px;
     }
-
     .hero-points {
       display: flex;
       flex-wrap: wrap;
@@ -164,7 +145,6 @@
       font-size: 14px;
       font-weight: 700;
     }
-
     .hero-image {
       border-radius: 0;
       height: 420px;
@@ -173,30 +153,25 @@
       border: 1px solid rgba(255,255,255,0.12);
       background: rgba(255,255,255,0.06);
     }
-
     .hero-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
     }
-
     section {
       padding: 76px 0;
     }
-
     #about,
     #services,
     #products,
     #contact {
       background: linear-gradient(135deg, #011028 0%, #02245a 100%);
     }
-
     .section-head {
       max-width: 700px;
       margin-bottom: 28px;
     }
-
     .section-head h2 {
       font-size: clamp(30px, 4vw, 44px);
       line-height: 1.12;
@@ -204,19 +179,16 @@
       color: var(--white);
       letter-spacing: -1px;
     }
-
     .section-head p {
       margin: 0;
       color: var(--text-soft);
       font-size: 17px;
     }
-
     .cards-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 22px;
     }
-
     .card {
       background: rgba(1,16,40,0.92);
       border: 1px solid var(--lightgray);
@@ -225,26 +197,22 @@
       color: var(--white);
       box-shadow: 0 8px 22px rgba(0,0,0,0.4);
     }
-
     .card h3 {
       margin: 0 0 10px;
       font-size: 22px;
       color: var(--white);
     }
-
     .card p,
     .card li {
       color: var(--text-soft);
       font-size: 15px;
     }
-
     .split {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 24px;
       align-items: stretch;
     }
-
     .panel {
       border-radius: 0;
       padding: 30px;
@@ -252,31 +220,26 @@
       background: rgba(1,16,40,0.92);
       color: var(--white);
     }
-
     .panel h3 {
       margin-top: 0;
       margin-bottom: 14px;
       color: var(--white);
       font-size: 24px;
     }
-
     .panel p {
       color: var(--text-soft);
     }
-
     .checklist {
       list-style: none;
       padding: 0;
       margin: 18px 0 0;
     }
-
     .checklist li {
       padding-left: 28px;
       position: relative;
       margin-bottom: 12px;
       color: var(--text-soft);
     }
-
     .checklist li::before {
       content: "✓";
       position: absolute;
@@ -285,7 +248,6 @@
       color: var(--white);
       font-weight: 700;
     }
-
     .contact-box {
       background: linear-gradient(135deg, #011028, #02245a);
       color: var(--white);
@@ -294,43 +256,36 @@
       box-shadow: var(--shadow);
       border: 1px solid rgba(255,255,255,0.10);
     }
-
     .contact-box h2 {
       color: var(--white);
       margin-top: 0;
       margin-bottom: 10px;
       font-size: clamp(30px, 4vw, 42px);
     }
-
     .contact-box p {
       color: var(--text-soft);
     }
-
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 18px;
       margin-top: 22px;
     }
-
     .contact-item {
       background: rgba(255,255,255,0.08);
       border: 1px solid rgba(255,255,255,0.12);
       border-radius: 0;
       padding: 18px;
     }
-
     .contact-item strong {
       display: block;
       margin-bottom: 4px;
     }
-
     footer {
       background: #081f3a;
       color: rgba(255,255,255,0.8);
       padding: 26px 0 40px;
     }
-
     .footer-row {
       display: flex;
       justify-content: space-between;
@@ -338,12 +293,10 @@
       align-items: center;
       flex-wrap: wrap;
     }
-
     .small {
       font-size: 14px;
       color: inherit;
     }
-
     @media (max-width: 980px) {
       .hero-grid,
       .cards-3,
@@ -351,45 +304,36 @@
       .contact-grid {
         grid-template-columns: 1fr;
       }
-
       .nav {
         flex-direction: column;
         align-items: flex-start;
       }
-
       .nav-links {
         flex-wrap: wrap;
       }
-
       .hero-image {
         height: 360px;
       }
     }
-
     @media (max-width: 640px) {
       .hero {
         padding-top: 54px;
       }
-
       section {
         padding: 58px 0;
       }
-
       .hero-actions,
       .hero-points {
         flex-direction: column;
         align-items: flex-start;
       }
-
       .text-logo {
         font-size: 26px;
         padding: 6px 14px;
       }
-
       .hero-image {
         height: 300px;
       }
-
       h1 {
         font-size: 42px;
       }
@@ -403,9 +347,8 @@
       <a class="brand" href="#home">
         <span class="text-logo">Kopperstone</span>
       </a>
-
       <div class="nav-links">
-        <a href="#about">About</a>
+        <a href="about.html">About</a>
         <a href="#services">Services</a>
         <a href="#products">Products</a>
         <a href="#contact">Contact</a>
@@ -413,7 +356,6 @@
       </div>
     </div>
   </div>
-
   <main>
     <section class="hero" id="home">
       <div class="container hero-grid">
@@ -434,13 +376,11 @@
             <span>✔ B2B commercial support</span>
           </div>
         </div>
-
         <div class="hero-image">
           <img src="hero.jpg" alt="International trade logistics">
         </div>
       </div>
     </section>
-
     <section id="about">
       <div class="container">
         <div class="section-head">
@@ -450,7 +390,6 @@
             Our objective is to support efficient sourcing, dependable communication, and practical deal flow in international markets.
           </p>
         </div>
-
         <div class="split">
           <div class="panel">
             <h3>What we stand for</h3>
@@ -461,7 +400,6 @@
               <li>Opportunities in construction, materials, and industrial supply</li>
             </ul>
           </div>
-
           <div class="panel">
             <h3>Our approach</h3>
             <p>
@@ -476,7 +414,6 @@
         </div>
       </div>
     </section>
-
     <section id="services">
       <div class="container">
         <div class="section-head">
@@ -485,7 +422,6 @@
             A professional front-facing website for clients, suppliers, and strategic partners.
           </p>
         </div>
-
         <div class="cards-3">
           <div class="card">
             <h3>Supplier Sourcing</h3>
@@ -493,14 +429,12 @@
               Identification of potential manufacturers and supply partners aligned with commercial and product needs.
             </p>
           </div>
-
           <div class="card">
             <h3>Trade Coordination</h3>
             <p>
               Support with business communication, initial alignment, and opportunity follow-up between parties.
             </p>
           </div>
-
           <div class="card">
             <h3>Market Development</h3>
             <p>
@@ -510,7 +444,6 @@
         </div>
       </div>
     </section>
-
     <section id="products">
       <div class="container">
         <div class="section-head">
@@ -519,18 +452,15 @@
             This section can be customized as your final product focus becomes clearer. For now, it positions Kopperstone in a professional way.
           </p>
         </div>
-
         <div class="cards-3">
           <div class="card">
             <h3>Construction Materials</h3>
             <p>Solutions for building-related supply chains, commercial materials, and sourcing support.</p>
           </div>
-
           <div class="card">
             <h3>Industrial Supply</h3>
             <p>Coordination for industrial products, components, and business-to-business procurement opportunities.</p>
           </div>
-
           <div class="card">
             <h3>Custom Trade Opportunities</h3>
             <p>Flexible representation for new product lines, market entry, and strategic supplier relationships.</p>
@@ -538,16 +468,14 @@
         </div>
       </div>
     </section>
-
     <section id="contact">
       <div class="container">
         <div class="contact-box">
-          <h2>Let’s build the right commercial connection.</h2>
+          <h2>Let's build the right commercial connection.</h2>
           <p>
             Whether you are looking for supply options, trade representation, or cross-border business support,
             Kopperstone is ready to start the conversation.
           </p>
-
           <div class="contact-grid">
             <div class="contact-item">
               <strong>Email</strong>
@@ -566,7 +494,6 @@
               <span>Request an introductory meeting</span>
             </div>
           </div>
-
           <div style="margin-top:24px; display:flex; gap:14px; flex-wrap:wrap;">
             <a class="btn btn-primary" href="mailto:info@kopperstone.com?subject=Kopperstone%20Inquiry">Email Kopperstone</a>
             <a class="btn btn-secondary" href="#home" style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.16);">Back to top</a>
@@ -575,7 +502,6 @@
       </div>
     </section>
   </main>
-
   <footer>
     <div class="container footer-row">
       <div>
