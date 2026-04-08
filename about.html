@@ -130,13 +130,14 @@
       letter-spacing: -1.5px;
     }
     .page-hero p {
-      padding: 100px 0; /* Increased padding to show more of the image */
-      background-image: linear-gradient(rgba(1, 16, 40, 0.8), rgba(1, 16, 40, 0.8)), 
+     .page-hero {
+      padding: 120px 0; /* More padding helps show more of the vertical photo */
+      background-image: linear-gradient(rgba(1, 16, 40, 0.7), rgba(1, 16, 40, 0.7)), 
                         url('LOS_MASCAPITOS');
-      background-size: cover;
-      background-position: center;
-      background-attachment: scroll;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      background-size: cover;      /* Forces image to fill the space */
+      background-position: center; /* Keeps the middle of your photo visible */
+      background-repeat: no-repeat;
+      min-height: 400px;           /* Ensures the box is tall enough for the photo */
     }
     section {
       padding: 72px 0;
