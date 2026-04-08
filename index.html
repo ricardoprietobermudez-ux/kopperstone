@@ -3,335 +3,170 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Kopperstone Design</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+<title>Kopperstone Group</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet"/>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--navy:#010f28;--navy2:#010c20;--w:rgba(255,255,255,1);--w70:rgba(255,255,255,0.7);--w40:rgba(255,255,255,0.4);--w20:rgba(255,255,255,0.2);--w08:rgba(255,255,255,0.08)}
-html{scroll-behavior:smooth}
-body{font-family:'Raleway',sans-serif;background:var(--navy);color:var(--w);overflow-x:hidden}
+:root{--navy:#010f28;--w:rgba(255,255,255,1);--w70:rgba(255,255,255,0.7);--w40:rgba(255,255,255,0.4);--w15:rgba(255,255,255,0.15);--w08:rgba(255,255,255,0.08)}
+html,body{width:100%;height:100%;overflow:hidden;font-family:'Raleway',sans-serif;background:var(--navy);color:var(--w)}
 a{text-decoration:none;color:inherit}
-
-/* NAV */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:28px 60px;
-  background:transparent;border-bottom:1px solid transparent;
-  transition:all 0.5s;
-}
-nav.solid{padding:18px 60px;background:rgba(1,15,40,0.96);border-bottom:1px solid var(--w08);backdrop-filter:blur(12px)}
-.nav-home{
-  font-family:'Cormorant Garamond',serif;
-  font-size:13px;font-weight:300;letter-spacing:6px;text-transform:uppercase;
-  color:rgba(255,255,255,0.5);transition:color 0.3s;
-}
-.nav-home:hover{color:var(--w)}
-.nav-brand{
-  font-family:'Cormorant Garamond',serif;
-  font-size:15px;font-weight:300;letter-spacing:6px;text-transform:uppercase;color:var(--w);
-}
-.nav-contact{
-  font-size:9px;letter-spacing:3px;text-transform:uppercase;
-  color:rgba(255,255,255,0.45);transition:color 0.3s;
-}
-.nav-contact:hover{color:var(--w)}
-
-/* HERO PANEL */
-.hero{
-  position:relative;width:100%;height:100vh;min-height:600px;
-  display:flex;align-items:flex-end;justify-content:flex-start;
-  overflow:hidden;
-}
-.hero-bg{
-  position:absolute;inset:0;z-index:0;
-  background:linear-gradient(135deg,#010f28 0%,#021640 50%,#010f28 100%);
+ 
+.scene{position:relative;width:100vw;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden}
+ 
+/* BG */
+.bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+.bg-inner{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,#010f28 0%,#01183d 50%,#010f28 100%);
   animation:drift 16s ease-in-out infinite alternate;
 }
-@keyframes drift{from{transform:scale(1)}to{transform:scale(1.06) translate(1%,-0.5%)}}
-.hero-overlay{
-  position:absolute;inset:0;z-index:1;
-  background:linear-gradient(to top,rgba(1,15,40,0.98) 0%,rgba(1,15,40,0.4) 50%,rgba(1,15,40,0.2) 100%);
+.bg-glow{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 50% at 55% 45%,rgba(255,255,255,0.025) 0%,transparent 70%);
 }
-.hero-content{
-  position:relative;z-index:2;
-  padding:0 80px 80px;
-  max-width:900px;
-  animation:fadeUp 1.2s ease 0.3s both;
+@keyframes drift{from{transform:scale(1)}to{transform:scale(1.08) translate(1%,-1%)}}
+.overlay{position:absolute;inset:0;z-index:1;background:rgba(1,15,40,0.5)}
+ 
+/* CONTENT */
+.content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;width:100%;padding:0 40px}
+ 
+.group-label{
+  font-size:9px;font-weight:400;letter-spacing:7px;text-transform:uppercase;
+  color:rgba(255,255,255,0.3);margin-bottom:10px;
+  animation:fadeUp 1s ease 0.1s both;
 }
-.hero-kicker{
-  font-size:9px;letter-spacing:5px;text-transform:uppercase;
-  color:rgba(255,255,255,0.35);margin-bottom:20px;
-}
-.hero-title{
+.title{
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(52px,9vw,120px);font-weight:300;line-height:0.9;
-  letter-spacing:4px;text-transform:uppercase;color:var(--w);
-  margin-bottom:28px;
+  font-size:clamp(70px,11vw,155px);font-weight:300;line-height:0.9;
+  letter-spacing:12px;text-transform:uppercase;color:var(--w);
+  animation:fadeUp 1.2s ease 0.3s both;margin-bottom:14px;
 }
-.hero-title em{font-style:italic;color:rgba(255,255,255,0.7)}
-.hero-desc{
-  font-size:13px;font-weight:300;line-height:2.1;
-  color:rgba(255,255,255,0.45);max-width:480px;margin-bottom:40px;
+.tagline{
+  font-size:9px;font-weight:300;letter-spacing:5px;text-transform:uppercase;
+  color:rgba(255,255,255,0.28);margin-bottom:52px;
+  display:flex;align-items:center;gap:16px;
+  animation:fadeUp 1s ease 0.5s both;
 }
-.hero-cta{
-  display:inline-flex;align-items:center;gap:14px;
-  font-size:9px;letter-spacing:4px;text-transform:uppercase;
-  color:var(--w);padding:15px 38px;
-  border:1px solid rgba(255,255,255,0.35);
-  transition:all 0.4s;
+.tagline-rule{display:block;width:24px;height:1px;background:rgba(255,255,255,0.2)}
+ 
+/* CARDS */
+.cards{
+  display:flex;align-items:stretch;justify-content:center;
+  width:100%;max-width:940px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.07);
+  animation:fadeUp 1.2s ease 0.7s both;
 }
-.hero-cta:hover{background:var(--w);color:var(--navy)}
-.hero-scroll{
-  position:absolute;right:60px;bottom:60px;z-index:2;
-  display:flex;flex-direction:column;align-items:center;gap:10px;
-  font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.25);
+.card{
+  flex:1;padding:36px 30px;
+  background:transparent;
+  display:flex;flex-direction:column;align-items:flex-start;
+  cursor:pointer;position:relative;overflow:hidden;
+  border-right:1px solid rgba(255,255,255,0.06);
+  transition:background 0.45s;
+}
+.card:last-child{border-right:none}
+.card::after{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:var(--w);transform:scaleX(0);transform-origin:left;
+  transition:transform 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+.card:hover::after{transform:scaleX(1)}
+.card:hover{background:rgba(255,255,255,0.05)}
+.card-num{font-size:8px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.22);margin-bottom:20px}
+.card-name{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(18px,2vw,26px);font-weight:300;color:var(--w);
+  line-height:1.2;margin-bottom:14px;flex:1;
+}
+.card-desc{font-size:11px;font-weight:300;line-height:1.9;color:rgba(255,255,255,0.35);margin-bottom:28px}
+.card-enter{
+  font-size:8px;letter-spacing:3.5px;text-transform:uppercase;
+  color:rgba(255,255,255,0.4);
+  display:flex;align-items:center;gap:10px;
+  transition:gap 0.35s,color 0.35s;
+}
+.card:hover .card-enter{gap:18px;color:var(--w)}
+.enter-line{width:16px;height:1px;background:currentColor;flex-shrink:0;transition:width 0.35s}
+.card:hover .enter-line{width:26px}
+ 
+/* BOTTOM BAR */
+.bottom{
+  position:absolute;bottom:28px;left:0;right:0;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 56px;z-index:2;
   animation:fadeUp 1s ease 1s both;
 }
-.scroll-line{width:1px;height:44px;background:linear-gradient(to bottom,rgba(255,255,255,0.3),transparent);animation:pulse 2.5s ease infinite}
-@keyframes pulse{0%,100%{opacity:0.3}50%{opacity:1}}
-
-.hero-video-note{
-  position:absolute;top:0;left:0;right:0;z-index:3;
-  background:rgba(255,255,255,0.03);border-bottom:1px solid var(--w08);
-  padding:10px 60px;font-size:9px;letter-spacing:1.5px;color:rgba(255,255,255,0.3);
-  display:flex;align-items:center;gap:10px;margin-top:80px;
-}
-.dot{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,0.3);animation:blink 2.5s ease infinite}
-@keyframes blink{0%,100%{opacity:0.2}50%{opacity:1}}
-
-/* SERVICES SECTION */
-.services{padding:120px 80px;background:var(--navy2)}
-.section-label{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:16px}
-.section-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(36px,4vw,56px);font-weight:300;
-  color:var(--w);margin-bottom:56px;line-height:1.1;
-}
-.section-title em{font-style:italic;color:rgba(255,255,255,0.6)}
-.services-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  gap:1px;background:rgba(255,255,255,0.06);
-}
-.service{
-  background:var(--navy2);padding:36px 28px;
-  border-top:1px solid transparent;transition:border-color 0.35s,background 0.35s;
-}
-.service:hover{border-color:rgba(255,255,255,0.4);background:rgba(255,255,255,0.03)}
-.service-num{font-size:8px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.2);margin-bottom:18px}
-.service-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:22px;font-weight:300;color:var(--w);margin-bottom:14px;
-}
-.service-text{font-size:12px;font-weight:300;line-height:1.9;color:rgba(255,255,255,0.38)}
-
-/* MATERIALS STRIP */
-.materials{
-  padding:80px;
-  display:flex;align-items:center;justify-content:space-between;
-  border-top:1px solid var(--w08);border-bottom:1px solid var(--w08);
-  gap:40px;flex-wrap:wrap;
-}
-.materials-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(28px,3vw,44px);font-weight:300;
-  color:var(--w);max-width:340px;line-height:1.2;
-}
-.materials-title em{font-style:italic;color:rgba(255,255,255,0.5)}
-.materials-tags{display:flex;flex-wrap:wrap;gap:10px;max-width:500px}
-.tag{
-  font-size:9px;letter-spacing:2.5px;text-transform:uppercase;
-  padding:9px 18px;border:1px solid rgba(255,255,255,0.15);
-  color:rgba(255,255,255,0.4);transition:all 0.3s;
-}
-.tag:hover{border-color:rgba(255,255,255,0.5);color:var(--w)}
-
-/* STATEMENT */
-.statement{
-  padding:120px 80px;text-align:center;
-  background:var(--navy2);
-}
-.statement-quote{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(28px,4vw,52px);font-weight:300;font-style:italic;
-  color:var(--w);line-height:1.3;max-width:800px;margin:0 auto 48px;
-}
-.statement-rule{width:40px;height:1px;background:rgba(255,255,255,0.25);margin:0 auto 24px}
-.statement-sub{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.3)}
-
-/* CONTACT */
-.contact-strip{
-  padding:100px 80px;
-  display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;
-}
-.contact-left{}
-.contact-label{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:14px}
-.contact-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(32px,4vw,56px);font-weight:300;color:var(--w);line-height:1.1;
-}
-.contact-title em{font-style:italic;color:rgba(255,255,255,0.55)}
-.contact-right{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
-.contact-item{font-size:11px;letter-spacing:2px;color:rgba(255,255,255,0.35)}
-.contact-item strong{display:block;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.2);font-weight:400;margin-bottom:4px}
-
-/* FOOTER */
-footer{
-  background:#000a1a;border-top:1px solid var(--w08);
-  padding:36px 80px;
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;
-}
-.footer-back{
-  font-size:9px;letter-spacing:3px;text-transform:uppercase;
-  color:rgba(255,255,255,0.3);display:flex;align-items:center;gap:10px;
-  transition:color 0.3s;
-}
-.footer-back:hover{color:var(--w)}
-.footer-logo{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:300;letter-spacing:6px;text-transform:uppercase;color:rgba(255,255,255,0.4)}
-.footer-copy{font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.15)}
-
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.9s ease,transform 0.9s ease}
-.reveal.on{opacity:1;transform:translateY(0)}
-
-@media(max-width:900px){
-  nav,nav.solid{padding-left:24px;padding-right:24px}
-  .hero-content{padding:0 24px 60px}
-  .hero-scroll{right:24px;bottom:24px}
-  .hero-video-note{padding-left:24px}
-  .services,.materials,.statement,.contact-strip,footer{padding-left:24px;padding-right:24px}
-  .services-grid{grid-template-columns:1fr 1fr}
-  .materials{flex-direction:column;align-items:flex-start}
-  .contact-strip{flex-direction:column;align-items:flex-start}
-}
-@media(max-width:560px){
-  .services-grid{grid-template-columns:1fr}
+.bottom-text{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.16)}
+ 
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+ 
+@media(max-width:760px){
+  html,body{overflow:auto}
+  .scene{height:auto;min-height:100vh;padding:80px 0 60px}
+  .cards{flex-direction:column;border:none;gap:1px;background:rgba(255,255,255,0.06)}
+  .card{border-right:none;border-bottom:1px solid rgba(255,255,255,0.06)}
+  .card:last-child{border-bottom:none}
+  .bottom{position:relative;margin-top:32px;padding:0 24px}
+  .content{padding:0 16px}
 }
 </style>
 </head>
 <body>
-
-<nav id="nav">
-  <a href="index.html" class="nav-home">← Kopperstone Group</a>
-  <div class="nav-brand">Kopperstone Design</div>
-  <a href="#contact" class="nav-contact">Contact</a>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg">
+<div class="scene">
+ 
+  <div class="bg">
     <!--
-      REPLACE WITH YOUR MARBLE KITCHEN VIDEO:
+      REPLACE bg-inner WITH YOUR INFRASTRUCTURE VIDEO:
       <video autoplay muted loop playsinline style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
-        <source src="marble-kitchen.mp4" type="video/mp4">
+        <source src="hero.mp4" type="video/mp4">
       </video>
     -->
+    <div class="bg-inner"></div>
+    <div class="bg-glow"></div>
   </div>
-  <div class="hero-overlay"></div>
-  <div class="hero-video-note" style="margin-top:0;top:0;position:absolute">
-    <div class="dot"></div>
-    Replace hero background: &lt;video autoplay muted loop playsinline&gt; → marble-kitchen.mp4
-  </div>
-  <div class="hero-content">
-    <div class="hero-kicker">Subsidiary I · Kopperstone Group</div>
-    <h1 class="hero-title">Kopper&shy;stone<br><em>Design</em></h1>
-    <p class="hero-desc">The world's finest natural stone, marble and premium surfaces — meticulously sourced and delivered for the most discerning residential and commercial interiors.</p>
-    <a href="#contact" class="hero-cta">Begin a Project
-      <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>
-    </a>
-  </div>
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    Scroll
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section class="services reveal">
-  <div class="section-label">What We Offer</div>
-  <div class="section-title">Crafted for the <em>exceptional</em></div>
-  <div class="services-grid">
-    <div class="service">
-      <div class="service-num">01</div>
-      <div class="service-title">Marble & Natural Stone</div>
-      <div class="service-text">Calacatta, Carrara, Statuario and rare imported stones sourced directly from quarries worldwide. Every slab selected for character and quality.</div>
+  <div class="overlay"></div>
+ 
+  <div class="content">
+    <div class="group-label">The Kopperstone Group</div>
+    <div class="title">Kopperstone</div>
+    <div class="tagline">
+      <span class="tagline-rule"></span>
+      Design &nbsp;&middot;&nbsp; Construction &nbsp;&middot;&nbsp; Excellence
+      <span class="tagline-rule"></span>
     </div>
-    <div class="service">
-      <div class="service-num">02</div>
-      <div class="service-title">Luxury Countertops</div>
-      <div class="service-text">Waterfall islands, honed surfaces and bespoke edge profiles. From concept to installation, precision at every step.</div>
-    </div>
-    <div class="service">
-      <div class="service-num">03</div>
-      <div class="service-title">Premium Kitchens</div>
-      <div class="service-text">Full material packages: backsplash, island, range hood cladding and custom finishes. The complete kitchen in stone.</div>
-    </div>
-    <div class="service">
-      <div class="service-num">04</div>
-      <div class="service-title">High-End Washrooms</div>
-      <div class="service-text">Floor-to-ceiling marble, book-matched feature walls and polished surface packages for bathrooms that transcend the ordinary.</div>
+ 
+    <div class="cards">
+ 
+      <a href="about.html" class="card">
+        <div class="card-num">The Group</div>
+        <div class="card-name">About Us</div>
+        <div class="card-desc">A Canadian holding company bridging North America and Latin America through design and construction excellence.</div>
+        <div class="card-enter"><div class="enter-line"></div>Enter</div>
+      </a>
+ 
+      <a href="design.html" class="card">
+        <div class="card-num">Subsidiary I</div>
+        <div class="card-name">Kopperstone Design</div>
+        <div class="card-desc">Luxury marble, natural stone, premium countertops and high-end interior finishes for elite projects.</div>
+        <div class="card-enter"><div class="enter-line"></div>Enter</div>
+      </a>
+ 
+      <a href="construction.html" class="card">
+        <div class="card-num">Subsidiary II</div>
+        <div class="card-name">Kopperstone Construction</div>
+        <div class="card-desc">Commercial and residential construction coordination across North America and Latin America.</div>
+        <div class="card-enter"><div class="enter-line"></div>Coming Soon</div>
+      </a>
+ 
     </div>
   </div>
-</section>
-
-<!-- MATERIALS STRIP -->
-<section class="materials reveal">
-  <div class="materials-title">The finest materials, <em>sourced globally</em></div>
-  <div class="materials-tags">
-    <span class="tag">Calacatta Gold</span>
-    <span class="tag">Carrara White</span>
-    <span class="tag">Statuario</span>
-    <span class="tag">Nero Marquina</span>
-    <span class="tag">Breccia Capraia</span>
-    <span class="tag">Quartzite</span>
-    <span class="tag">Onyx</span>
-    <span class="tag">Travertine</span>
-    <span class="tag">Granite</span>
-    <span class="tag">Porcelain Slab</span>
-    <span class="tag">Engineered Stone</span>
+ 
+  <div class="bottom">
+    <div class="bottom-text">© 2026 Kopperstone Group</div>
+    <div class="bottom-text">Toronto, Canada</div>
   </div>
-</section>
-
-<!-- STATEMENT -->
-<section class="statement reveal">
-  <div class="statement-quote">"The surface of a space is its first language — we ensure it speaks with permanence."</div>
-  <div class="statement-rule"></div>
-  <div class="statement-sub">Kopperstone Design · Toronto, Canada</div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact-strip reveal" id="contact">
-  <div class="contact-left">
-    <div class="contact-label">Start the conversation</div>
-    <div class="contact-title">Let's create something<br><em>remarkable</em></div>
-  </div>
-  <div class="contact-right">
-    <div class="contact-item"><strong>Email</strong>info@kopperstone.com</div>
-    <div class="contact-item"><strong>Headquarters</strong>Toronto, Canada</div>
-    <div class="contact-item"><strong>Markets</strong>Canada · USA · Latin America</div>
-    <br/>
-    <a href="mailto:info@kopperstone.com?subject=Design Project Inquiry" class="hero-cta" style="padding:13px 32px;font-size:9px">
-      Email Us
-      <svg width="12" height="8" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>
-    </a>
-  </div>
-</section>
-
-<footer>
-  <a href="index.html" class="footer-back">
-    <svg width="12" height="10" viewBox="0 0 14 10" fill="none"><path d="M13 5H1M5 1l-4 4 4 4" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>
-    Back to Kopperstone Group
-  </a>
-  <div class="footer-logo">Kopperstone Design</div>
-  <div class="footer-copy">© 2026 Kopperstone Group</div>
-</footer>
-
-<script>
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>{nav.classList.toggle('solid',window.scrollY>60)});
-const revealEls=document.querySelectorAll('.reveal');
-const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')})},{threshold:0.12});
-revealEls.forEach(el=>obs.observe(el));
-</script>
+ 
+</div>
 </body>
 </html>
