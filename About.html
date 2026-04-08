@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>About Us · Kopperstone Group</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#010f28;--navy2:#010c20;--w:#ffffff;--w08:rgba(255,255,255,0.08)}
+html{scroll-behavior:smooth}
+body{font-family:'Raleway',sans-serif;background:var(--navy);color:var(--w);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:28px 60px;background:transparent;border-bottom:1px solid transparent;transition:all 0.5s;
+}
+nav.solid{padding:18px 60px;background:rgba(1,15,40,0.96);border-bottom:1px solid var(--w08);backdrop-filter:blur(12px)}
+.nav-home{font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:300;letter-spacing:6px;text-transform:uppercase;color:rgba(255,255,255,0.4);transition:color 0.3s}
+.nav-home:hover{color:var(--w)}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:300;letter-spacing:6px;text-transform:uppercase;color:var(--w)}
+
+/* HERO */
+.hero{
+  position:relative;height:70vh;min-height:480px;
+  display:flex;align-items:flex-end;justify-content:flex-start;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:linear-gradient(135deg,#010f28 0%,#011530 50%,#010f28 100%);
+}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(1,15,40,1) 0%,rgba(1,15,40,0.3) 60%,rgba(1,15,40,0.1) 100%)}
+.hero-content{position:relative;z-index:2;padding:0 80px 70px;animation:fadeUp 1.2s ease 0.3s both}
+.hero-kicker{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:18px}
+.hero-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(56px,9vw,110px);font-weight:300;line-height:0.9;
+  letter-spacing:4px;text-transform:uppercase;color:var(--w);
+}
+.hero-title em{font-style:italic;color:rgba(255,255,255,0.6)}
+
+/* BODY */
+.body-wrap{padding:100px 80px;background:var(--navy)}
+.two-col{display:grid;grid-template-columns:1fr 1.4fr;gap:100px;align-items:start;margin-bottom:80px}
+.col-label{font-size:9px;letter-spacing:5px;text-transform:uppercase;color:rgba(255,255,255,0.28);margin-bottom:16px}
+.col-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,3vw,44px);font-weight:300;color:var(--w);line-height:1.1}
+.col-title em{font-style:italic;color:rgba(255,255,255,0.55)}
+.col-rule{width:32px;height:1px;background:rgba(255,255,255,0.2);margin:28px 0}
+.body-text{font-size:13px;font-weight:300;line-height:2.2;color:rgba(255,255,255,0.42);margin-bottom:20px}
+.body-text strong{color:rgba(255,255,255,0.7);font-weight:400}
+
+/* STATS */
+.stats{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:rgba(255,255,255,0.06);
+  margin-bottom:80px;
+}
+.stat{background:var(--navy);padding:36px 28px}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:var(--w);line-height:1;margin-bottom:10px}
+.stat-label{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.28)}
+
+/* SUBSIDIARIES */
+.subs{
+  display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  background:rgba(255,255,255,0.06);margin-bottom:80px;
+}
+.sub{
+  background:var(--navy2);padding:44px 40px;
+  border-top:1px solid transparent;transition:border-color 0.3s,background 0.3s;
+}
+.sub:hover{border-color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.02)}
+.sub-tag{font-size:8px;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.22);margin-bottom:18px}
+.sub-name{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:var(--w);margin-bottom:14px}
+.sub-desc{font-size:12px;font-weight:300;line-height:1.9;color:rgba(255,255,255,0.35);margin-bottom:24px}
+.sub-link{
+  font-size:9px;letter-spacing:3px;text-transform:uppercase;
+  color:rgba(255,255,255,0.4);display:inline-flex;align-items:center;gap:10px;
+  transition:gap 0.3s,color 0.3s;
+}
+.sub:hover .sub-link{gap:16px;color:var(--w)}
+.sub-line{width:14px;height:1px;background:currentColor;transition:width 0.3s}
+.sub:hover .sub-line{width:22px}
+
+/* VALUES */
+.values{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:rgba(255,255,255,0.06);
+}
+.value{background:var(--navy2);padding:32px 24px;border-top:1px solid transparent;transition:border-color 0.3s}
+.value:hover{border-color:rgba(255,255,255,0.3)}
+.value-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--w);margin-bottom:12px}
+.value-text{font-size:11px;font-weight:300;line-height:1.9;color:rgba(255,255,255,0.32)}
+
+/* CONTACT STRIP */
+.contact-strip{
+  background:var(--navy2);border-top:1px solid rgba(255,255,255,0.06);
+  padding:80px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;
+}
+.contact-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,48px);font-weight:300;color:var(--w)}
+.contact-title em{font-style:italic;color:rgba(255,255,255,0.5)}
+.cta{display:inline-flex;align-items:center;gap:14px;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--w);padding:14px 36px;border:1px solid rgba(255,255,255,0.25);transition:all 0.4s}
+.cta:hover{background:var(--w);color:var(--navy)}
+
+/* FOOTER */
+footer{background:#000a1a;border-top:1px solid rgba(255,255,255,0.06);padding:36px 80px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.footer-back{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.28);display:flex;align-items:center;gap:10px;transition:color 0.3s}
+.footer-back:hover{color:var(--w)}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:300;letter-spacing:6px;text-transform:uppercase;color:rgba(255,255,255,0.35)}
+.footer-copy{font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.14)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.9s ease,transform 0.9s ease}
+.reveal.on{opacity:1;transform:translateY(0)}
+
+@media(max-width:900px){
+  nav,nav.solid{padding-left:24px;padding-right:24px}
+  .hero-content{padding:0 24px 52px}
+  .body-wrap,.contact-strip,footer{padding-left:24px;padding-right:24px}
+  .two-col{grid-template-columns:1fr;gap:40px}
+  .stats,.values{grid-template-columns:1fr 1fr}
+  .subs{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  .stats,.values{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-home">← Kopperstone Group</a>
+  <div class="nav-brand">About Us</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-kicker">The Kopperstone Group · Toronto, Canada</div>
+    <h1 class="hero-title">About<br><em>Kopperstone</em></h1>
+  </div>
+</section>
+
+<!-- MAIN BODY -->
+<div class="body-wrap">
+
+  <!-- INTRO -->
+  <div class="two-col reveal">
+    <div>
+      <div class="col-label">Who We Are</div>
+      <div class="col-title">A holding company built on <em>precision</em></div>
+      <div class="col-rule"></div>
+    </div>
+    <div>
+      <p class="body-text">Kopperstone is a <strong>Canadian holding company</strong> headquartered in Toronto, operating at the intersection of luxury design and high-performance construction across North America and Latin America.</p>
+      <p class="body-text">We were founded on a single conviction: that <strong>premium materials and expert execution</strong> should be accessible to every ambitious project, regardless of geography. We act as the bridge between the world's finest suppliers and the clients who demand the very best.</p>
+      <p class="body-text">Through two specialist subsidiaries — <strong>Kopperstone Design</strong> and <strong>Kopperstone Construction</strong> — we deliver end-to-end solutions for the most demanding residential and commercial projects on the continent.</p>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats reveal">
+    <div class="stat"><div class="stat-num">2</div><div class="stat-label">Subsidiaries</div></div>
+    <div class="stat"><div class="stat-num">3</div><div class="stat-label">Regions of Operation</div></div>
+    <div class="stat"><div class="stat-num">CA</div><div class="stat-label">Toronto Headquarters</div></div>
+    <div class="stat"><div class="stat-num">B2B</div><div class="stat-label">Trade & Commercial Focus</div></div>
+  </div>
+
+  <!-- SUBSIDIARIES -->
+  <div class="col-label reveal" style="margin-bottom:16px">Our Companies</div>
+  <div class="subs reveal">
+    <div class="sub">
+      <div class="sub-tag">Subsidiary I</div>
+      <div class="sub-name">Kopperstone Design</div>
+      <div class="sub-desc">Luxury marble, natural stone, premium countertops and high-end interior finishes. We source the world's finest materials for kitchens, bathrooms and signature interiors.</div>
+      <a href="design.html" class="sub-link"><div class="sub-line"></div>Visit Kopperstone Design</a>
+    </div>
+    <div class="sub">
+      <div class="sub-tag">Subsidiary II · Coming Soon</div>
+      <div class="sub-name">Kopperstone Construction</div>
+      <div class="sub-desc">End-to-end construction coordination and commercial project delivery across North America and Latin America. Launching soon — register your interest today.</div>
+      <a href="construction.html" class="sub-link"><div class="sub-line"></div>Learn More</a>
+    </div>
+  </div>
+
+  <!-- VALUES -->
+  <div class="col-label reveal" style="margin-bottom:16px">What We Stand For</div>
+  <div class="values reveal">
+    <div class="value"><div class="value-title">Integrity</div><div class="value-text">Transparent relationships at every stage — with clients, suppliers and partners alike.</div></div>
+    <div class="value"><div class="value-title">Craftsmanship</div><div class="value-text">We supply and oversee only materials and work that meet our exacting standards.</div></div>
+    <div class="value"><div class="value-title">Global Vision</div><div class="value-text">Cross-border expertise connecting North America and Latin America seamlessly.</div></div>
+    <div class="value"><div class="value-title">Longevity</div><div class="value-text">Built to last — in quality of materials, in relationships, and in results.</div></div>
+  </div>
+
+</div>
+
+<!-- CONTACT -->
+<div class="contact-strip reveal">
+  <div class="contact-title">Ready to build something <em>exceptional?</em></div>
+  <a href="mailto:info@kopperstone.com" class="cta">Contact Kopperstone
+    <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M9 1l4 4-4 4" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>
+  </a>
+</div>
+
+<footer>
+  <a href="index.html" class="footer-back">
+    <svg width="12" height="10" viewBox="0 0 14 10" fill="none"><path d="M13 5H1M5 1l-4 4 4 4" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg>
+    Back to Kopperstone Group
+  </a>
+  <div class="footer-logo">Kopperstone Group</div>
+  <div class="footer-copy">© 2026 Kopperstone Group</div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('solid',window.scrollY>60)});
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')})},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
