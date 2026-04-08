@@ -111,7 +111,7 @@
       background-size: cover;
       background-position: center 25%;
       background-repeat: no-repeat;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      border-bottom: none;
       display: flex;
       align-items: center;
       min-height: 500px;
@@ -176,7 +176,15 @@
     .story-photo-col {
       flex: 0 0 300px;
       width: 300px;
-      overflow: visible;
+      position: relative;
+      overflow: hidden;
+    }
+    .story-photo-col::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(1, 16, 40, 0.55);
+      pointer-events: none;
     }
     .story-photo-col img {
       width: 100%;
@@ -184,16 +192,6 @@
       object-fit: cover;
       object-position: center top;
       display: block;
-      filter: blur(1.5px);
-      transform: scale(1.03);
-      -webkit-mask-image:
-        linear-gradient(to right,  transparent 0%, black 18%, black 82%, transparent 100%),
-        linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
-      mask-image:
-        linear-gradient(to right,  transparent 0%, black 18%, black 82%, transparent 100%),
-        linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
-      -webkit-mask-composite: intersect;
-      mask-composite: intersect;
     }
 
     .founders-grid {
