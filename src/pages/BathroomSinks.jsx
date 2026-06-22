@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 const sinks = [
-  { id: 1, img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/792791dc1_Screenshot2026-06-16at61504PM.png', sku: 'KP-1101' },
-  { id: 2, img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/201351091_Screenshot2026-06-16at61615PM.png', sku: 'KP-1103' },
-  { id: 3, img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/eaba71f56_Screenshot2026-06-16at61708PM.png', sku: 'KP-1104' },
-  { id: 4, img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/a3037b51f_Screenshot2026-06-16at61800PM.png', sku: 'KP-1105' },
+  { id: 1, img: '/images/792791dc1_Screenshot2026-06-16at61504PM.png', sku: 'KP-1101' },
+  { id: 2, img: '/images/201351091_Screenshot2026-06-16at61615PM.png', sku: 'KP-1103' },
+  { id: 3, img: '/images/eaba71f56_Screenshot2026-06-16at61708PM.png', sku: 'KP-1104' },
+  { id: 4, img: '/images/a3037b51f_Screenshot2026-06-16at61800PM.png', sku: 'KP-1105' },
 ];
 
 export default function BathroomSinks() {
@@ -24,7 +24,7 @@ export default function BathroomSinks() {
           </p>
         </div>
         <div className="relative min-h-[350px]">
-          <img src="https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/26db784c2_image.png" alt="Bathroom sink" className="w-full h-full object-cover" />
+          <img src="/images/26db784c2_image.png" alt="Bathroom sink" className="w-full h-full object-cover" />
         </div>
       </section>
 

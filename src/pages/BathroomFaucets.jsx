@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 const faucets = [
-{ sku: 'KP-6104', name: 'Square Basin Mixer', type: 'Basin Tap', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/5c5b00e04_Screenshot2026-06-18at65443PM.png' },
-{ sku: 'KP-6113', name: 'Slim Matte Black', type: 'Basin Tap', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/c4ad9b4bf_Screenshot2026-06-18at65626PM.png' },
-{ sku: 'KP-6114', name: 'Slender Single Lever', type: 'Basin Tap', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/1f277cab4_Screenshot2026-06-18at70112PM.png' },
-{ sku: 'KP-6117', name: 'Curved Lever', type: 'Basin Tap', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/26a5eb260_Screenshot2026-06-18at70200PM.png' },
+{ sku: 'KP-6104', name: 'Square Basin Mixer', type: 'Basin Tap', img: '/images/5c5b00e04_Screenshot2026-06-18at65443PM.png' },
+{ sku: 'KP-6113', name: 'Slim Matte Black', type: 'Basin Tap', img: '/images/c4ad9b4bf_Screenshot2026-06-18at65626PM.png' },
+{ sku: 'KP-6114', name: 'Slender Single Lever', type: 'Basin Tap', img: '/images/1f277cab4_Screenshot2026-06-18at70112PM.png' },
+{ sku: 'KP-6117', name: 'Curved Lever', type: 'Basin Tap', img: '/images/26a5eb260_Screenshot2026-06-18at70200PM.png' },
 { sku: 'KS-WB3009B', name: 'Tall Lever Black', type: 'Basin Tap' },
 { sku: 'KS-WB3010', name: 'Low-Arc Basin Mixer', type: 'Basin Tap' },
 { sku: 'KS-WB3014', name: 'Modern Square Lever', type: 'Basin Tap' },
@@ -49,7 +49,7 @@ export default function BathroomFaucets() {
           </div>
         </div>
         <div className="relative min-h-[350px]">
-          <img src="https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/736843221_image.png" alt="Bathroom faucets" className="w-full h-full object-cover" />
+          <img src="/images/736843221_image.png" alt="Bathroom faucets" className="w-full h-full object-cover" />
         </div>
       </section>
 

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { base44 } from '@/api/base44Client';
 import { ArrowRight } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 
@@ -9,12 +8,19 @@ export default function Projects() {
   const [submitted, setSubmitted] = useState(false);
 
   const handleInquiry = async () => {
-    await base44.entities.Lead.create({
-      company_name: form.company,
-      email: form.email,
-      project_type: form.project_type.toLowerCase().replace(/ /g, '_'),
-      status: 'new',
-    });
+    try {
+      await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+          subject: `Project Inquiry — ${form.company}`,
+          from_name: form.company,
+          email: form.email,
+          project_type: form.project_type,
+        }),
+      });
+    } catch (_) {}
     setSubmitted(true);
   };
 

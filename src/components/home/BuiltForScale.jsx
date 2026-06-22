@@ -3,7 +3,7 @@ import { useLanguage } from '@/lib/i18n';
 import { motion } from 'framer-motion';
 import { Ship, Tag, TrendingDown, Clock, Users } from 'lucide-react';
 
-const LOGISTICS_IMG = 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/badec9e3b_generated_image.png';
+const LOGISTICS_IMG = '/images/badec9e3b_generated_image.png';
 
 const caps = [
   { k: 'sourcing',     descK: 'sourcingDesc',    Icon: Ship },

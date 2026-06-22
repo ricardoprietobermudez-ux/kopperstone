@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
-const BATH   = 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/24219b1c5_generated_image.png';
-const TUB    = 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/5f01c3e72_generated_image.png';
-const VAN    = 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/4454f1e2c_generated_image.png';
-const SOLID  = 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/98dc5de89_generated_image.png';
-const SHOWER = 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/8eb20d42b_generated_image.png';
-const QUARTZ = 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/6285b3a94_generated_image.png';
+const BATH   = '/images/24219b1c5_generated_image.png';
+const TUB    = '/images/5f01c3e72_generated_image.png';
+const VAN    = '/images/4454f1e2c_generated_image.png';
+const SOLID  = '/images/98dc5de89_generated_image.png';
+const SHOWER = '/images/8eb20d42b_generated_image.png';
+const QUARTZ = '/images/6285b3a94_generated_image.png';
 
 const featured = [
   {

@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 const finishSwatches = [
-  { label: 'Steel', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/e50630d91_Screenshot2026-06-15at104127PM.png' },
-  { label: 'Gold', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/49a1a21cd_Screenshot2026-06-15at104203PM.png' },
-  { label: 'Gunmetal', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/128aad42b_Screenshot2026-06-15at104230PM.png' },
+  { label: 'Steel', img: '/images/e50630d91_Screenshot2026-06-15at104127PM.png' },
+  { label: 'Gold', img: '/images/49a1a21cd_Screenshot2026-06-15at104203PM.png' },
+  { label: 'Gunmetal', img: '/images/128aad42b_Screenshot2026-06-15at104230PM.png' },
   { label: 'Black', img: null, color: 'bg-zinc-900' },
 ];
 
@@ -15,13 +15,13 @@ const dropIn = [
     sku: 'KS-DSB-01',
     name: 'SINGLE BOWL',
     dims: '32" x 19" x 4-10"',
-    img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/25bd5f26d_Screenshot2026-06-15at104756PM.png',
+    img: '/images/25bd5f26d_Screenshot2026-06-15at104756PM.png',
   },
   {
     sku: 'KS-DDB-01',
     name: 'DOUBLE BOWL',
     dims: '31" x 18" x 4-10"',
-    img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/0d2d74a05_Screenshot2026-06-15at104912PM.png',
+    img: '/images/0d2d74a05_Screenshot2026-06-15at104912PM.png',
   },
 ];
 
@@ -30,30 +30,30 @@ const farmhouse = [
     sku: 'KS-FSB-01',
     name: 'SINGLE BOWL',
     dims: '36" x 18" x 4-10"',
-    img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/8949bcc5c_Screenshot2026-06-15at105028PM.png',
+    img: '/images/8949bcc5c_Screenshot2026-06-15at105028PM.png',
   },
   {
     sku: 'KS-FWS-01',
     name: 'DOUBLE BOWL',
     dims: '36" x 20" x 7-10"',
-    img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/841a084a6_Screenshot2026-06-15at105129PM.png',
+    img: '/images/841a084a6_Screenshot2026-06-15at105129PM.png',
   },
 ];
 
 const stoneSinks = [
-  { sku: 'KP-8101', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/9bb02c155_Screenshot2026-06-15at105854PM.png' },
-  { sku: 'KP-8104', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/e5b23d6ef_Screenshot2026-06-15at110313PM.png' },
-  { sku: 'KP-8102', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/be79bc133_Screenshot2026-06-15at110124PM.png' },
-  { sku: 'KP-8105', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/cd6bf43d9_Screenshot2026-06-15at110351PM.png' },
-  { sku: 'KP-8103', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/b5b973241_Screenshot2026-06-15at110230PM.png' },
-  { sku: 'KP-8106', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/423732cf9_Screenshot2026-06-15at110425PM.png' },
+  { sku: 'KP-8101', img: '/images/9bb02c155_Screenshot2026-06-15at105854PM.png' },
+  { sku: 'KP-8104', img: '/images/e5b23d6ef_Screenshot2026-06-15at110313PM.png' },
+  { sku: 'KP-8102', img: '/images/be79bc133_Screenshot2026-06-15at110124PM.png' },
+  { sku: 'KP-8105', img: '/images/cd6bf43d9_Screenshot2026-06-15at110351PM.png' },
+  { sku: 'KP-8103', img: '/images/b5b973241_Screenshot2026-06-15at110230PM.png' },
+  { sku: 'KP-8106', img: '/images/423732cf9_Screenshot2026-06-15at110425PM.png' },
 ];
 
 function FinishSwatches() {
   return (
     <div>
       <p className="text-[9px] font-sans tracking-widest uppercase text-charcoal mb-3">Available Finishes</p>
-      <img src="https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/bdae2337e_Screenshot2026-06-15at105351PM.png" alt="Available finishes: Steel, Gold, Gunmetal, Black" className="max-w-[260px] w-full" />
+      <img src="/images/bdae2337e_Screenshot2026-06-15at105351PM.png" alt="Available finishes: Steel, Gold, Gunmetal, Black" className="max-w-[260px] w-full" />
     </div>
   );
 }
@@ -162,7 +162,7 @@ export default function KitchenSinks() {
           </p>
         </div>
         <div className="relative min-h-[350px]">
-          <img src="https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/5841edf23_image.png" alt="Kitchen sink" className="w-full h-full object-cover" />
+          <img src="/images/5841edf23_image.png" alt="Kitchen sink" className="w-full h-full object-cover" />
         </div>
       </section>
 

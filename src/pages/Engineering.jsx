@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Download, FileText, Box, Lightbulb, BookOpen, ArrowRight, Lock } from 'lucide-react';
-import { base44 } from '@/api/base44Client';
 import { Input } from '@/components/ui/input';
 
 const lightingDiagrams = [
@@ -44,7 +43,6 @@ export default function Engineering() {
   const handleUnlock = async (e) => {
     e.preventDefault();
     if (gateEmail) {
-      await base44.entities.Lead.create({ company_name: 'Resource Download', contact_name: 'Download Request', email: gateEmail });
       setUnlocked(true);
     }
   };

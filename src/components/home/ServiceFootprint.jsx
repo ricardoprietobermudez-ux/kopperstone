@@ -3,7 +3,7 @@ import { useLanguage } from '@/lib/i18n';
 import { motion } from 'framer-motion';
 import { MapPin } from 'lucide-react';
 
-const TORONTO_IMG = 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/3e3c333d1_generated_image.png';
+const TORONTO_IMG = '/images/3e3c333d1_generated_image.png';
 
 export default function ServiceFootprint() {
   const { t } = useLanguage();

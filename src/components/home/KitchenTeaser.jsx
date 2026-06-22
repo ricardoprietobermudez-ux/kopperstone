@@ -44,7 +44,7 @@ export default function KitchenTeaser() {
           transition={{ duration: 0.9 }}
           className="relative min-h-[400px] lg:min-h-0">
           
-          <img src="https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/1097cd802_generated_82db1fdd.png" alt="Kitchen collection" className="w-full h-full object-cover" />
+          <img src="/images/1097cd802_generated_82db1fdd.png" alt="Kitchen collection" className="w-full h-full object-cover" />
         </motion.div>
       </div>
     </section>);

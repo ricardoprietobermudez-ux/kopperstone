@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { base44 } from '@/api/base44Client';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, ArrowLeft, CheckCircle, MapPin, Phone, Mail, Linkedin } from 'lucide-react';
 import { Input } from '@/components/ui/input';
@@ -7,6 +6,8 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Checkbox } from '@/components/ui/checkbox';
+
+const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
 
 const roles = [
   { v: 'developer', l: 'Developer / Owner' },
@@ -16,7 +17,6 @@ const roles = [
   { v: 'designer', l: 'Interior Designer' },
   { v: 'other', l: 'Other' },
 ];
-
 const projectTypes = [
   { v: 'multi_family_residential', l: 'Multi-Family Residential' },
   { v: 'hospitality', l: 'Hotel / Hospitality' },
@@ -26,14 +26,12 @@ const projectTypes = [
   { v: 'villa', l: 'Villa / Resort' },
   { v: 'other', l: 'Other' },
 ];
-
 const unitOptions = [
   { v: 'under_30', l: 'Under 30 units / rooms' },
   { v: '30_100', l: '30 – 100 units / rooms' },
   { v: '100_300', l: '100 – 300 units / rooms' },
   { v: '300_plus', l: '300+ units / rooms' },
 ];
-
 const regions = [
   { v: 'canada', l: 'Canada' },
   { v: 'united_states', l: 'United States' },
@@ -41,7 +39,6 @@ const regions = [
   { v: 'latin_america', l: 'Other Latin America' },
   { v: 'other', l: 'Other / International' },
 ];
-
 const prodCats = [
   { v: 'kitchens', l: 'Complete Kitchens' },
   { v: 'bathrooms', l: 'Complete Bathrooms' },
@@ -49,7 +46,6 @@ const prodCats = [
   { v: 'cabinets', l: 'Cabinetry Only' },
   { v: 'full_package', l: 'Full Kitchen & Bathroom Package' },
 ];
-
 const installOptions = ['Yes — turnkey installation required', 'No — supply only', 'Not sure'];
 
 export default function Contact() {
@@ -65,17 +61,35 @@ export default function Contact() {
   const update = (f, v) => setForm(p => ({ ...p, [f]: v }));
   const toggleCat = c => setForm(p => ({
     ...p,
-    product_categories: p.product_categories.includes(c) ? p.product_categories.filter(x => x !== c) : [...p.product_categories, c],
+    product_categories: p.product_categories.includes(c)
+      ? p.product_categories.filter(x => x !== c)
+      : [...p.product_categories, c],
   }));
 
   const handleSubmit = async () => {
     setSub(true);
-    await base44.entities.Lead.create(form);
-    await base44.integrations.Core.SendEmail({
-      to: 'ricardo@kopperstone.com',
-      subject: `New Consultation Request — ${form.company_name}`,
-      body: `Company: ${form.company_name}\nContact: ${form.contact_name}\nEmail: ${form.email}\nPhone: ${form.phone}\nRole: ${form.role}\nProject: ${form.project_type}\nUnits: ${form.estimated_units}\nRegion: ${form.delivery_region}\nInstallation: ${form.installation}\nProducts: ${form.product_categories.join(', ')}\nTarget Date: ${form.target_ship_date}\n\nNotes:\n${form.message}`,
-    });
+    try {
+      await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `New Consultation Request — ${form.company_name}`,
+          from_name: form.contact_name,
+          email: form.email,
+          company: form.company_name,
+          phone: form.phone,
+          role: form.role,
+          project_type: form.project_type,
+          estimated_units: form.estimated_units,
+          delivery_region: form.delivery_region,
+          installation: form.installation,
+          products: form.product_categories.join(', '),
+          target_date: form.target_ship_date,
+          message: form.message,
+        }),
+      });
+    } catch (_) {}
     setSub(false);
     setDone(true);
   };
@@ -98,7 +112,6 @@ export default function Contact() {
 
   return (
     <div className="bg-cream pb-20">
-      {/* Hero */}
       <section className="bg-navy py-16">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
           <div className="gold-overline mb-5">CONTACT</div>
@@ -109,9 +122,7 @@ export default function Contact() {
 
       <div className="max-w-screen-xl mx-auto px-6 lg:px-10 mt-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-          {/* Form */}
           <div className="lg:col-span-7">
-            {/* Step indicator */}
             <div className="flex items-center gap-0 mb-10 border border-navy/10">
               {[1, 2, 3].map(s => (
                 <div key={s} className={`flex-1 py-3 px-4 text-center border-r border-navy/10 last:border-0 text-xs font-sans tracking-wide transition-colors ${step === s ? 'bg-gold text-navy' : step > s ? 'bg-navy text-cream/50' : 'text-warm-grey'}`}>
@@ -240,15 +251,11 @@ export default function Contact() {
             </AnimatePresence>
           </div>
 
-          {/* Sidebar contacts */}
           <div className="lg:col-span-5 space-y-4">
-            {/* General Inquiries */}
             <div className="bg-navy-light border border-cream/10 p-7">
               <p className="text-[9px] font-sans tracking-widest uppercase text-gold mb-2">General Inquiries</p>
               <a href="mailto:info@kopperstone.com" className="font-serif text-lg text-cream hover:text-gold transition-colors">info@kopperstone.com</a>
             </div>
-
-            {/* Leadership */}
             <div className="bg-navy-light border border-cream/10 p-7">
               <p className="text-[9px] font-sans tracking-widest uppercase text-gold mb-4">Leadership</p>
               <div className="space-y-4">
@@ -264,23 +271,13 @@ export default function Contact() {
                 ))}
               </div>
             </div>
-
-            {/* LinkedIn */}
             <div className="bg-navy-light border border-cream/10 p-7">
               <p className="text-[9px] font-sans tracking-widest uppercase text-gold mb-4">Connect With Us</p>
-              <a
-                href="https://www.linkedin.com/company/kopperstone/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Kopperstone on LinkedIn"
-                className="inline-flex items-center gap-3 group"
-              >
+              <a href="https://www.linkedin.com/company/kopperstone/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 group">
                 <Linkedin className="w-5 h-5 text-gold group-hover:text-cream transition-colors" />
                 <span className="text-cream/50 text-sm font-sans group-hover:text-gold transition-colors">linkedin.com/company/kopperstone</span>
               </a>
             </div>
-
-            {/* Operations */}
             <div className="bg-navy-light border border-cream/10 p-7">
               <p className="text-[9px] font-sans tracking-widest uppercase text-gold mb-4">Operations</p>
               <div className="space-y-4">

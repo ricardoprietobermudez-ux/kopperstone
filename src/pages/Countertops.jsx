@@ -6,38 +6,38 @@ import { ArrowRight } from 'lucide-react';
 const MARBLE_IMG = 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=900&q=80';
 
 const quartzSlabs = [
-{ sku: 'KP-9303', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/c5ffbfa6d_Screenshot2026-06-09at74951PM.png' },
-{ sku: 'KP-9304', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/02634e67f_Screenshot2026-06-09at75032PM.png' },
-{ sku: 'KP-9305', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/7152a3cd3_Screenshot2026-06-09at75047PM.png' },
-{ sku: 'KP-9306', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/4361945da_Screenshot2026-06-09at75108PM.png' },
-{ sku: 'KP-9307', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/cca0999b6_Screenshot2026-06-09at75146PM.png' },
-{ sku: 'KP-9308', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/a540a2b11_Screenshot2026-06-09at75203PM.png' },
-{ sku: 'KP-9309', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/87532eefb_Screenshot2026-06-09at75238PM.png' },
-{ sku: 'KP-9310', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/077b2c322_Screenshot2026-06-09at75410PM.png' },
-{ sku: 'KP-9311', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/71972c1b0_Screenshot2026-06-09at75432PM.png' },
-{ sku: 'KP-9313', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/8f1755071_Screenshot2026-06-09at75456PM.png' },
-{ sku: 'KP-9314', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/a91fb4312_Screenshot2026-06-09at75604PM.png' },
-{ sku: 'KP-9315', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/e51089582_Screenshot2026-06-09at75619PM.png' },
-{ sku: 'KP-9301', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/5683dcbf9_Screenshot2026-06-09at75708PM.png' },
-{ sku: 'KP-9302', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/222c22acd_Screenshot2026-06-09at75723PM.png' },
+{ sku: 'KP-9303', img: '/images/c5ffbfa6d_Screenshot2026-06-09at74951PM.png' },
+{ sku: 'KP-9304', img: '/images/02634e67f_Screenshot2026-06-09at75032PM.png' },
+{ sku: 'KP-9305', img: '/images/7152a3cd3_Screenshot2026-06-09at75047PM.png' },
+{ sku: 'KP-9306', img: '/images/4361945da_Screenshot2026-06-09at75108PM.png' },
+{ sku: 'KP-9307', img: '/images/cca0999b6_Screenshot2026-06-09at75146PM.png' },
+{ sku: 'KP-9308', img: '/images/a540a2b11_Screenshot2026-06-09at75203PM.png' },
+{ sku: 'KP-9309', img: '/images/87532eefb_Screenshot2026-06-09at75238PM.png' },
+{ sku: 'KP-9310', img: '/images/077b2c322_Screenshot2026-06-09at75410PM.png' },
+{ sku: 'KP-9311', img: '/images/71972c1b0_Screenshot2026-06-09at75432PM.png' },
+{ sku: 'KP-9313', img: '/images/8f1755071_Screenshot2026-06-09at75456PM.png' },
+{ sku: 'KP-9314', img: '/images/a91fb4312_Screenshot2026-06-09at75604PM.png' },
+{ sku: 'KP-9315', img: '/images/e51089582_Screenshot2026-06-09at75619PM.png' },
+{ sku: 'KP-9301', img: '/images/5683dcbf9_Screenshot2026-06-09at75708PM.png' },
+{ sku: 'KP-9302', img: '/images/222c22acd_Screenshot2026-06-09at75723PM.png' },
 ];
 
 
 const solidSurfaceSlabs = [
-  { sku: 'KP-9401', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/919916366_Screenshot2026-06-09at105010PM.png' },
-  { sku: 'KP-9402', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/b63402219_Screenshot2026-06-09at105105PM.png' },
-  { sku: 'KP-9403', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/31b72a16c_Screenshot2026-06-09at105128PM.png' },
-  { sku: 'KP-9404', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/342bbbe7d_Screenshot2026-06-09at105150PM.png' },
-  { sku: 'KP-9405', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/854dbc6b9_Screenshot2026-06-09at105249PM.png' },
-  { sku: 'KP-9406', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/140611fb4_Screenshot2026-06-09at105317PM.png' },
-  { sku: 'KP-9407', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/6e3fa32d7_Screenshot2026-06-09at105339PM.png' },
-  { sku: 'KP-9408', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/a54797b4e_Screenshot2026-06-09at105425PM.png' },
-  { sku: 'KP-9409', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/8dffd6954_Screenshot2026-06-09at105516PM.png' },
-  { sku: 'KP-9410', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/497261d5a_Screenshot2026-06-09at105615PM.png' },
-  { sku: 'KP-9411', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/e4afcc4a2_Screenshot2026-06-09at105631PM.png' },
-  { sku: 'KP-9412', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/25fd29255_Screenshot2026-06-09at105657PM.png' },
-  { sku: 'KP-9413', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/ade8fc1f5_Screenshot2026-06-09at105724PM.png' },
-  { sku: 'KP-9414', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/11e724bad_Screenshot2026-06-09at105747PM.png' },
+  { sku: 'KP-9401', img: '/images/919916366_Screenshot2026-06-09at105010PM.png' },
+  { sku: 'KP-9402', img: '/images/b63402219_Screenshot2026-06-09at105105PM.png' },
+  { sku: 'KP-9403', img: '/images/31b72a16c_Screenshot2026-06-09at105128PM.png' },
+  { sku: 'KP-9404', img: '/images/342bbbe7d_Screenshot2026-06-09at105150PM.png' },
+  { sku: 'KP-9405', img: '/images/854dbc6b9_Screenshot2026-06-09at105249PM.png' },
+  { sku: 'KP-9406', img: '/images/140611fb4_Screenshot2026-06-09at105317PM.png' },
+  { sku: 'KP-9407', img: '/images/6e3fa32d7_Screenshot2026-06-09at105339PM.png' },
+  { sku: 'KP-9408', img: '/images/a54797b4e_Screenshot2026-06-09at105425PM.png' },
+  { sku: 'KP-9409', img: '/images/8dffd6954_Screenshot2026-06-09at105516PM.png' },
+  { sku: 'KP-9410', img: '/images/497261d5a_Screenshot2026-06-09at105615PM.png' },
+  { sku: 'KP-9411', img: '/images/e4afcc4a2_Screenshot2026-06-09at105631PM.png' },
+  { sku: 'KP-9412', img: '/images/25fd29255_Screenshot2026-06-09at105657PM.png' },
+  { sku: 'KP-9413', img: '/images/ade8fc1f5_Screenshot2026-06-09at105724PM.png' },
+  { sku: 'KP-9414', img: '/images/11e724bad_Screenshot2026-06-09at105747PM.png' },
 ];
 
 const solidSurfaceSpecs = [
@@ -67,7 +67,7 @@ export default function Countertops() {
       {/* Hero — two-column split */}
       <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
         <div className="relative min-h-[400px]">
-          <img src="https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/2817dc910_generated_60eb22ce.png" alt="Marble countertop" className="w-full h-full object-cover" />
+          <img src="/images/2817dc910_generated_60eb22ce.png" alt="Marble countertop" className="w-full h-full object-cover" />
         </div>
         <div className="bg-navy flex flex-col justify-center px-10 lg:px-16 py-20">
           <div className="gold-overline mb-6">PREMIUM SURFACES</div>

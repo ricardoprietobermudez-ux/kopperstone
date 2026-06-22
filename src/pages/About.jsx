@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Linkedin } from 'lucide-react';
 
-const FOUNDERS_IMG = 'https://media.base44.com/files/public/69fe4ed5912775ef1d08d528/e894a3faa_websitephoto.pdf';
+const FOUNDERS_IMG = '/images/e894a3faa_websitephoto.pdf';
 
 export default function About() {
   return (
@@ -25,9 +25,9 @@ export default function About() {
         <motion.div initial={{ opacity: 0, scale: 0.97 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-10">
           {[
-            { src: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/db1326dde_IMG_1399.jpg', name: 'Ricardo Prieto', title: 'Co-Founder · CEO', pos: '15%', zoom: true },
-            { src: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/e69e4d93b_IMG_1400.jpg', name: 'Santiago Rojas', title: 'Co-Founder · CFO', pos: '0%', zoom: true },
-            { src: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/abeb0c9e1_a4dc7d2e-bbba-4ec6-b925-55ff64a65eff.jpg', name: 'Cesar Padilla', title: 'Co-Founder · COO', pos: '15%', zoom: false },
+            { src: '/images/db1326dde_IMG_1399.jpg', name: 'Ricardo Prieto', title: 'Co-Founder · CEO', pos: '15%', zoom: true },
+            { src: '/images/e69e4d93b_IMG_1400.jpg', name: 'Santiago Rojas', title: 'Co-Founder · CFO', pos: '0%', zoom: true },
+            { src: '/images/abeb0c9e1_a4dc7d2e-bbba-4ec6-b925-55ff64a65eff.jpg', name: 'Cesar Padilla', title: 'Co-Founder · COO', pos: '15%', zoom: false },
           ].map((p) => (
             <div key={p.name} className="flex flex-col items-center gap-4">
               <div className="w-36 h-36 rounded-full overflow-hidden ring-2 ring-gold/40 flex-shrink-0 bg-navy">

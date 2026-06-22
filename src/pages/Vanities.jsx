@@ -4,12 +4,12 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 const vanities = [
-{ sku: 'KP-2101', label: 'kp-2101', size: '610mm', desc: 'Compact floating vanity for guest bathrooms and powder rooms.', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/b5af16793_Screenshot2026-06-16at74311PM.png' },
-{ sku: 'KS-V100', label: 'kp-2107', size: '1000mm', desc: 'Single-sink floating vanity, standard hotel room specification.', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/92b3393d8_Screenshot2026-06-16at73256PM.png' },
-{ sku: 'KS-V1200', label: 'kp-2110', size: '1200mm', desc: 'Extended single-sink vanity for larger guest suites.', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/44f9153ba_Screenshot2026-06-16at73348PM.png' },
-{ sku: 'KS-V1500', label: 'kp-2111', size: '1500mm', desc: 'Standard double-sink vanity for residential master bathrooms.', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/00d15ce34_Screenshot2026-06-16at73706PM.png' },
-{ sku: 'KS-V160A', label: 'kp-2203', size: '1600mm', desc: 'Double-sink vanity with extended storage — luxury residential.', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/a10dec276_Screenshot2026-06-16at73946PM.png' },
-{ sku: 'KS-V160B', label: 'kp-2112', size: '1600mm', desc: 'Double-sink vanity with alternative door profile configuration.', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/36b3405a8_Screenshot2026-06-16at74041PM.png' }];
+{ sku: 'KP-2101', label: 'kp-2101', size: '610mm', desc: 'Compact floating vanity for guest bathrooms and powder rooms.', img: '/images/b5af16793_Screenshot2026-06-16at74311PM.png' },
+{ sku: 'KS-V100', label: 'kp-2107', size: '1000mm', desc: 'Single-sink floating vanity, standard hotel room specification.', img: '/images/92b3393d8_Screenshot2026-06-16at73256PM.png' },
+{ sku: 'KS-V1200', label: 'kp-2110', size: '1200mm', desc: 'Extended single-sink vanity for larger guest suites.', img: '/images/44f9153ba_Screenshot2026-06-16at73348PM.png' },
+{ sku: 'KS-V1500', label: 'kp-2111', size: '1500mm', desc: 'Standard double-sink vanity for residential master bathrooms.', img: '/images/00d15ce34_Screenshot2026-06-16at73706PM.png' },
+{ sku: 'KS-V160A', label: 'kp-2203', size: '1600mm', desc: 'Double-sink vanity with extended storage — luxury residential.', img: '/images/a10dec276_Screenshot2026-06-16at73946PM.png' },
+{ sku: 'KS-V160B', label: 'kp-2112', size: '1600mm', desc: 'Double-sink vanity with alternative door profile configuration.', img: '/images/36b3405a8_Screenshot2026-06-16at74041PM.png' }];
 
 
 const finishes = ['Warm Oak', 'Dark Walnut', 'White Lacquer', 'Grey Lacquer', 'Custom RAL Color'];
@@ -28,7 +28,7 @@ export default function Vanities() {
           </p>
         </div>
         <div className="relative min-h-[350px]">
-          <img src="https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/6e6b967ef_image.png" alt="Vanity collection" className="w-full h-full object-cover" />
+          <img src="/images/6e6b967ef_image.png" alt="Vanity collection" className="w-full h-full object-cover" />
         </div>
       </section>
 

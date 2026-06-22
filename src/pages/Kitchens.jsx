@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import ArchitecturalDrawing from '@/components/kitchens/ArchitecturalDrawing';
 
-const HERO_IMG = 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/31f720a9b_image.png';
+const HERO_IMG = '/images/31f720a9b_image.png';
 
 const collections = [
 {
@@ -13,7 +13,7 @@ const collections = [
   overline: 'CLEAN · CONTEMPORARY',
   desc: 'Minimalist lines, integrated appliances, and handleless door profiles. Matte lacquer finishes in a curated palette from pure white to deep charcoal. Designed for urban multi-family and boutique hotel properties.',
   components: ['Handleless base and wall cabinets', 'Integrated refrigerator panel', 'L-shape layout with window sink', 'Under-cabinet LED lighting', 'Solid surface countertop or quartz', 'Undermount workstation sink', 'Pull-out storage systems', 'Built-in oven column'],
-  img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/59ce696b9_image.png'
+  img: '/images/59ce696b9_image.png'
 },
 {
   id: 'french',
@@ -21,7 +21,7 @@ const collections = [
   overline: 'SOFT · TRANSITIONAL',
   desc: 'Soft transitional design with arched upper cabinet profiles, shaker door detailing, and painted finishes. Natural marble-look countertops, brushed gold hardware, and open shelf elements with integrated lighting.',
   components: ['Arched upper cabinet doors', 'Shaker base cabinets', 'Painted finish — custom color matching', 'Marble-look quartz countertops', 'Integrated cooktop — back wall layout', 'Open display shelving with lighting', 'Brushed gold hardware throughout'],
-  img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/0531815df_image.png'
+  img: '/images/0531815df_image.png'
 },
 {
   id: 'american',
@@ -29,7 +29,7 @@ const collections = [
   overline: 'CLASSIC · GRAND',
   desc: 'Rich walnut cabinetry with glass display uppers, brass accent hardware, and a statement marble island. Designed for luxury residential towers, boutique hotels, and hospitality properties demanding timeless American craftsmanship.',
   components: ['Walnut cabinetry — full height', 'Glass display upper cabinets', 'Marble waterfall island with seating', 'Brass gold hardware throughout', 'Professional range with hood', 'Built-in double oven column', 'Smart refrigerator integration'],
-  img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/b6991cabb_image.png'
+  img: '/images/b6991cabb_image.png'
 },
 {
   id: 'industrial',
@@ -37,7 +37,7 @@ const collections = [
   overline: 'RAW · MODERN',
   desc: 'Dark grey cabinetry with oak wood accents, exposed ductwork integration, concrete-look surfaces, and a breakfast bar layout. Designed for loft apartments, restaurant fit-outs, and co-living developments.',
   components: ['Dark grey flat-panel cabinets', 'Oak wood breakfast bar island', 'Walnut open shelving', 'Concrete-look countertop', 'Exposed ductwork hood integration', 'Tall storage column', 'Matte black hardware and fixtures'],
-  img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/f79637405_image.png'
+  img: '/images/f79637405_image.png'
 },
 {
   id: 'european',
@@ -45,7 +45,7 @@ const collections = [
   overline: 'LUXURY · TRANSITIONAL',
   desc: 'Two-tone island compositions, soft grey cabinetry with marble surfaces, and brushed gold hardware. Designed for five-star hotel properties and premium residential developments demanding specification-grade European elegance.',
   components: ['Soft grey shaker upper cabinets', 'Glass display upper inserts', 'Marble island with integrated sink', 'Brushed gold hardware throughout', 'Integrated refrigerator column', 'Professional range with hood', 'Full-height marble backsplash'],
-  img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/4d3f499fa_image.png'
+  img: '/images/4d3f499fa_image.png'
 }];
 
 

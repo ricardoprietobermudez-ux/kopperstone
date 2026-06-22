@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Mail, AlertTriangle, CheckCircle, Calendar, Layers, Truck, Wrench, FileText, Copy, Check } from 'lucide-react';
-import { base44 } from '@/api/base44Client';
 import { addWeeks, subWeeks, format, differenceInDays } from 'date-fns';
 
 const PROJECT_TYPES = [
@@ -344,26 +343,36 @@ export default function TimelineEstimator() {
 }
 
 function TimelineEmailModal({ inputs, result, onClose }) {
-  const [email, setEmail] = useState('');
-  const [sent, setSent] = useState(false);
-  const [sending, setSending] = useState(false);
+  const [downloaded, setDownloaded] = useState(false);
 
-  const handleSend = async () => {
-    if (!email || !result) return;
-    setSending(true);
+  const handleDownload = () => {
+    if (!result) return;
     const phaseLines = result.phases.map(p =>
       `${p.name}: ${format(p.start, 'MMM d, yyyy')} - ${format(p.end, 'MMM d, yyyy')} (${p.weeks} weeks)`
     ).join('\n');
-    try {
-      await base44.integrations.Core.SendEmail({
-        to: email,
-        subject: `Your Kopperstone Project Timeline — Target: ${format(result.target, 'MMMM d, yyyy')}`,
-        body: `Kopperstone — Project Timeline Estimator\n\nYour Project Timeline\n\nInstallation target: ${format(result.target, 'MMMM d, yyyy')}\nUnits: ${inputs.units} · Project type: ${inputs.projectType}\n\nPhase Schedule:\n${phaseLines}\n\nBegin specification by: ${format(result.specStart, 'MMMM d, yyyy')}\n\nBegin Specification Now: https://kopperstone.com/contact`,
-      });
-      setSent(true);
-    } finally {
-      setSending(false);
-    }
+
+    const text = [
+      'Kopperstone — Project Timeline Estimator',
+      '',
+      `Installation target: ${format(result.target, 'MMMM d, yyyy')}`,
+      `Units: ${inputs.units} · Project type: ${inputs.projectType}`,
+      '',
+      'Phase Schedule:',
+      phaseLines,
+      '',
+      `Begin specification by: ${format(result.specStart, 'MMMM d, yyyy')}`,
+      '',
+      'Begin Specification Now: https://kopperstone.com/contact',
+    ].join('\n');
+
+    const blob = new Blob([text], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Kopperstone-Project-Timeline.txt';
+    a.click();
+    URL.revokeObjectURL(url);
+    setDownloaded(true);
   };
 
   return (
@@ -374,25 +383,22 @@ function TimelineEmailModal({ inputs, result, onClose }) {
         <button onClick={onClose} className="absolute top-4 right-4 text-cream/40 hover:text-cream transition-colors">
           <span className="text-lg">×</span>
         </button>
-        {sent ? (
+        {downloaded ? (
           <div className="text-center py-6">
             <div className="w-12 h-12 border border-gold/40 flex items-center justify-center mx-auto mb-4">
               <Check className="w-5 h-5 text-gold" />
             </div>
-            <h3 className="font-serif text-xl text-cream mb-2">Timeline Sent</h3>
-            <p className="text-cream/50 text-sm font-sans">Check your inbox at <span className="text-gold">{email}</span></p>
+            <h3 className="font-serif text-xl text-cream mb-2">Timeline Downloaded</h3>
+            <p className="text-cream/50 text-sm font-sans">Your project timeline has been saved.</p>
             <button onClick={onClose} className="mt-6 border border-gold/40 text-gold text-xs font-sans uppercase tracking-wide px-6 py-2.5">Close</button>
           </div>
         ) : (
           <>
-            <div className="gold-overline mb-4">EMAIL TIMELINE</div>
-            <h3 className="font-serif text-2xl text-cream mb-4">Email Me This Timeline</h3>
-            <input type="email" value={email} onChange={e => setEmail(e.target.value)}
-              placeholder="procurement@company.com"
-              className="w-full bg-navy border border-cream/20 text-cream placeholder:text-cream/25 px-4 py-3 text-sm font-sans mb-4 focus:border-gold focus:outline-none" />
-            <button onClick={handleSend} disabled={!email || sending}
-              className="w-full bg-gold text-navy text-xs font-sans uppercase tracking-wide py-3.5 hover:bg-gold/90 transition-colors disabled:opacity-40 flex items-center justify-center gap-2">
-              <Mail className="w-3.5 h-3.5" /> {sending ? 'Sending…' : 'Send Timeline'}
+            <div className="gold-overline mb-4">DOWNLOAD TIMELINE</div>
+            <h3 className="font-serif text-2xl text-cream mb-4">Save Your Timeline</h3>
+            <button onClick={handleDownload}
+              className="w-full bg-gold text-navy text-xs font-sans uppercase tracking-wide py-3.5 hover:bg-gold/90 transition-colors flex items-center justify-center gap-2">
+              Download Timeline
             </button>
           </>
         )}

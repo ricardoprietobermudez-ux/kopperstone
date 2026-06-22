@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Download } from 'lucide-react';
 
-const HERO  = 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/98dc5de89_generated_image.png';
-const QUARTZ= 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/6285b3a94_generated_image.png';
-const BATH  = 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/24219b1c5_generated_image.png';
-const SHOWER= 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/8eb20d42b_generated_image.png';
-const KITCHEN='https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/00f6b86f6_generated_image.png';
+const HERO  = '/images/98dc5de89_generated_image.png';
+const QUARTZ= '/images/6285b3a94_generated_image.png';
+const BATH  = '/images/24219b1c5_generated_image.png';
+const SHOWER= '/images/8eb20d42b_generated_image.png';
+const KITCHEN='/images/00f6b86f6_generated_image.png';
 
 const specs = [
   { label: 'Material',          value: '100% Acrylic / Modified Acrylic' },

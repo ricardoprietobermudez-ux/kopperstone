@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { X, Check, ArrowRight } from 'lucide-react';
-import { base44 } from '@/api/base44Client';
+
+const WEB3FORMS_KEY = import.meta.env.VITE_WEB3FORMS_KEY;
 
 export default function QuoteModal({ mode, config, onClose }) {
   const [form, setForm] = useState({ company: '', name: '', email: '', units: 50 });
@@ -12,28 +13,22 @@ export default function QuoteModal({ mode, config, onClose }) {
     if (!form.email || !form.company) return;
     setSubmitting(true);
     const configSummary = Object.entries(config).map(([k, v]) => `${k}: ${v}`).join(', ');
-    await base44.entities.Lead.create({
-      company_name: form.company,
-      contact_name: form.name,
-      email: form.email,
-      estimated_units: form.units >= 500 ? '500_plus' : form.units >= 250 ? '250_500' : form.units >= 100 ? '100_250' : form.units >= 50 ? '50_100' : 'under_50',
-      product_categories: mode === 'kitchen' ? ['cabinets', 'countertops_quartz'] : ['vanities', 'shower_systems'],
-      message: `Configuration from Design Configurator (${mode}): ${configSummary}. Units: ${form.units}.`,
-      status: 'new',
-    });
-    await base44.integrations.Core.SendEmail({
-      to: 'info@kopperstone.com',
-      subject: `Quote Request — ${form.units} units — ${mode === 'kitchen' ? 'Kitchen' : 'Bathroom'} Configurator`,
-      body: `<div style="font-family:sans-serif"><h2>New Quote Request from Design Configurator</h2>
-        <p><strong>Company:</strong> ${form.company}</p>
-        <p><strong>Contact:</strong> ${form.name}</p>
-        <p><strong>Email:</strong> ${form.email}</p>
-        <p><strong>Units:</strong> ${form.units}</p>
-        <p><strong>Mode:</strong> ${mode}</p>
-        <h3>Configuration</h3>
-        <pre>${configSummary}</pre>
-      </div>`
-    });
+    try {
+      await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `Quote Request — ${form.units} units — ${mode === 'kitchen' ? 'Kitchen' : 'Bathroom'} Configurator`,
+          from_name: form.name || form.company,
+          email: form.email,
+          company: form.company,
+          units: form.units,
+          mode,
+          configuration: configSummary,
+        }),
+      });
+    } catch (_) {}
     setSubmitted(true);
     setSubmitting(false);
   };
@@ -93,7 +88,6 @@ export default function QuoteModal({ mode, config, onClose }) {
                 </div>
               </div>
 
-              {/* Config preview */}
               <div className="bg-navy border border-cream/10 p-4">
                 <p className="text-[9px] font-sans uppercase tracking-widest text-gold mb-2">Pre-filled Configuration</p>
                 <div className="flex flex-wrap gap-x-4 gap-y-1">

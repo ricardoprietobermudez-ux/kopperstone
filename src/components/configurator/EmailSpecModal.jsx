@@ -1,51 +1,79 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { X, Check, Mail } from 'lucide-react';
-import { base44 } from '@/api/base44Client';
+import { X, Check, Download } from 'lucide-react';
+import jsPDF from 'jspdf';
 
 export default function EmailSpecModal({ mode, config, onClose }) {
-  const [email, setEmail] = useState('');
-  const [sent, setSent] = useState(false);
-  const [sending, setSending] = useState(false);
+  const [downloaded, setDownloaded] = useState(false);
 
-  const handleSend = async () => {
-    if (!email) return;
-    setSending(true);
-    const configLines = Object.entries(config).map(([k, v]) => `• ${k.charAt(0).toUpperCase() + k.slice(1)}: ${v.replace(/-/g, ' ')}`).join('\n');
-    await Promise.all([
-      base44.integrations.Core.SendEmail({
-        to: email,
-        subject: `Your Kopperstone ${mode === 'kitchen' ? 'Kitchen' : 'Bathroom'} Specification`,
-      body: `<div style="font-family:sans-serif;color:#1A1A1A;max-width:600px">
-        <div style="background:#0E1A2B;padding:32px;text-align:center">
-          <h1 style="color:#F5EFE6;font-family:Georgia,serif;margin:0;font-size:24px">Kopperstone</h1>
-          <p style="color:#C9A77C;font-size:10px;letter-spacing:3px;margin:4px 0 0;text-transform:uppercase">Developer Supply Partner</p>
-        </div>
-        <div style="padding:32px;background:#F9F7F4">
-          <h2 style="color:#0E1A2B;font-family:Georgia,serif">Your ${mode === 'kitchen' ? 'Kitchen' : 'Bathroom'} Specification</h2>
-          <p style="color:#666;font-size:14px">Thank you for using the Kopperstone Design Configurator. Below is your selected specification.</p>
-          <div style="background:#fff;border:1px solid #E5E0D8;padding:24px;margin:24px 0">
-            <h3 style="color:#C9A77C;font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-top:0">Selected Configuration</h3>
-            <pre style="font-family:sans-serif;font-size:13px;color:#333;line-height:1.8;white-space:pre-wrap">${configLines}</pre>
-          </div>
-          <p style="color:#666;font-size:13px">This specification is indicative. Final specifications, SKUs, and pricing are confirmed upon project consultation.</p>
-          <div style="margin-top:24px">
-            <a href="https://kopperstone.com/contact" style="background:#C9A77C;color:#0E1A2B;padding:14px 28px;text-decoration:none;font-size:12px;letter-spacing:1px;text-transform:uppercase;font-family:sans-serif">Request a Formal Quote →</a>
-          </div>
-        </div>
-        <div style="padding:16px 32px;background:#0E1A2B;text-align:center">
-          <p style="color:rgba(245,239,230,0.4);font-size:10px;margin:0">© ${new Date().getFullYear()} Kopperstone Inc. · info@kopperstone.com</p>
-        </div>
-      </div>`
-      }),
-      base44.integrations.Core.SendEmail({
-      to: 'ricardo@kopperstone.com',
-      subject: `[Spec Sheet] New ${mode === 'kitchen' ? 'Kitchen' : 'Bathroom'} Configuration — ${email}`,
-      body: `A spec sheet was requested by ${email}.\n\nConfiguration:\n${Object.entries(config).map(([k, v]) => `• ${k}: ${v}`).join('\n')}`,
-      }),
-      ]);
-      setSent(true);
-    setSending(false);
+  const handleDownload = () => {
+    const doc = new jsPDF();
+    const gold = [201, 167, 124];
+    const navy = [14, 26, 43];
+
+    doc.setFillColor(...navy);
+    doc.rect(0, 0, 210, 40, 'F');
+    doc.setTextColor(245, 239, 230);
+    doc.setFontSize(22);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Kopperstone', 20, 20);
+    doc.setFontSize(8);
+    doc.setTextColor(...gold);
+    doc.setFont('helvetica', 'normal');
+    doc.text('DEVELOPER SUPPLY PARTNER', 20, 28);
+
+    doc.setTextColor(...navy);
+    doc.setFontSize(16);
+    doc.setFont('helvetica', 'bold');
+    doc.text(`Your ${mode === 'kitchen' ? 'Kitchen' : 'Bathroom'} Specification`, 20, 58);
+
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'normal');
+    doc.setTextColor(100, 100, 100);
+    doc.text('Thank you for using the Kopperstone Design Configurator. Below is your selected specification.', 20, 68);
+
+    doc.setFillColor(245, 240, 232);
+    doc.rect(20, 78, 170, Object.keys(config).length * 10 + 20, 'F');
+    doc.setTextColor(...gold);
+    doc.setFontSize(8);
+    doc.setFont('helvetica', 'bold');
+    doc.text('SELECTED CONFIGURATION', 28, 90);
+
+    doc.setFont('helvetica', 'normal');
+    doc.setTextColor(50, 50, 50);
+    doc.setFontSize(10);
+    let y = 100;
+    Object.entries(config).forEach(([k, v]) => {
+      doc.setFont('helvetica', 'bold');
+      doc.text(`${k.charAt(0).toUpperCase() + k.slice(1)}:`, 28, y);
+      doc.setFont('helvetica', 'normal');
+      doc.text(v.replace(/-/g, ' '), 80, y);
+      y += 10;
+    });
+
+    y += 14;
+    doc.setTextColor(100, 100, 100);
+    doc.setFontSize(9);
+    doc.text('This specification is indicative. Final specifications, SKUs, and pricing are', 20, y);
+    doc.text('confirmed upon project consultation.', 20, y + 6);
+
+    y += 20;
+    doc.setFillColor(...gold);
+    doc.rect(20, y, 60, 10, 'F');
+    doc.setTextColor(...navy);
+    doc.setFontSize(8);
+    doc.setFont('helvetica', 'bold');
+    doc.text('REQUEST A FORMAL QUOTE', 24, y + 7);
+
+    doc.setFillColor(...navy);
+    doc.rect(0, 275, 210, 22, 'F');
+    doc.setTextColor(245, 239, 230, 0.4);
+    doc.setFontSize(8);
+    doc.setFont('helvetica', 'normal');
+    doc.text(`© ${new Date().getFullYear()} Kopperstone Inc. · info@kopperstone.com`, 20, 288);
+
+    doc.save(`Kopperstone-${mode}-spec.pdf`);
+    setDownloaded(true);
   };
 
   return (
@@ -56,39 +84,41 @@ export default function EmailSpecModal({ mode, config, onClose }) {
         <button onClick={onClose} className="absolute top-4 right-4 text-cream/40 hover:text-cream transition-colors">
           <X className="w-4 h-4" />
         </button>
-        {sent ? (
+        {downloaded ? (
           <div className="text-center py-6">
             <div className="w-12 h-12 border border-gold/40 flex items-center justify-center mx-auto mb-4">
               <Check className="w-5 h-5 text-gold" />
             </div>
-            <h3 className="font-serif text-xl text-cream mb-2">Specification Sent</h3>
-            <p className="text-cream/50 text-sm font-sans">Check your inbox at <span className="text-gold">{email}</span></p>
+            <h3 className="font-serif text-xl text-cream mb-2">Specification Downloaded</h3>
+            <p className="text-cream/50 text-sm font-sans">Your PDF spec sheet has been saved to your downloads.</p>
             <button onClick={onClose} className="mt-6 border border-gold/40 text-gold text-xs font-sans uppercase tracking-wide px-6 py-2.5 hover:bg-gold/5 transition-colors">
               Close
             </button>
           </div>
         ) : (
           <>
-            <div className="gold-overline mb-4">EMAIL SPEC SHEET</div>
-            <h3 className="font-serif text-2xl text-cream mb-2">Email Me This Spec</h3>
+            <div className="gold-overline mb-4">DOWNLOAD SPEC SHEET</div>
+            <h3 className="font-serif text-2xl text-cream mb-2">Download Your Spec</h3>
             <p className="text-cream/45 text-xs font-sans mb-6 leading-relaxed">
-              We'll send your configuration with selected materials, estimated lead times, and a CTA to request a formal quote.
+              We'll generate a PDF with your selected materials, estimated lead times, and a CTA to request a formal quote.
             </p>
-            <label className="block text-[9px] font-sans uppercase tracking-widest text-gold mb-2">Your Email Address</label>
-            <input
-              type="email"
-              value={email}
-              onChange={e => setEmail(e.target.value)}
-              placeholder="procurement@company.com"
-              className="w-full bg-navy border border-cream/20 text-cream placeholder:text-cream/25 px-4 py-3 text-sm font-sans mb-4 focus:border-gold focus:outline-none transition-colors"
-            />
+            <div className="bg-navy border border-cream/10 p-4 mb-6">
+              <p className="text-[9px] font-sans uppercase tracking-widest text-gold mb-2">Your Configuration</p>
+              <div className="space-y-1">
+                {Object.entries(config).map(([k, v]) => (
+                  <div key={k} className="flex gap-2 text-[10px] font-sans">
+                    <span className="text-cream/50 capitalize">{k}:</span>
+                    <span className="text-cream/80">{v.replace(/-/g, ' ')}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
             <button
-              onClick={handleSend}
-              disabled={!email || sending}
-              className="w-full bg-gold text-navy text-xs font-sans uppercase tracking-wide py-3.5 hover:bg-gold/90 transition-colors disabled:opacity-40 flex items-center justify-center gap-2"
+              onClick={handleDownload}
+              className="w-full bg-gold text-navy text-xs font-sans uppercase tracking-wide py-3.5 hover:bg-gold/90 transition-colors flex items-center justify-center gap-2"
             >
-              <Mail className="w-3.5 h-3.5" />
-              {sending ? 'Sending…' : 'Send Spec Sheet'}
+              <Download className="w-3.5 h-3.5" />
+              Download Spec Sheet PDF
             </button>
             <p className="text-cream/25 text-[10px] font-sans mt-3 text-center">Specification-grade materials list · Estimated lead times · SKU references</p>
           </>

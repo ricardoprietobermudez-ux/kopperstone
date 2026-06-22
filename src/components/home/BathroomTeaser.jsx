@@ -19,7 +19,7 @@ export default function BathroomTeaser() {
           transition={{ duration: 0.9 }}
           className="relative min-h-[400px] lg:min-h-0 order-2 lg:order-1">
           
-          <img src="https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/f94f43c59_generated_2c63c2a9.png" alt="Bathroom collection" className="w-full h-full object-cover opacity-70" />
+          <img src="/images/f94f43c59_generated_2c63c2a9.png" alt="Bathroom collection" className="w-full h-full object-cover opacity-70" />
         </motion.div>
 
         {/* Right text */}

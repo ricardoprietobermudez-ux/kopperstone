@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
-const HERO_IMG = 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/3994739c2_Screenshot2026-06-09at110229PM.png';
+const HERO_IMG = '/images/3994739c2_Screenshot2026-06-09at110229PM.png';
 
 const materials = [
   {
@@ -12,8 +12,8 @@ const materials = [
     desc: 'High-gloss premium finish with deep color saturation and superior moisture resistance — but shows fingerprints and scratches.',
     tradeNote: 'Best for: luxury hotel rooms, upscale residential. Avoid in high-traffic commercial kitchens.',
     swatch: 'bg-gray-100',
-    img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/fb23a07da_Screenshot2026-06-09at110524PM.png',
-    heroImg: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/82bcd888c_Screenshot2026-06-15at95056PM.png',
+    img: '/images/fb23a07da_Screenshot2026-06-09at110524PM.png',
+    heroImg: '/images/82bcd888c_Screenshot2026-06-15at95056PM.png',
   },
   {
     id: 'lacquer',
@@ -21,8 +21,8 @@ const materials = [
     desc: 'Fully custom color matching in matte, satin, or gloss; can be refinished on-site but yellows over 8–10 years.',
     tradeNote: 'Best for: bespoke residential, boutique hotel. Budget for touch-up in commercial leases.',
     swatch: 'bg-emerald-800',
-    img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/047543dc3_Screenshot2026-06-09at111334PM.png',
-    heroImg: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/170a32311_Screenshot2026-06-15at95404PM.png',
+    img: '/images/047543dc3_Screenshot2026-06-09at111334PM.png',
+    heroImg: '/images/170a32311_Screenshot2026-06-15at95404PM.png',
   },
   {
     id: 'laminate',
@@ -30,8 +30,8 @@ const materials = [
     desc: 'Highest impact, scratch, and heat resistance; the workhorse choice for commercial, rental, and high-traffic builds.',
     tradeNote: 'Best for: multi-family rental, hotel back-of-house, healthcare. 10+ year lifecycle in heavy use.',
     swatch: 'bg-zinc-900',
-    img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/cde0703b7_Screenshot2026-06-09at111439PM.png',
-    heroImg: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/6c0d868a9_Screenshot2026-06-15at95516PM.png',
+    img: '/images/cde0703b7_Screenshot2026-06-09at111439PM.png',
+    heroImg: '/images/6c0d868a9_Screenshot2026-06-15at95516PM.png',
   },
   {
     id: 'kpvc',
@@ -39,8 +39,8 @@ const materials = [
     desc: 'Seamless PVC-wrapped MDF for detailed door profiles at mid-tier pricing; will delaminate near heat sources.',
     tradeNote: 'Best for: master bath vanities, bedroom cabinetry. Keep away from range and dishwasher zones.',
     swatch: 'bg-gray-50',
-    img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/8de464daf_Screenshot2026-06-15at94454PM.png',
-    heroImg: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/d78887136_Screenshot2026-06-15at95648PM.png',
+    img: '/images/8de464daf_Screenshot2026-06-15at94454PM.png',
+    heroImg: '/images/d78887136_Screenshot2026-06-15at95648PM.png',
   },
   {
     id: 'melamine',
@@ -48,8 +48,8 @@ const materials = [
     desc: 'Most economical option for closets, garages, and budget cabinet interiors; swells permanently if water penetrates the edge.',
     tradeNote: 'Best for: closet systems, utility storage, interior cabinet boxes. Not recommended for wet zones.',
     swatch: 'bg-amber-800',
-    img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/35662b316_Screenshot2026-06-15at94616PM.png',
-    heroImg: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/5f3c856f9_Screenshot2026-06-15at95907PM.png',
+    img: '/images/35662b316_Screenshot2026-06-15at94616PM.png',
+    heroImg: '/images/5f3c856f9_Screenshot2026-06-15at95907PM.png',
   },
   {
     id: 'veneer',
@@ -57,8 +57,8 @@ const materials = [
     desc: 'Authentic wood grain that stains and ages like solid lumber; requires dry zones and careful handling — damage cannot be patched invisibly.',
     tradeNote: 'Best for: premium residential, executive suites, low-humidity environments. Avoid near pool, spa.',
     swatch: 'bg-amber-200',
-    img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/25bb4e811_Screenshot2026-06-15at94829PM.png',
-    heroImg: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/4d9566eb6_Screenshot2026-06-15at100205PM.png',
+    img: '/images/25bb4e811_Screenshot2026-06-15at94829PM.png',
+    heroImg: '/images/4d9566eb6_Screenshot2026-06-15at100205PM.png',
   },
 ];
 

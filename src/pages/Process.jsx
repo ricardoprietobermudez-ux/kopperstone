@@ -10,7 +10,7 @@ const steps = [
     title: 'Consultation',
     body: 'We define project scope, scale, and design preferences.',
     detail: ['Initial project brief review', 'Unit count and scale assessment', 'Design preferences and finish direction', 'Budget and timeline alignment'],
-    img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/962cffd7d_image.png',
+    img: '/images/962cffd7d_image.png',
   },
   {
     num: '02',
@@ -18,7 +18,7 @@ const steps = [
     title: 'Design & Selection',
     body: 'Curated configurations or custom specs — every detail drafted and approved before production.',
     detail: ['Architectural drawings and elevations', 'Material and finish selection', 'Custom configuration drafting', 'Client approval before production'],
-    img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/a35e4fe2d_image.png',
+    img: '/images/a35e4fe2d_image.png',
   },
   {
     num: '03',
@@ -26,7 +26,7 @@ const steps = [
     title: 'Proposal & Approval',
     body: 'Full proposal with selections, quantities, and timelines, ready for your sign off.',
     detail: ['Complete specification package', 'Itemised quantities and pricing', 'Production timeline confirmed', 'Written sign-off before manufacturing begins'],
-    img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/1181a89b1_image.png',
+    img: '/images/1181a89b1_image.png',
   },
   {
     num: '04',
@@ -42,7 +42,7 @@ const steps = [
     title: 'Delivery & Support',
     body: 'Coordinated delivery to your site, with installation guidance and dedicated after-sales support.',
     detail: ['End-to-end freight and customs management', 'Phased delivery to match construction schedule', 'Installation guidance and coordination', 'Dedicated after-sales support'],
-    img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/91ec3eac7_image.png',
+    img: '/images/91ec3eac7_image.png',
   },
 ];
 

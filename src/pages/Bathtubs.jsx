@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 const bathtubs = [
-  { sku: 'KS-B114',   name: 'KP-6208', dims: '1700 × 800 × 590mm', type: 'Freestanding', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/5d663b22f_Screenshot2026-06-16at80732PM.png' },
-  { sku: 'KS-B117',   name: 'KP-6207', dims: '1680 × 780 × 600mm', type: 'Freestanding', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/a98d261f2_Screenshot2026-06-16at80838PM.png' },
-  { sku: 'KS-B001A1', name: 'KP-6219', dims: '1700 × 800 × 650mm', type: 'Freestanding', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/ee022c15d_Screenshot2026-06-16at80944PM.png' },
-  { sku: 'KS-B029A',  name: 'KP-6221', dims: '1700 × 800 × 580mm', type: 'Built-In',     img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/184550f7f_Screenshot2026-06-17at51713PM.png' },
+  { sku: 'KS-B114',   name: 'KP-6208', dims: '1700 × 800 × 590mm', type: 'Freestanding', img: '/images/5d663b22f_Screenshot2026-06-16at80732PM.png' },
+  { sku: 'KS-B117',   name: 'KP-6207', dims: '1680 × 780 × 600mm', type: 'Freestanding', img: '/images/a98d261f2_Screenshot2026-06-16at80838PM.png' },
+  { sku: 'KS-B001A1', name: 'KP-6219', dims: '1700 × 800 × 650mm', type: 'Freestanding', img: '/images/ee022c15d_Screenshot2026-06-16at80944PM.png' },
+  { sku: 'KS-B029A',  name: 'KP-6221', dims: '1700 × 800 × 580mm', type: 'Built-In',     img: '/images/184550f7f_Screenshot2026-06-17at51713PM.png' },
 ];
 
 export default function Bathtubs() {
@@ -18,7 +18,7 @@ export default function Bathtubs() {
       <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[560px]">
         <div className="relative min-h-[380px]">
           <img
-            src="https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/c863828dd_image.png"
+            src="/images/c863828dd_image.png"
             alt="Freestanding bathtub"
             className="w-full h-full object-cover"
           />

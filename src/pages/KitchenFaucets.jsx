@@ -4,12 +4,12 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 const faucets = [
-  { sku: 'KP-9202', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/d5a34e9d3_Screenshot2026-06-16at120951PM.png' },
-  { sku: 'KP-9220', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/111391d57_Screenshot2026-06-16at13336PM.png' },
-  { sku: 'KP-9209', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/a55ece026_Screenshot2026-06-16at13659PM.png' },
-  { sku: 'KP-9204', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/0e29e58c2_Screenshot2026-06-16at13855PM.png' },
-  { sku: 'KP-9218', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/fd95f6aa0_Screenshot2026-06-16at14016PM.png' },
-  { sku: 'KP-9223', img: 'https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/13ce3592a_Screenshot2026-06-16at15138PM.png' },
+  { sku: 'KP-9202', img: '/images/d5a34e9d3_Screenshot2026-06-16at120951PM.png' },
+  { sku: 'KP-9220', img: '/images/111391d57_Screenshot2026-06-16at13336PM.png' },
+  { sku: 'KP-9209', img: '/images/a55ece026_Screenshot2026-06-16at13659PM.png' },
+  { sku: 'KP-9204', img: '/images/0e29e58c2_Screenshot2026-06-16at13855PM.png' },
+  { sku: 'KP-9218', img: '/images/fd95f6aa0_Screenshot2026-06-16at14016PM.png' },
+  { sku: 'KP-9223', img: '/images/13ce3592a_Screenshot2026-06-16at15138PM.png' },
 ];
 
 export default function KitchenFaucets() {
@@ -21,7 +21,7 @@ export default function KitchenFaucets() {
       <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[560px]">
         <div className="relative min-h-[350px] overflow-hidden">
           <img
-            src="https://media.base44.com/images/public/69fe4ed5912775ef1d08d528/3b98cc36b_Screenshot2026-06-16at115831AM.png"
+            src="/images/3b98cc36b_Screenshot2026-06-16at115831AM.png"
             alt="Kitchen faucets"
             className="w-full h-full object-cover scale-105 transition-transform duration-700"
           />
