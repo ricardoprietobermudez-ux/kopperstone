@@ -91,6 +91,10 @@ export default function Navbar() {
                 {l.label}
               </Link>
             ))}
+            <div className="w-px h-4 bg-cream/10 mx-1" />
+            <Link to="/trade" className="px-3 py-2 text-[11px] font-sans tracking-wide uppercase text-cream/40 hover:text-cream transition-colors">
+              {t('trade.nav.forDevelopers')}
+            </Link>
           </div>
 
           {/* Right side */}
@@ -166,6 +170,7 @@ export default function Navbar() {
             {toolPaths.map(l => (
               <Link key={l.path} to={l.path} className="block py-2.5 text-sm text-gold/70 border-b border-cream/5">{l.label}</Link>
             ))}
+            <Link to="/trade" className="block py-2.5 text-sm text-cream/40 hover:text-cream border-b border-cream/5">{t('trade.nav.forDevelopers')}</Link>
             <div className="pt-6">
               <button onClick={() => setMobileOpen(false) || setContactModal(true)} className="block w-full text-center bg-gold text-navy text-sm font-sans tracking-wide uppercase px-6 py-3">
                 Get in Touch

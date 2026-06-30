@@ -84,6 +84,41 @@ const translations = {
     trusted: {
       overline: 'Trusted by leading developers & hospitality groups across North America',
     },
+    trade: {
+      nav: { forDevelopers: 'For Developers', backToHome: 'For Homeowners' },
+      hero: {
+        label: 'Trade & Developer Programme',
+        title: 'Specification-grade supply for multi-unit projects.',
+        sub: 'Kopperstone sources and supplies kitchen and bathroom packages for residential developers, hotel operators, and commercial contractors across Canada and the U.S.',
+        cta_primary: 'Request a Project Quote',
+        cta_secondary: 'View Trade Process',
+      },
+      values: {
+        label: 'Why Kopperstone Trade',
+        v1_title: 'Vertically Integrated Supply', v1_body: 'Direct factory relationships mean shorter lead times and better unit economics at volume.',
+        v2_title: 'Quality Standards', v2_body: 'We work to ISO 9001 factory standards and conduct three-stage inspection on all shipments.',
+        v3_title: 'Importer of Record', v3_body: 'We handle customs clearance into Canada and the U.S. You receive landed, duty-paid product.',
+        v4_title: 'Volume Pricing', v4_body: 'Pricing tiers from 5-unit to 100+ unit projects. Contact us for your tier.',
+      },
+      process: {
+        label: 'Procurement Process',
+        title: 'From specification to site delivery.',
+        cta: 'See Trade Process',
+        placeholder: 'Coming soon: spec submission, factory matching, sample approval, production, three-stage QC inspection, customs clearance, and site delivery.',
+      },
+      cta: {
+        title: 'Working on a project?',
+        sub: 'Share your spec sheet and unit count. We will respond with a landed cost estimate within 48 hours.',
+        btn: 'Request a Project Quote',
+      },
+      timeline: {
+        label: 'Trade Tool',
+        title: 'Project Timeline Estimator',
+        sub: 'Enter your project parameters and get an estimated procurement and delivery timeline.',
+        placeholder: 'Coming soon: enter project type, unit count, collection, province/state, and required on-site date to get a phase-by-phase timeline.',
+        cta: 'Talk to a Project Manager',
+      },
+    },
   },
   es: {
     nav: {
@@ -168,6 +203,41 @@ const translations = {
     trusted: {
       overline: 'Con la confianza de promotores líderes en América del Norte',
     },
+    trade: {
+      nav: { forDevelopers: 'Para Desarrolladores', backToHome: 'Para Propietarios' },
+      hero: {
+        label: 'Programa para Desarrolladores',
+        title: 'Suministro de especificación para proyectos de múltiples unidades.',
+        sub: 'Kopperstone abastece paquetes de cocina y baño para desarrolladores residenciales, operadores hoteleros y contratistas en Canadá y EE.UU.',
+        cta_primary: 'Solicitar Cotización',
+        cta_secondary: 'Ver Proceso',
+      },
+      values: {
+        label: 'Por qué Kopperstone Trade',
+        v1_title: 'Cadena de Suministro Integrada', v1_body: 'Relaciones directas con fábricas para tiempos de entrega más cortos y mejores costos en volumen.',
+        v2_title: 'Estándares de Calidad', v2_body: 'Trabajamos con estándares de fábrica ISO 9001 e inspección en tres etapas.',
+        v3_title: 'Importador de Registro', v3_body: 'Gestionamos el despacho aduanero en Canadá y EE.UU. Recibe producto entregado con aranceles pagados.',
+        v4_title: 'Precios por Volumen', v4_body: 'Niveles de precios desde 5 hasta más de 100 unidades. Contáctenos para su nivel.',
+      },
+      process: {
+        label: 'Proceso de Adquisición',
+        title: 'De la especificación a la entrega en obra.',
+        cta: 'Ver Proceso',
+        placeholder: 'Próximamente: envío de especificaciones, selección de fábrica, aprobación de muestras, producción, inspección QC, despacho aduanero y entrega.',
+      },
+      cta: {
+        title: '¿Trabajando en un proyecto?',
+        sub: 'Comparta su hoja de especificaciones y cantidad de unidades. Respondemos con una estimación en 48 horas.',
+        btn: 'Solicitar Cotización',
+      },
+      timeline: {
+        label: 'Herramienta Trade',
+        title: 'Estimador de Cronograma',
+        sub: 'Ingrese los parámetros de su proyecto y obtenga un cronograma estimado.',
+        placeholder: 'Próximamente.',
+        cta: 'Hablar con un Gerente de Proyecto',
+      },
+    },
   },
   fr: {
     nav: {
@@ -251,6 +321,41 @@ const translations = {
     },
     trusted: {
       overline: 'Approuvé par des promoteurs leaders en Amérique du Nord',
+    },
+    trade: {
+      nav: { forDevelopers: 'Pour les Promoteurs', backToHome: 'Pour les Propriétaires' },
+      hero: {
+        label: 'Programme Trade & Promoteurs',
+        title: 'Fourniture de spécification pour les projets multi-unités.',
+        sub: 'Kopperstone approvisionne des ensembles cuisine et salle de bain pour les promoteurs résidentiels, opérateurs hôteliers et entrepreneurs au Canada et aux États-Unis.',
+        cta_primary: 'Demander un Devis',
+        cta_secondary: 'Voir le Processus',
+      },
+      values: {
+        label: 'Pourquoi Kopperstone Trade',
+        v1_title: 'Chaîne d\'Approvisionnement Intégrée', v1_body: 'Relations directes avec les usines pour des délais plus courts et de meilleures économies en volume.',
+        v2_title: 'Normes de Qualité', v2_body: 'Nous travaillons selon les normes ISO 9001 avec inspection en trois étapes.',
+        v3_title: 'Importateur de Record', v3_body: 'Nous gérons le dédouanement au Canada et aux États-Unis. Vous recevez le produit livré, droits acquittés.',
+        v4_title: 'Tarification en Volume', v4_body: 'Niveaux de tarification de 5 à plus de 100 unités. Contactez-nous pour votre niveau.',
+      },
+      process: {
+        label: 'Processus d\'Approvisionnement',
+        title: 'De la spécification à la livraison sur site.',
+        cta: 'Voir le Processus',
+        placeholder: 'Bientôt disponible: soumission des spécifications, sélection d\'usine, approbation des échantillons, production, inspection QC, dédouanement et livraison.',
+      },
+      cta: {
+        title: 'Vous travaillez sur un projet?',
+        sub: 'Partagez votre fiche de spécifications et le nombre d\'unités. Nous répondrons avec une estimation sous 48 heures.',
+        btn: 'Demander un Devis',
+      },
+      timeline: {
+        label: 'Outil Trade',
+        title: 'Estimateur de Calendrier',
+        sub: 'Entrez les paramètres de votre projet et obtenez un calendrier d\'approvisionnement estimé.',
+        placeholder: 'Bientôt disponible.',
+        cta: 'Parler à un Chef de Projet',
+      },
     },
   },
 };
