@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/lib/i18n';
 
@@ -12,12 +13,34 @@ function ValueCard({ title, body }) {
 
 export default function TradeHome() {
   const { t } = useLanguage();
+  const videoRef = useRef(null);
+
+  function handleVideoLoad() {
+    if (videoRef.current) {
+      videoRef.current.currentTime = 2;
+    }
+  }
 
   return (
     <>
       {/* Hero */}
       <section className="relative min-h-[90vh] flex items-end bg-navy overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-navy via-navy to-steel/20" />
+        <div className="absolute inset-0">
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            playsInline
+            onLoadedMetadata={handleVideoLoad}
+            className="w-full h-full object-cover opacity-55"
+          >
+            <source src="/video_2.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/65 to-navy/25" />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-tl from-navy via-navy/40 to-transparent" />
+        </div>
         <div className="absolute top-0 inset-x-0 h-px bg-gold/20" />
 
         <div className="relative z-10 max-w-screen-xl mx-auto px-6 lg:px-10 pb-20 pt-36 w-full">
