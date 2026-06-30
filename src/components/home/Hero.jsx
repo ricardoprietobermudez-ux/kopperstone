@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-end overflow-hidden bg-navy">
       <div className="absolute inset-0">
-        <video autoPlay muted loop playsInline className="w-full h-full object-cover opacity-55">
+        <video autoPlay muted loop playsInline className="w-full h-full object-cover opacity-55 scale-110">
           <source src="/video.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/65 to-navy/25" />
