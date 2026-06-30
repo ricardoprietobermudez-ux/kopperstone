@@ -4,17 +4,10 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '@/lib/i18n';
 
-const HERO_IMG = 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&q=80';
-
 export default function Hero() {
   const { t } = useLanguage();
   return (
     <section className="relative min-h-screen flex items-end overflow-hidden bg-navy">
-      <div className="absolute inset-0">
-        <img src={HERO_IMG} alt="Multi-unit development interior" className="w-full h-full object-cover opacity-55" />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/65 to-navy/25" />
-        <div className="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent" />
-      </div>
 
       <div className="relative z-10 w-full max-w-screen-xl mx-auto px-6 lg:px-10 pb-24 pt-40">
         <div className="max-w-2xl">
