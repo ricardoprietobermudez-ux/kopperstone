@@ -14,7 +14,7 @@ export default function Hero() {
         </video>
         <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/65 to-navy/25" />
         <div className="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-tl from-navy/90 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-tl from-navy via-navy/40 to-transparent" />
       </div>
 
       <div className="relative z-10 w-full max-w-screen-xl mx-auto px-6 lg:px-10 pb-24 pt-40">
