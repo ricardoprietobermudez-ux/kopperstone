@@ -28,7 +28,7 @@ const collections = [
   name: 'American Collection',
   overline: 'CLASSIC · GRAND',
   desc: 'Rich walnut cabinetry with glass display uppers, brass accent hardware, and a statement marble island. Designed for luxury residential towers, boutique hotels, and hospitality properties demanding timeless American craftsmanship.',
-  components: ['Walnut cabinetry — full height', 'Glass display upper cabinets', 'Marble waterfall island with seating', 'Brass gold hardware throughout', 'Professional range with hood', 'Built-in double oven column', 'Smart refrigerator integration'],
+  components: ['Walnut cabinetry, full height', 'Marble waterfall island with seating', 'Professional range with hood'],
   img: '/images/kitchen_3.png'
 },
 {
