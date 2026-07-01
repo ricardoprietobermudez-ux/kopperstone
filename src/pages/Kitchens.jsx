@@ -20,7 +20,7 @@ const collections = [
   name: 'French Collection',
   overline: 'SOFT · TRANSITIONAL',
   desc: 'Soft transitional design with arched upper cabinet profiles, shaker door detailing, and painted finishes. Natural marble-look countertops, brushed gold hardware, and open shelf elements with integrated lighting.',
-  components: ['Arched upper cabinet doors', 'Shaker base cabinets', 'Painted finish — custom color matching', 'Marble-look quartz countertops', 'Integrated cooktop — back wall layout', 'Open display shelving with lighting', 'Brushed gold hardware throughout'],
+  components: ['Arched upper cabinet doors', 'Painted finish, custom color matching', 'Marble-look quartz countertops'],
   img: '/images/kitchen_2.png'
 },
 {
