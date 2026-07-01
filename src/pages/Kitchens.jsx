@@ -45,7 +45,7 @@ const collections = [
   overline: 'LUXURY · TRANSITIONAL',
   desc: 'Two-tone island compositions, soft grey cabinetry with marble surfaces, and brushed gold hardware. Designed for five-star hotel properties and premium residential developments demanding specification-grade European elegance.',
   components: ['Soft grey shaker upper cabinets', 'Glass display upper inserts', 'Marble island with integrated sink', 'Brushed gold hardware throughout', 'Integrated refrigerator column', 'Professional range with hood', 'Full-height marble backsplash'],
-  img: '/images/4d3f499fa_image.png'
+  img: '/images/kitchen_5.png'
 }];
 
 
