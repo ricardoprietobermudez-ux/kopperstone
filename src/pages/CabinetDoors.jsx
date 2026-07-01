@@ -66,9 +66,9 @@ export default function CabinetDoors() {
   return (
     <div className="bg-cream">
       {/* Hero */}
-      <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[500px]">
-        <div className="relative min-h-[350px]">
-          <img src={HERO_IMG} alt="Cabinet textures" className="w-full h-full object-cover" />
+      <section className="grid grid-cols-1 lg:grid-cols-2">
+        <div className="relative h-[380px]">
+          <img src={HERO_IMG} alt="Cabinet textures" className="w-full h-full object-cover object-center" />
         </div>
         <div className="bg-cream flex flex-col justify-center px-10 lg:px-16 py-20">
           <div className="w-10 h-px bg-gold mb-4" />
@@ -112,8 +112,8 @@ export default function CabinetDoors() {
             </div>
 
             {/* Image */}
-            <div className={`relative min-h-[300px] ${i % 2 === 1 ? 'order-first lg:order-last' : ''}`}>
-              <img src={mat.heroImg || mat.img} alt={mat.label} className="w-full h-full object-cover" />
+            <div className={`relative h-[300px] ${i % 2 === 1 ? 'order-first lg:order-last' : ''}`}>
+              <img src={mat.heroImg || mat.img} alt={mat.label} className="w-full h-full object-cover object-center" />
             </div>
           </motion.section>
         ))}
