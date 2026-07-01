@@ -36,7 +36,7 @@ const collections = [
   name: 'Industrial Collection',
   overline: 'RAW · MODERN',
   desc: 'Dark grey cabinetry with oak wood accents, exposed ductwork integration, concrete-look surfaces, and a breakfast bar layout. Designed for loft apartments, restaurant fit-outs, and co-living developments.',
-  components: ['Dark grey flat-panel cabinets', 'Oak wood breakfast bar island', 'Walnut open shelving', 'Concrete-look countertop', 'Exposed ductwork hood integration', 'Tall storage column', 'Matte black hardware and fixtures'],
+  components: ['Dark grey flat-panel cabinets', 'Concrete-look countertop', 'Matte black hardware and fixtures'],
   img: '/images/kitchen_4.png'
 },
 {
