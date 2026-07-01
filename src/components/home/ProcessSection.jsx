@@ -40,7 +40,7 @@ export default function ProcessSection() {
               {/* Number + label */}
               <div className="relative z-10 flex items-baseline gap-1 mb-6">
                 <span className="font-serif text-4xl text-cream">{step.num}</span>
-                <span className="text-[9px] font-sans tracking-widest uppercase text-warm-grey">{['DISCOVERY','DESIGN','REVIEW','PRODUCTION','CLOSE'][i]}</span>
+                <span className="text-[9px] font-sans tracking-widest uppercase text-warm-grey">{['DISCOVERY','DESIGN','REVIEW','BUILD','CLOSE'][i]}</span>
               </div>
               <h3 className="font-serif text-base text-cream mb-3 italic text-gold">{step.title}</h3>
               <p className="text-cream/40 text-xs leading-relaxed font-sans">{step.body}</p>
