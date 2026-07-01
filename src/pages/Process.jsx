@@ -10,7 +10,7 @@ const steps = [
     title: 'Consultation',
     body: 'An in home visit to understand the space, the style, and the goals for the project.',
     detail: ['In-home visit to assess the space and layout', 'Style preferences and inspiration review', 'Project scope and goals defined', 'Budget and timeline discussion'],
-    img: '/images/962cffd7d_image.png',
+    img: '/images/consultation.png',
   },
   {
     num: '02',
@@ -34,7 +34,7 @@ const steps = [
     title: 'Fabrication & Install',
     body: 'Materials sourced and surfaces cut to measure, then installed by our own team.',
     detail: ['Materials sourced and fabricated to spec', 'Surfaces cut to measure in-house', 'Installation handled by our own team', 'Progress updates throughout the build'],
-    img: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=900&q=80',
+    img: '/images/build.png',
   },
   {
     num: '05',
