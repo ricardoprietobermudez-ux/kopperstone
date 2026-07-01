@@ -74,7 +74,7 @@ const translations = {
         { num: '02', title: 'Design & Selection', body: 'Layout, materials, and finishes chosen and confirmed before anything is ordered.' },
         { num: '03', title: 'Proposal & Approval', body: 'A clear, fixed proposal laying out every selection, price, and timeline.' },
         { num: '04', title: 'Fabrication & Install', body: 'Materials sourced and surfaces cut to measure, then installed by our own team.' },
-        { num: '05', title: 'Delivery & Support', body: 'A finished space completed on schedule, backed by warranty and after-sales support.' },
+        { num: '05', title: 'Handover & Support', body: 'A finished space completed on schedule, backed by warranty and after-sales support.' },
       ],
     },
     cta: {
@@ -316,7 +316,7 @@ const translations = {
         { num: '02', title: 'Design & Sélection', body: 'Disposition, matériaux et finitions choisis et confirmés avant toute commande.' },
         { num: '03', title: 'Proposition & Approbation', body: 'Une proposition claire et fixe détaillant chaque sélection, prix et calendrier.' },
         { num: '04', title: 'Fabrication & Installation', body: 'Matériaux approvisionnés et surfaces découpées sur mesure, puis installés par notre propre équipe.' },
-        { num: '05', title: 'Livraison & Support', body: 'Un espace terminé livré dans les délais, garanti et avec support après-vente.' },
+        { num: '05', title: 'Remise & Support', body: 'Un espace terminé livré dans les délais, garanti et avec support après-vente.' },
       ],
     },
     cta: {
