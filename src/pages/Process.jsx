@@ -54,10 +54,10 @@ export default function Process() {
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
           <div className="gold-overline mb-6">OUR PROCESS</div>
           <h1 className="font-serif text-5xl md:text-6xl text-cream tracking-tight max-w-2xl">
-            How it<br /><em className="text-gold italic">Works</em>
+            From First Visit<br /><em className="text-gold italic">to Final Reveal</em>
           </h1>
           <p className="mt-6 text-cream/45 text-base leading-relaxed max-w-xl font-sans">
-            Five steps. One team. From the first visit to the finished room, we handle design, supply, and installation so you never have to coordinate multiple contractors.
+            Five stages. One point of contact. Full transparency at every step — we manage everything from the first design to the finished install.
           </p>
         </div>
       </section>
