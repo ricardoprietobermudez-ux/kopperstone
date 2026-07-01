@@ -17,7 +17,8 @@ export default function WhoWeAre() {
             </div>
             <h2 className="font-serif text-5xl lg:text-6xl text-cream leading-tight tracking-tight">
               {t('who.headline1')}<br />
-              <em className="text-gold italic">{t('who.headline2')}</em>
+              {t('who.headline2')}<br />
+              {t('who.headline3')}<em className="text-gold italic">{t('who.headline4')}</em>
             </h2>
           </motion.div>
 
