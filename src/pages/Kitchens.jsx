@@ -83,14 +83,16 @@ export default function Kitchens() {
           transition={{ duration: 0.7 }}
           className="border-b border-navy/10"
         >
-          {/* Full-width image */}
-          <div className="w-full aspect-[16/9] overflow-hidden">
-            <img
-              src={col.img}
-              alt={col.name}
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
+          {/* Image — contained with fixed height */}
+          <div className="max-w-screen-xl mx-auto px-6 lg:px-10 pt-10">
+            <div className="w-full h-[480px] overflow-hidden">
+              <img
+                src={col.img}
+                alt={col.name}
+                className="w-full h-full object-cover object-center"
+                loading="lazy"
+              />
+            </div>
           </div>
 
           {/* Caption bar */}
