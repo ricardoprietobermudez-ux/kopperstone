@@ -64,11 +64,8 @@ export default function Kitchens() {
             Kitchen<br /><em className="text-gold italic">Collections</em>
           </h1>
           <p className="mt-6 text-cream/50 text-base max-w-xl leading-relaxed font-sans">
-            Precision crafted kitchens for residences and commercial developments. Every collection is fully customizable from cabinet finish to countertop material. Specified to your project's exact vision.
+            Precision-crafted kitchens for the modern home. Every collection is fully customizable, from cabinet finish to countertop material, and built around the way each space is meant to be lived in.
           </p>
-          <div className="mt-4 text-sm text-cream/30 font-sans">
-            Projects from 30+ units to multi-tower developments · Institutional pricing · Developer-direct supply
-          </div>
         </div>
       </section>
 
