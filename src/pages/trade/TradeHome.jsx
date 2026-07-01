@@ -93,19 +93,21 @@ export default function TradeHome() {
         </div>
       </section>
 
-      {/* Process teaser */}
-      <section className="bg-cream py-20 lg:py-28">
+      {/* Process teaser rectangle */}
+      <section className="bg-navy py-16 lg:py-20 border-t border-white/10">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
-          <p className="text-xs font-sans font-medium tracking-[0.2em] uppercase text-gold mb-4">
-            — {t('trade.process.label')}
-          </p>
-          <h2 className="font-serif text-4xl lg:text-5xl text-navy mb-10">{t('trade.process.title')}</h2>
-          <div className="border border-dashed border-warm-300 p-10 text-center max-w-2xl mb-10">
-            <p className="text-sm text-warm-500 leading-relaxed">{t('trade.process.placeholder')}</p>
+          <div className="border border-white/10 p-10 lg:p-14 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+            <div>
+              <p className="text-xs font-sans font-medium tracking-[0.2em] uppercase text-gold mb-4">
+                — {t('trade.process.label')}
+              </p>
+              <h2 className="font-serif text-3xl lg:text-4xl text-cream">{t('trade.process.title')}</h2>
+              <p className="text-cream/45 text-sm leading-relaxed font-sans mt-3 max-w-lg">{t('trade.process.placeholder')}</p>
+            </div>
+            <Link to="/trade/process" className="inline-flex items-center justify-center border border-gold text-gold text-sm font-sans tracking-wide uppercase px-8 py-4 hover:bg-gold hover:text-navy transition-colors whitespace-nowrap">
+              {t('trade.process.cta')}
+            </Link>
           </div>
-          <Link to="/trade/process" className="inline-flex items-center justify-center border border-navy text-navy text-sm font-sans tracking-wide uppercase px-8 py-4 hover:bg-navy hover:text-cream transition-colors">
-            {t('trade.process.cta')}
-          </Link>
         </div>
       </section>
 
