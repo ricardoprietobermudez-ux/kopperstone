@@ -21,7 +21,7 @@ const collections = [
   overline: 'SOFT · TRANSITIONAL',
   desc: 'Soft transitional design with arched upper cabinet profiles, shaker door detailing, and painted finishes. Natural marble-look countertops, brushed gold hardware, and open shelf elements with integrated lighting.',
   components: ['Arched upper cabinet doors', 'Shaker base cabinets', 'Painted finish — custom color matching', 'Marble-look quartz countertops', 'Integrated cooktop — back wall layout', 'Open display shelving with lighting', 'Brushed gold hardware throughout'],
-  img: '/images/0531815df_image.png'
+  img: '/images/kitchen_2.png'
 },
 {
   id: 'american',
@@ -29,7 +29,7 @@ const collections = [
   overline: 'CLASSIC · GRAND',
   desc: 'Rich walnut cabinetry with glass display uppers, brass accent hardware, and a statement marble island. Designed for luxury residential towers, boutique hotels, and hospitality properties demanding timeless American craftsmanship.',
   components: ['Walnut cabinetry — full height', 'Glass display upper cabinets', 'Marble waterfall island with seating', 'Brass gold hardware throughout', 'Professional range with hood', 'Built-in double oven column', 'Smart refrigerator integration'],
-  img: '/images/b6991cabb_image.png'
+  img: '/images/kitchen_3.png'
 },
 {
   id: 'industrial',
@@ -37,7 +37,7 @@ const collections = [
   overline: 'RAW · MODERN',
   desc: 'Dark grey cabinetry with oak wood accents, exposed ductwork integration, concrete-look surfaces, and a breakfast bar layout. Designed for loft apartments, restaurant fit-outs, and co-living developments.',
   components: ['Dark grey flat-panel cabinets', 'Oak wood breakfast bar island', 'Walnut open shelving', 'Concrete-look countertop', 'Exposed ductwork hood integration', 'Tall storage column', 'Matte black hardware and fixtures'],
-  img: '/images/f79637405_image.png'
+  img: '/images/kitchen_4.png'
 },
 {
   id: 'european',
