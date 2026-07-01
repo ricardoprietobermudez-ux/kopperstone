@@ -39,10 +39,10 @@ const steps = [
   {
     num: '05',
     category: 'CLOSE',
-    title: 'Delivery & Support',
+    title: 'Handover & Support',
     body: 'A finished space completed on schedule, backed by warranty and after-sales support.',
     detail: ['Final installation with site left clean', 'Walkthrough with the team at handover', 'Warranty on all workmanship and materials', 'After-sales support available ongoing'],
-    img: '/images/91ec3eac7_image.png',
+    img: '/images/casa.png',
   },
 ];
 
