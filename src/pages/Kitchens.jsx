@@ -12,7 +12,7 @@ const collections = [
   name: 'Modern Collection',
   overline: 'CLEAN · CONTEMPORARY',
   desc: 'Minimalist lines, integrated appliances, and handleless door profiles. Matte lacquer finishes in a curated palette from pure white to deep charcoal. Designed for urban multi-family and boutique hotel properties.',
-  components: ['Handleless base and wall cabinets', 'Integrated refrigerator panel', 'L-shape layout with window sink', 'Under-cabinet LED lighting', 'Solid surface countertop or quartz', 'Undermount workstation sink', 'Pull-out storage systems', 'Built-in oven column'],
+  components: ['Handleless base and wall cabinets', 'Solid surface or quartz countertop', 'Under-cabinet LED lighting'],
   img: '/images/kitchen_1.png'
 },
 {
