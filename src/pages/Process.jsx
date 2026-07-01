@@ -8,40 +8,40 @@ const steps = [
     num: '01',
     category: 'DISCOVERY',
     title: 'Consultation',
-    body: 'An in home visit to understand the space, the style, and the goals for the project.',
-    detail: ['In-home visit to assess the space and layout', 'Style preferences and inspiration review', 'Project scope and goals defined', 'Budget and timeline discussion'],
+    body: 'We define project scope, scale, and design preferences.',
+    detail: ['Initial project brief review', 'Unit count and scale assessment', 'Design preferences and finish direction', 'Budget and timeline alignment'],
     img: '/images/962cffd7d_image.png',
   },
   {
     num: '02',
     category: 'DESIGN',
     title: 'Design & Selection',
-    body: 'Layout, materials, and finishes chosen and confirmed before anything is ordered.',
-    detail: ['Layout and dimensions confirmed', 'Materials and finishes selected together', 'Design presented for your approval', 'No orders placed until everything is confirmed'],
+    body: 'Curated configurations or custom specs — every detail drafted and approved before production.',
+    detail: ['Architectural drawings and elevations', 'Material and finish selection', 'Custom configuration drafting', 'Client approval before production'],
     img: '/images/a35e4fe2d_image.png',
   },
   {
     num: '03',
     category: 'REVIEW',
     title: 'Proposal & Approval',
-    body: 'A clear, fixed proposal laying out every selection, price, and timeline.',
-    detail: ['Itemised quote with all selections included', 'Fixed price with no surprises', 'Timeline confirmed before work begins', 'Written sign-off required to proceed'],
+    body: 'Full proposal with selections, quantities, and timelines, ready for your sign off.',
+    detail: ['Complete specification package', 'Itemised quantities and pricing', 'Production timeline confirmed', 'Written sign-off before manufacturing begins'],
     img: '/images/1181a89b1_image.png',
   },
   {
     num: '04',
-    category: 'BUILD',
-    title: 'Fabrication & Install',
-    body: 'Materials sourced and surfaces cut to measure, then installed by our own team.',
-    detail: ['Materials sourced and fabricated to spec', 'Surfaces cut to measure in-house', 'Installation handled by our own team', 'Progress updates throughout the build'],
+    category: 'PRODUCTION',
+    title: 'Quality & Control',
+    body: 'Every unit produced to spec, backed by third-party inspection and certification at every critical stage.',
+    detail: ['ISO 9001 quality management', 'Third-party inspection at key milestones', 'Photo-documented production stages', 'Pre-shipment inspection report'],
     img: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=900&q=80',
   },
   {
     num: '05',
     category: 'CLOSE',
     title: 'Delivery & Support',
-    body: 'A finished space completed on schedule, backed by warranty and after-sales support.',
-    detail: ['Final installation with site left clean', 'Walkthrough with the team at handover', 'Warranty on all workmanship and materials', 'After-sales support available ongoing'],
+    body: 'Coordinated delivery to your site, with installation guidance and dedicated after-sales support.',
+    detail: ['End-to-end freight and customs management', 'Phased delivery to match construction schedule', 'Installation guidance and coordination', 'Dedicated after-sales support'],
     img: '/images/91ec3eac7_image.png',
   },
 ];
@@ -54,10 +54,10 @@ export default function Process() {
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
           <div className="gold-overline mb-6">OUR PROCESS</div>
           <h1 className="font-serif text-5xl md:text-6xl text-cream tracking-tight max-w-2xl">
-            How it<br /><em className="text-gold italic">Works</em>
+            From Specification<br /><em className="text-gold italic">to Delivery</em>
           </h1>
           <p className="mt-6 text-cream/45 text-base leading-relaxed max-w-xl font-sans">
-            Five steps. One team. From the first visit to the finished room, we handle design, supply, and installation so you never have to coordinate multiple contractors.
+            Five stages. One point of contact. Full transparency at every step. Kopperstone manages the complete supply chain from initial specification through job-site delivery.
           </p>
         </div>
       </section>
