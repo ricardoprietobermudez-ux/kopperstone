@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight, Copy, Mail, ArrowRight, Check } from 'lucide-react';
-import { base44 } from '@/api/base44Client';
 import KitchenCanvas from '@/components/configurator/KitchenCanvas';
 import BathroomCanvas from '@/components/configurator/BathroomCanvas';
 import EmailSpecModal from '@/components/configurator/EmailSpecModal';
