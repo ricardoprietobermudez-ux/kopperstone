@@ -81,21 +81,21 @@ export default function Configurator() {
           <div className="gold-overline mb-2">DESIGN CONFIGURATOR</div>
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
-              <h1 className="font-serif text-2xl text-cream">Build a specification for your project.</h1>
-              <p className="text-cream/40 text-xs font-sans mt-1 max-w-xl">Configure cabinets, countertops, hardware, and fixtures — then export the spec sheet or request a quote at scale.</p>
+              <h1 className="font-serif text-2xl text-cream">Design your space, your way.</h1>
+              <p className="text-cream/40 text-xs font-sans mt-1 max-w-xl">Choose your layout, finishes, and fixtures — then save your design or book a free consultation with our team.</p>
             </div>
             <div className="flex gap-2">
               <button
                 onClick={() => setMode('kitchen')}
                 className={`px-5 py-2 text-[11px] font-sans tracking-wide uppercase transition-colors border ${mode === 'kitchen' ? 'bg-gold text-navy border-gold' : 'border-cream/20 text-cream/60 hover:border-cream/40 hover:text-cream'}`}
               >
-                Kitchen Configurator
+                Kitchen
               </button>
               <button
                 onClick={() => setMode('bathroom')}
                 className={`px-5 py-2 text-[11px] font-sans tracking-wide uppercase transition-colors border ${mode === 'bathroom' ? 'bg-gold text-navy border-gold' : 'border-cream/20 text-cream/60 hover:border-cream/40 hover:text-cream'}`}
               >
-                Bathroom Configurator
+                Bathroom
               </button>
             </div>
           </div>
@@ -151,7 +151,7 @@ export default function Configurator() {
                   </button>
                 ) : (
                   <div className="flex-1 p-4 border border-gold/40 bg-gold/5">
-                    <p className="text-gold text-xs font-sans text-center">✓ Your configuration is complete. What's next?</p>
+                    <p className="text-gold text-xs font-sans text-center">✓ Your design is complete. Save it or book a consultation below.</p>
                   </div>
                 )}
               </div>
@@ -164,11 +164,11 @@ export default function Configurator() {
           <div className="flex-1 relative overflow-hidden p-6">
             <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
               <div>
-                <p className="text-[8px] font-sans tracking-widest uppercase text-warm-grey">KOPPERSTONE · {mode.toUpperCase()} CONFIGURATOR</p>
-                <p className="text-[8px] font-sans text-warm-grey/60">PLAN VIEW · SCALE 1:50 · NOT FOR CONSTRUCTION</p>
+                <p className="text-[8px] font-sans tracking-widest uppercase text-warm-grey">KOPPERSTONE · {mode.toUpperCase()} DESIGN PREVIEW</p>
+                <p className="text-[8px] font-sans text-warm-grey/60">PLAN VIEW · FOR REFERENCE ONLY</p>
               </div>
               <div className="text-right">
-                <p className="text-[8px] font-sans text-warm-grey/60">Configuration Preview</p>
+                <p className="text-[8px] font-sans text-warm-grey/60">Live Preview</p>
               </div>
             </div>
 
@@ -209,16 +209,16 @@ export default function Configurator() {
               </div>
             ) : (
               <button onClick={handleSave} className="border border-gold/50 text-gold text-[11px] font-sans uppercase tracking-wide px-5 py-2.5 hover:border-gold hover:bg-gold/5 transition-colors">
-                Save Configuration
+                Save My Design
               </button>
             )}
           </div>
           <div className="flex gap-3">
             <button onClick={() => setShowEmailModal(true)} className="border border-gold/50 text-gold text-[11px] font-sans uppercase tracking-wide px-5 py-2.5 hover:border-gold hover:bg-gold/5 transition-colors flex items-center gap-2">
-              <Mail className="w-3.5 h-3.5" /> Email Me This Spec
+              <Mail className="w-3.5 h-3.5" /> Email My Design
             </button>
             <button onClick={() => setShowQuoteModal(true)} className="bg-gold text-navy text-[11px] font-sans uppercase tracking-wide px-5 py-2.5 hover:bg-gold/90 transition-colors">
-              Request Quote <ArrowRight className="w-3.5 h-3.5 inline ml-1" />
+              Book a Consultation <ArrowRight className="w-3.5 h-3.5 inline ml-1" />
             </button>
           </div>
         </div>
@@ -236,51 +236,51 @@ export default function Configurator() {
 // ─── Kitchen Step Panel ───────────────────────────────────────────────────────
 function KitchenStepPanel({ step, config, setConfig }) {
   const layouts = [
-    { id: 'galley', label: 'Galley', desc: 'Single-run linear' },
-    { id: 'l-shaped', label: 'L-Shaped', desc: 'Two-run corner' },
-    { id: 'u-shaped', label: 'U-Shaped', desc: 'Three-run perimeter' },
-    { id: 'island', label: 'Island', desc: 'Open plan + island' },
+    { id: 'galley',   label: 'Galley',    desc: 'Best for narrow or compact kitchens' },
+    { id: 'l-shaped', label: 'L-Shaped',  desc: 'Great for corner spaces and open plans' },
+    { id: 'u-shaped', label: 'U-Shaped',  desc: 'Maximum storage and counter space' },
+    { id: 'island',   label: 'Island',    desc: 'Ideal for open-plan living areas' },
   ];
   const cabinets = [
-    { id: 'acrylic-white', label: 'Acrylic White', color: '#F5F5F5', border: '#ddd' },
-    { id: 'acrylic-black', label: 'Acrylic Black', color: '#1A1A1A', border: '#333' },
-    { id: 'lacquer-navy', label: 'Lacquer Navy', color: '#0E1A2B', border: '#1a2e45' },
-    { id: 'lacquer-forest', label: 'Lacquer Forest', color: '#2D4A2D', border: '#3a5e3a' },
-    { id: 'laminate-walnut', label: 'Laminate Walnut', color: '#7B4F2E', border: '#8B5E3C' },
-    { id: 'veneer-oak', label: 'Veneer Oak', color: '#C4A882', border: '#B8976E' },
+    { id: 'acrylic-white',   label: 'Acrylic White',   hint: 'High-gloss, easy to clean',            color: '#F5F5F5', border: '#ddd' },
+    { id: 'acrylic-black',   label: 'Acrylic Black',   hint: 'Dramatic finish, fingerprints visible', color: '#1A1A1A', border: '#333' },
+    { id: 'lacquer-navy',    label: 'Lacquer Navy',    hint: 'Deep tone, fully custom color',         color: '#0E1A2B', border: '#1a2e45' },
+    { id: 'lacquer-forest',  label: 'Lacquer Forest',  hint: 'Rich green, bespoke feel',              color: '#2D4A2D', border: '#3a5e3a' },
+    { id: 'laminate-walnut', label: 'Laminate Walnut', hint: 'Durable wood look, scratch-resistant',  color: '#7B4F2E', border: '#8B5E3C' },
+    { id: 'veneer-oak',      label: 'Veneer Oak',      hint: 'Real wood grain, premium natural feel', color: '#C4A882', border: '#B8976E' },
   ];
   const countertops = [
-    { id: 'calacatta', label: 'Calacatta Quartz', color: '#F8F6F3', veins: '#C0B8B0' },
-    { id: 'statuario', label: 'Statuario Quartz', color: '#F4F2EF', veins: '#7A7068' },
-    { id: 'carrara', label: 'Carrara Quartz', color: '#F7F6F4', veins: '#B8B4AE' },
-    { id: 'pure-white', label: 'Pure White SS', color: '#FFFFFF', veins: '#E8E8E8' },
-    { id: 'charcoal-ss', label: 'Charcoal SS', color: '#3A3A3A', veins: '#4A4A4A' },
-    { id: 'terrazzo', label: 'Terrazzo SS', color: '#D4C8B8', veins: '#A89880' },
+    { id: 'calacatta',   label: 'Calacatta Quartz',  hint: 'White marble look, low maintenance',     color: '#F8F6F3', veins: '#C0B8B0' },
+    { id: 'statuario',   label: 'Statuario Quartz',  hint: 'Bold veining, makes a statement',        color: '#F4F2EF', veins: '#7A7068' },
+    { id: 'carrara',     label: 'Carrara Quartz',    hint: 'Soft grey veins, classic and timeless',  color: '#F7F6F4', veins: '#B8B4AE' },
+    { id: 'pure-white',  label: 'Pure White Surface', hint: 'Seamless solid surface, no joins',      color: '#FFFFFF', veins: '#E8E8E8' },
+    { id: 'charcoal-ss', label: 'Charcoal Surface',  hint: 'Dark and modern, hides everyday wear',   color: '#3A3A3A', veins: '#4A4A4A' },
+    { id: 'terrazzo',    label: 'Terrazzo Surface',  hint: 'Speckled texture, one-of-a-kind look',   color: '#D4C8B8', veins: '#A89880' },
   ];
   const hardware = [
-    { id: 'brushed-gold', label: 'Brushed Gold', color: '#C9A77C' },
-    { id: 'matte-black', label: 'Matte Black', color: '#1A1A1A' },
-    { id: 'gunmetal', label: 'Gunmetal', color: '#4A4E54' },
+    { id: 'brushed-gold',  label: 'Brushed Gold',  color: '#C9A77C' },
+    { id: 'matte-black',   label: 'Matte Black',   color: '#1A1A1A' },
+    { id: 'gunmetal',      label: 'Gunmetal',      color: '#4A4E54' },
     { id: 'brushed-steel', label: 'Brushed Steel', color: '#B8BEC6' },
   ];
   const sinks = [
     { id: 'drop-in-single', label: 'Drop-in Single Bowl' },
     { id: 'drop-in-double', label: 'Drop-in Double Bowl' },
-    { id: 'farmhouse', label: 'Farmhouse Single' },
-    { id: 'undermount', label: 'Undermount' },
+    { id: 'farmhouse',      label: 'Farmhouse Single' },
+    { id: 'undermount',     label: 'Undermount' },
     { id: 'stone-composite', label: 'Stone Composite' },
   ];
   const faucets = [
     { id: 'pull-down-spring', label: 'Pull-down Spring' },
     { id: 'pull-down-modern', label: 'Pull-down Modern' },
-    { id: 'deck-mount', label: 'Deck Mount Mixer' },
-    { id: 'wall-mount', label: 'Wall Mount' },
+    { id: 'deck-mount',       label: 'Deck Mount Mixer' },
+    { id: 'wall-mount',       label: 'Wall Mount' },
   ];
 
   if (step === 0) return (
     <div>
       <h2 className="font-serif text-2xl text-cream mb-2">Kitchen Layout</h2>
-      <p className="text-cream/40 text-xs font-sans mb-6">Select the floor plan configuration for your units.</p>
+      <p className="text-cream/40 text-xs font-sans mb-6">Choose the layout that fits your kitchen best.</p>
       <div className="grid grid-cols-2 gap-3">
         {layouts.map(l => (
           <button key={l.id} onClick={() => setConfig(c => ({ ...c, layout: l.id }))}
@@ -297,13 +297,14 @@ function KitchenStepPanel({ step, config, setConfig }) {
   if (step === 1) return (
     <div>
       <h2 className="font-serif text-2xl text-cream mb-2">Cabinet Finish</h2>
-      <p className="text-cream/40 text-xs font-sans mb-6">Choose your cabinet door material and finish.</p>
+      <p className="text-cream/40 text-xs font-sans mb-6">Choose the finish for your cabinet doors.</p>
       <div className="grid grid-cols-2 gap-3">
         {cabinets.map(c => (
           <button key={c.id} onClick={() => setConfig(cfg => ({ ...cfg, cabinet: c.id }))}
             className={`border transition-all overflow-hidden ${config.cabinet === c.id ? 'border-gold' : 'border-cream/15 hover:border-cream/30'}`}>
             <div className="h-20 w-full" style={{ backgroundColor: c.color, border: `1px solid ${c.border}` }} />
-            <p className={`text-[11px] font-sans p-2 text-left ${config.cabinet === c.id ? 'text-gold bg-gold/5' : 'text-cream/60'}`}>{c.label}</p>
+            <p className={`text-[11px] font-sans px-2 pt-2 text-left ${config.cabinet === c.id ? 'text-gold bg-gold/5' : 'text-cream/60'}`}>{c.label}</p>
+            <p className={`text-[9px] font-sans px-2 pb-2 text-left ${config.cabinet === c.id ? 'text-gold/50 bg-gold/5' : 'text-cream/25'}`}>{c.hint}</p>
           </button>
         ))}
       </div>
@@ -313,7 +314,7 @@ function KitchenStepPanel({ step, config, setConfig }) {
   if (step === 2) return (
     <div>
       <h2 className="font-serif text-2xl text-cream mb-2">Countertop</h2>
-      <p className="text-cream/40 text-xs font-sans mb-6">Select your countertop material and finish.</p>
+      <p className="text-cream/40 text-xs font-sans mb-6">Choose your countertop material and finish.</p>
       <div className="grid grid-cols-2 gap-3">
         {countertops.map(c => (
           <button key={c.id} onClick={() => setConfig(cfg => ({ ...cfg, countertop: c.id }))}
@@ -321,7 +322,8 @@ function KitchenStepPanel({ step, config, setConfig }) {
             <div className="h-20 w-full relative overflow-hidden" style={{ backgroundColor: c.color }}>
               <VeinPattern color={c.veins} />
             </div>
-            <p className={`text-[11px] font-sans p-2 text-left ${config.countertop === c.id ? 'text-gold bg-gold/5' : 'text-cream/60'}`}>{c.label}</p>
+            <p className={`text-[11px] font-sans px-2 pt-2 text-left ${config.countertop === c.id ? 'text-gold bg-gold/5' : 'text-cream/60'}`}>{c.label}</p>
+            <p className={`text-[9px] font-sans px-2 pb-2 text-left ${config.countertop === c.id ? 'text-gold/50 bg-gold/5' : 'text-cream/25'}`}>{c.hint}</p>
           </button>
         ))}
       </div>
@@ -331,7 +333,7 @@ function KitchenStepPanel({ step, config, setConfig }) {
   if (step === 3) return (
     <div>
       <h2 className="font-serif text-2xl text-cream mb-2">Hardware Finish</h2>
-      <p className="text-cream/40 text-xs font-sans mb-6">Choose the metal finish for handles, pulls, and fixtures.</p>
+      <p className="text-cream/40 text-xs font-sans mb-6">Choose the metal finish for handles, taps, and fittings.</p>
       <div className="grid grid-cols-2 gap-4">
         {hardware.map(h => (
           <button key={h.id} onClick={() => setConfig(c => ({ ...c, hardware: h.id }))}
@@ -347,7 +349,7 @@ function KitchenStepPanel({ step, config, setConfig }) {
   if (step === 4) return (
     <div>
       <h2 className="font-serif text-2xl text-cream mb-2">Sink & Faucet</h2>
-      <p className="text-cream/40 text-xs font-sans mb-6">Select your sink type and faucet style.</p>
+      <p className="text-cream/40 text-xs font-sans mb-6">Choose your sink type and faucet style.</p>
       <div className="mb-6">
         <p className="text-[9px] font-sans uppercase tracking-widest text-gold mb-3">Sink Type</p>
         <div className="space-y-2">
@@ -378,42 +380,42 @@ function KitchenStepPanel({ step, config, setConfig }) {
 // ─── Bathroom Step Panel ──────────────────────────────────────────────────────
 function BathroomStepPanel({ step, config, setConfig }) {
   const layouts = [
-    { id: 'single-vanity', label: 'Single Vanity', desc: 'Single basin' },
-    { id: 'double-vanity', label: 'Double Vanity', desc: 'Dual basin' },
-    { id: 'powder-room', label: 'Powder Room', desc: 'Compact WC' },
-    { id: 'master-suite', label: 'Master Suite', desc: 'Full ensuite' },
+    { id: 'single-vanity', label: 'Single Vanity', desc: 'One sink — ideal for a personal bathroom' },
+    { id: 'double-vanity', label: 'Double Vanity', desc: 'Two sinks — great for shared bathrooms' },
+    { id: 'powder-room',   label: 'Powder Room',   desc: 'Toilet and sink only, no shower' },
+    { id: 'master-suite',  label: 'Master Suite',  desc: 'Full bathroom with shower and separate tub' },
   ];
   const vanities = [
-    { id: 'acrylic-white', label: 'Acrylic White', color: '#F5F5F5' },
-    { id: 'acrylic-black', label: 'Acrylic Black', color: '#1A1A1A' },
-    { id: 'lacquer-navy', label: 'Lacquer Navy', color: '#0E1A2B' },
-    { id: 'lacquer-forest', label: 'Lacquer Forest', color: '#2D4A2D' },
-    { id: 'laminate-walnut', label: 'Laminate Walnut', color: '#7B4F2E' },
-    { id: 'veneer-oak', label: 'Veneer Oak', color: '#C4A882' },
+    { id: 'acrylic-white',   label: 'Acrylic White',   hint: 'High-gloss, easy to clean',            color: '#F5F5F5' },
+    { id: 'acrylic-black',   label: 'Acrylic Black',   hint: 'Dramatic finish, fingerprints visible', color: '#1A1A1A' },
+    { id: 'lacquer-navy',    label: 'Lacquer Navy',    hint: 'Deep tone, fully custom color',         color: '#0E1A2B' },
+    { id: 'lacquer-forest',  label: 'Lacquer Forest',  hint: 'Rich green, bespoke feel',              color: '#2D4A2D' },
+    { id: 'laminate-walnut', label: 'Laminate Walnut', hint: 'Durable wood look, scratch-resistant',  color: '#7B4F2E' },
+    { id: 'veneer-oak',      label: 'Veneer Oak',      hint: 'Real wood grain, premium natural feel', color: '#C4A882' },
   ];
   const counters = [
-    { id: 'integrated-solid', label: 'Integrated Solid Surface' },
-    { id: 'quartz-vessel', label: 'Quartz + Vessel Sink' },
-    { id: 'cultured-marble', label: 'Cultured Marble + Undermount' },
-    { id: 'stone-wallmount', label: 'Stone + Wall-Mount Basin' },
+    { id: 'integrated-solid',  label: 'Integrated Solid Surface',      hint: 'Seamless look, easiest to clean' },
+    { id: 'quartz-vessel',     label: 'Quartz with Vessel Sink',       hint: 'Statement sink that sits on top' },
+    { id: 'cultured-marble',   label: 'Cultured Marble + Undermount',  hint: 'Timeless look, sink sits below counter' },
+    { id: 'stone-wallmount',   label: 'Stone with Wall-Mount Basin',   hint: 'Floating design, easy floor cleaning' },
   ];
   const showers = [
-    { id: 'walkin-glass', label: 'Walk-in with Glass Panel' },
-    { id: 'tub-shower', label: 'Tub-Shower Combo' },
-    { id: 'standalone', label: 'Standalone Tub + Separate Shower' },
-    { id: 'wet-room', label: 'Wet Room Style' },
+    { id: 'walkin-glass',  label: 'Walk-in with Glass Panel',         hint: 'Open and spacious, no door needed' },
+    { id: 'tub-shower',    label: 'Tub-Shower Combo',                 hint: 'Space-saving and versatile' },
+    { id: 'standalone',    label: 'Standalone Tub + Separate Shower', hint: 'Luxury setup, needs more space' },
+    { id: 'wet-room',      label: 'Wet Room',                         hint: 'Fully waterproofed, sleek and minimal' },
   ];
   const hardware = [
-    { id: 'brushed-gold', label: 'Brushed Gold', color: '#C9A77C' },
-    { id: 'matte-black', label: 'Matte Black', color: '#1A1A1A' },
-    { id: 'gunmetal', label: 'Gunmetal', color: '#4A4E54' },
+    { id: 'brushed-gold',  label: 'Brushed Gold',  color: '#C9A77C' },
+    { id: 'matte-black',   label: 'Matte Black',   color: '#1A1A1A' },
+    { id: 'gunmetal',      label: 'Gunmetal',      color: '#4A4E54' },
     { id: 'brushed-steel', label: 'Brushed Steel', color: '#B8BEC6' },
   ];
 
   if (step === 0) return (
     <div>
       <h2 className="font-serif text-2xl text-cream mb-2">Bathroom Layout</h2>
-      <p className="text-cream/40 text-xs font-sans mb-6">Select the bathroom configuration for your units.</p>
+      <p className="text-cream/40 text-xs font-sans mb-6">Choose the layout that matches your bathroom space.</p>
       <div className="grid grid-cols-2 gap-3">
         {layouts.map(l => (
           <button key={l.id} onClick={() => setConfig(c => ({ ...c, layout: l.id }))}
@@ -430,13 +432,14 @@ function BathroomStepPanel({ step, config, setConfig }) {
   if (step === 1) return (
     <div>
       <h2 className="font-serif text-2xl text-cream mb-2">Vanity Finish</h2>
-      <p className="text-cream/40 text-xs font-sans mb-6">Choose the cabinet finish for your vanity units.</p>
+      <p className="text-cream/40 text-xs font-sans mb-6">Choose the finish for your vanity cabinet.</p>
       <div className="grid grid-cols-2 gap-3">
         {vanities.map(v => (
           <button key={v.id} onClick={() => setConfig(c => ({ ...c, vanity: v.id }))}
             className={`border transition-all overflow-hidden ${config.vanity === v.id ? 'border-gold' : 'border-cream/15 hover:border-cream/30'}`}>
             <div className="h-20 w-full" style={{ backgroundColor: v.color }} />
-            <p className={`text-[11px] font-sans p-2 text-left ${config.vanity === v.id ? 'text-gold bg-gold/5' : 'text-cream/60'}`}>{v.label}</p>
+            <p className={`text-[11px] font-sans px-2 pt-2 text-left ${config.vanity === v.id ? 'text-gold bg-gold/5' : 'text-cream/60'}`}>{v.label}</p>
+            <p className={`text-[9px] font-sans px-2 pb-2 text-left ${config.vanity === v.id ? 'text-gold/50 bg-gold/5' : 'text-cream/25'}`}>{v.hint}</p>
           </button>
         ))}
       </div>
@@ -445,13 +448,14 @@ function BathroomStepPanel({ step, config, setConfig }) {
 
   if (step === 2) return (
     <div>
-      <h2 className="font-serif text-2xl text-cream mb-2">Counter & Sink Combo</h2>
-      <p className="text-cream/40 text-xs font-sans mb-6">Select your countertop and integrated sink configuration.</p>
+      <h2 className="font-serif text-2xl text-cream mb-2">Counter & Sink</h2>
+      <p className="text-cream/40 text-xs font-sans mb-6">Choose your countertop and sink combination.</p>
       <div className="space-y-2">
         {counters.map(c => (
           <button key={c.id} onClick={() => setConfig(cfg => ({ ...cfg, counter: c.id }))}
-            className={`w-full text-left px-4 py-4 border text-sm font-sans transition-all ${config.counter === c.id ? 'border-gold text-gold bg-gold/5' : 'border-cream/15 text-cream/60 hover:border-cream/30'}`}>
-            {c.label}
+            className={`w-full text-left px-4 py-3 border transition-all ${config.counter === c.id ? 'border-gold bg-gold/5' : 'border-cream/15 hover:border-cream/30'}`}>
+            <p className={`text-sm font-sans ${config.counter === c.id ? 'text-gold' : 'text-cream/60'}`}>{c.label}</p>
+            <p className={`text-[10px] font-sans mt-0.5 ${config.counter === c.id ? 'text-gold/50' : 'text-cream/25'}`}>{c.hint}</p>
           </button>
         ))}
       </div>
@@ -460,13 +464,14 @@ function BathroomStepPanel({ step, config, setConfig }) {
 
   if (step === 3) return (
     <div>
-      <h2 className="font-serif text-2xl text-cream mb-2">Shower System</h2>
-      <p className="text-cream/40 text-xs font-sans mb-6">Select the shower and bathing configuration.</p>
+      <h2 className="font-serif text-2xl text-cream mb-2">Shower & Bath</h2>
+      <p className="text-cream/40 text-xs font-sans mb-6">Choose your preferred shower and bathing setup.</p>
       <div className="space-y-2">
         {showers.map(s => (
           <button key={s.id} onClick={() => setConfig(c => ({ ...c, shower: s.id }))}
-            className={`w-full text-left px-4 py-4 border text-sm font-sans transition-all ${config.shower === s.id ? 'border-gold text-gold bg-gold/5' : 'border-cream/15 text-cream/60 hover:border-cream/30'}`}>
-            {s.label}
+            className={`w-full text-left px-4 py-3 border transition-all ${config.shower === s.id ? 'border-gold bg-gold/5' : 'border-cream/15 hover:border-cream/30'}`}>
+            <p className={`text-sm font-sans ${config.shower === s.id ? 'text-gold' : 'text-cream/60'}`}>{s.label}</p>
+            <p className={`text-[10px] font-sans mt-0.5 ${config.shower === s.id ? 'text-gold/50' : 'text-cream/25'}`}>{s.hint}</p>
           </button>
         ))}
       </div>
@@ -476,7 +481,7 @@ function BathroomStepPanel({ step, config, setConfig }) {
   if (step === 4) return (
     <div>
       <h2 className="font-serif text-2xl text-cream mb-2">Hardware Finish</h2>
-      <p className="text-cream/40 text-xs font-sans mb-6">Choose the metal finish for towel bars, fixtures, and hardware.</p>
+      <p className="text-cream/40 text-xs font-sans mb-6">Choose the metal finish for taps, towel bars, and fittings.</p>
       <div className="grid grid-cols-2 gap-4">
         {hardware.map(h => (
           <button key={h.id} onClick={() => setConfig(c => ({ ...c, hardware: h.id }))}
