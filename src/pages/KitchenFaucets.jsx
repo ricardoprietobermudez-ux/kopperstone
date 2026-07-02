@@ -33,24 +33,8 @@ export default function KitchenFaucets() {
             Kitchen Faucet<br /><em className="text-gold italic">Collections</em>
           </h1>
           <p className="mt-6 text-warm-grey text-base leading-relaxed font-sans max-w-md">
-            A refined selection of kitchen faucets, available in multiple styles and finishes — engineered for institutional volume without compromising design.
+            A refined selection of kitchen faucets, available in multiple styles and finishes — engineered to last, without compromising design.
           </p>
-          <div className="mt-10 flex items-center gap-6">
-            <div className="text-center">
-              <p className="font-serif text-3xl text-navy">6+</p>
-              <p className="text-[10px] font-sans tracking-widest text-warm-grey uppercase mt-1">Models</p>
-            </div>
-            <div className="w-px h-10 bg-navy/10" />
-            <div className="text-center">
-              <p className="font-serif text-3xl text-navy">5</p>
-              <p className="text-[10px] font-sans tracking-widest text-warm-grey uppercase mt-1">Finishes</p>
-            </div>
-            <div className="w-px h-10 bg-navy/10" />
-            <div className="text-center">
-              <p className="font-serif text-3xl text-navy">30+</p>
-              <p className="text-[10px] font-sans tracking-widest text-warm-grey uppercase mt-1">Unit Min.</p>
-            </div>
-          </div>
         </div>
       </section>
 
