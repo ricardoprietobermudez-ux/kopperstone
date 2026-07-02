@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
-const HERO_IMG = '/images/3994739c2_Screenshot2026-06-09at110229PM.png';
+const HERO_IMG = '/images/010726.jpg';
 
 const materials = [
   {
