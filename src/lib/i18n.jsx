@@ -25,7 +25,7 @@ const translations = {
       tag: 'Kitchen & Bathroom Design',
       headline1: 'Your Home,',
       headline2: 'Designed & Built',
-      headline3: 'the Way You Imagined',
+      headline3: 'The Way You Imagined',
       sub: 'Custom kitchens and bathrooms for single-family homes across North America designed, sourced, and installed by one team, start to finish.',
       cta: 'Request a Consultation',
       secondary: 'View Collections',
