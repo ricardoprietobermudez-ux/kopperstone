@@ -28,10 +28,8 @@ import Quality from '@/pages/Quality';
 import About from '@/pages/About';
 import Contact from '@/pages/Contact';
 import Configurator from '@/pages/Configurator';
-import TimelineEstimator from '@/pages/TimelineEstimator';
 import TradeHome from '@/pages/trade/TradeHome';
 import TradeProcess from '@/pages/trade/TradeProcess';
-import TradeTimeline from '@/pages/trade/TradeTimeline';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -75,10 +73,8 @@ const AuthenticatedApp = () => {
         <Route path="/about"              element={<About />} />
         <Route path="/contact"            element={<Contact />} />
         <Route path="/configurator"       element={<Configurator />} />
-        <Route path="/timeline-estimator" element={<TimelineEstimator />} />
         <Route path="/trade"              element={<TradeHome />} />
         <Route path="/trade/process"      element={<TradeProcess />} />
-        <Route path="/trade/timeline"     element={<TradeTimeline />} />
       </Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>

@@ -27,7 +27,6 @@ const mainPaths = [
 
 const toolPaths = [
   { label: 'Design Configurator', path: '/configurator' },
-  { label: 'Timeline Estimator', path: '/timeline-estimator' },
 ];
 
 export default function Navbar() {

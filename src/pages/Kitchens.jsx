@@ -139,22 +139,14 @@ export default function Kitchens() {
               Request a Consultation <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-          <div className="border-t border-cream/10 pt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Link to="/configurator?mode=kitchen" className="flex items-center justify-between border border-gold/40 px-6 py-5 group hover:bg-gold/5 transition-colors">
+          <div className="border-t border-cream/10 pt-10">
+            <Link to="/configurator?mode=kitchen" className="flex items-center justify-between border border-gold/40 px-6 py-5 group hover:bg-gold/5 transition-colors max-w-md">
               <div>
                 <p className="text-[9px] font-sans uppercase tracking-widest text-gold mb-1">Interactive Tool</p>
                 <p className="font-serif text-lg text-cream">Design Configurator</p>
-                <p className="text-cream/40 text-xs font-sans mt-1">Build a specification with 2D plan preview</p>
+                <p className="text-cream/40 text-xs font-sans mt-1">Choose your layout, finishes, and fixtures</p>
               </div>
               <ArrowRight className="w-4 h-4 text-gold group-hover:translate-x-1 transition-transform" />
-            </Link>
-            <Link to="/timeline-estimator" className="flex items-center justify-between border border-cream/15 px-6 py-5 group hover:border-cream/30 transition-colors">
-              <div>
-                <p className="text-[9px] font-sans uppercase tracking-widest text-gold mb-1">Planning Tool</p>
-                <p className="font-serif text-lg text-cream">Timeline Estimator</p>
-                <p className="text-cream/40 text-xs font-sans mt-1">Calculate your procurement deadline</p>
-              </div>
-              <ArrowRight className="w-4 h-4 text-cream/30 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
         </div>
