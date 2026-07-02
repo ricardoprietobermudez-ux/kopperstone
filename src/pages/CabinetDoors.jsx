@@ -13,7 +13,7 @@ const materials = [
     tradeNote: 'Best for: luxury hotel rooms, upscale residential. Avoid in high-traffic commercial kitchens.',
     swatch: 'bg-gray-100',
     img: '/images/fb23a07da_Screenshot2026-06-09at110524PM.png',
-    heroImg: '/images/82bcd888c_Screenshot2026-06-15at95056PM.png',
+    heroImg: '/images/coci_2.jpg',
   },
   {
     id: 'lacquer',
