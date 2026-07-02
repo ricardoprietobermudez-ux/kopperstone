@@ -25,9 +25,9 @@ export default function About() {
         <motion.div initial={{ opacity: 0, scale: 0.97 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-10">
           {[
-            { src: '/images/db1326dde_IMG_1399.jpg', name: 'Ricardo Prieto', title: 'Co-Founder · CEO', pos: '15%', zoom: true },
-            { src: '/images/e69e4d93b_IMG_1400.jpg', name: 'Santiago Rojas', title: 'Co-Founder · CFO', pos: '0%', zoom: true },
-            { src: '/images/abeb0c9e1_a4dc7d2e-bbba-4ec6-b925-55ff64a65eff.jpg', name: 'Cesar Padilla', title: 'Co-Founder · COO', pos: '15%', zoom: false },
+            { src: '/images/db1326dde_IMG_1399.jpg', name: 'Ricardo Prieto', title: 'Co-Founder', pos: '15%', zoom: true },
+            { src: '/images/e69e4d93b_IMG_1400.jpg', name: 'Santiago Rojas', title: 'Co-Founder', pos: '0%', zoom: true },
+            { src: '/images/abeb0c9e1_a4dc7d2e-bbba-4ec6-b925-55ff64a65eff.jpg', name: 'Cesar Padilla', title: 'Co-Founder', pos: '15%', zoom: false },
           ].map((p) => (
             <div key={p.name} className="flex flex-col items-center gap-4">
               <div className="w-36 h-36 rounded-full overflow-hidden ring-2 ring-gold/40 flex-shrink-0 bg-navy">
@@ -88,9 +88,9 @@ export default function About() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
-            { initials: 'RP', name: 'Ricardo Prieto', title: 'Co-Founder · CEO', email: 'ricardo@kopperstone.com' },
-            { initials: 'SR', name: 'Santiago Rojas', title: 'Co-Founder · CFO', email: 'santiago@kopperstone.com' },
-            { initials: 'CP', name: 'Cesar Padilla', title: 'Co-Founder · COO', email: 'cesar@kopperstone.com' },
+            { initials: 'RP', name: 'Ricardo Prieto', title: 'Co-Founder', email: 'ricardo@kopperstone.com' },
+            { initials: 'SR', name: 'Santiago Rojas', title: 'Co-Founder', email: 'santiago@kopperstone.com' },
+            { initials: 'CP', name: 'Cesar Padilla', title: 'Co-Founder', email: 'cesar@kopperstone.com' },
           ].map((person, i) => (
             <motion.div
               key={person.name}
@@ -107,7 +107,9 @@ export default function About() {
               <div>
                 <p className="font-serif text-xl text-cream mb-1">{person.name}</p>
                 <p className="text-cream/45 text-sm font-sans">
-                  {person.title} &middot;{' '}
+                  {person.title}
+                </p>
+                <p className="text-sm font-sans mt-0.5">
                   <a href={`mailto:${person.email}`} className="text-gold/70 hover:text-gold transition-colors">
                     {person.email}
                   </a>
