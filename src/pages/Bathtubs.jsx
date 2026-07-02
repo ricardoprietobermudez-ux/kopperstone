@@ -29,17 +29,8 @@ export default function Bathtubs() {
             Bathtub<br /><em className="text-gold italic">Collections</em>
           </h1>
           <p className="mt-6 text-cream/50 text-base leading-relaxed font-sans max-w-md">
-            Freestanding and built-in bathtubs crafted for hotels, residences, and luxury developments.
-            Every model available in custom finishes, specified to your project's exact vision.
+            Freestanding and built-in bathtubs crafted as the centerpiece of the bathroom. Every model is available in custom finishes, chosen to suit the space.
           </p>
-          <div className="mt-10 flex gap-10">
-            {[['4', 'Models'], ['100%', 'Customisable'], ['30+', 'Unit Pricing']].map(([val, lbl]) => (
-              <div key={lbl}>
-                <p className="font-serif text-2xl text-gold">{val}</p>
-                <p className="text-[10px] font-sans text-cream/40 uppercase tracking-widest mt-0.5">{lbl}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
