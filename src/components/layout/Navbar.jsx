@@ -55,10 +55,7 @@ export default function Navbar() {
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10 flex items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex-shrink-0 mr-10">
-            <div>
-              <span className="font-serif text-xl text-cream tracking-wide">Kopperstone</span>
-              <span className="block text-[9px] font-sans text-gold/70 tracking-widest uppercase mt-0">Developer Supply Partner</span>
-            </div>
+            <span className="font-serif text-xl text-cream tracking-wide">Kopperstone</span>
           </Link>
 
           {/* Desktop nav */}

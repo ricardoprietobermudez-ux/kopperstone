@@ -5,39 +5,40 @@ import { ArrowRight } from 'lucide-react';
 
 const MARBLE_IMG = 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=900&q=80';
 
+// NOTE: names below are descriptive placeholders based on swatch appearance — swap in real product names when available
 const quartzSlabs = [
-{ sku: 'KP-9303', img: '/images/c5ffbfa6d_Screenshot2026-06-09at74951PM.png' },
-{ sku: 'KP-9304', img: '/images/02634e67f_Screenshot2026-06-09at75032PM.png' },
-{ sku: 'KP-9305', img: '/images/7152a3cd3_Screenshot2026-06-09at75047PM.png' },
-{ sku: 'KP-9306', img: '/images/4361945da_Screenshot2026-06-09at75108PM.png' },
-{ sku: 'KP-9307', img: '/images/cca0999b6_Screenshot2026-06-09at75146PM.png' },
-{ sku: 'KP-9308', img: '/images/a540a2b11_Screenshot2026-06-09at75203PM.png' },
-{ sku: 'KP-9309', img: '/images/87532eefb_Screenshot2026-06-09at75238PM.png' },
-{ sku: 'KP-9310', img: '/images/077b2c322_Screenshot2026-06-09at75410PM.png' },
-{ sku: 'KP-9311', img: '/images/71972c1b0_Screenshot2026-06-09at75432PM.png' },
-{ sku: 'KP-9313', img: '/images/8f1755071_Screenshot2026-06-09at75456PM.png' },
-{ sku: 'KP-9314', img: '/images/a91fb4312_Screenshot2026-06-09at75604PM.png' },
-{ sku: 'KP-9315', img: '/images/e51089582_Screenshot2026-06-09at75619PM.png' },
-{ sku: 'KP-9301', img: '/images/5683dcbf9_Screenshot2026-06-09at75708PM.png' },
-{ sku: 'KP-9302', img: '/images/222c22acd_Screenshot2026-06-09at75723PM.png' },
+{ sku: 'KP-9303', name: 'Calacatta Whisper', img: '/images/c5ffbfa6d_Screenshot2026-06-09at74951PM.png' },
+{ sku: 'KP-9304', name: 'Golden Calacatta', img: '/images/02634e67f_Screenshot2026-06-09at75032PM.png' },
+{ sku: 'KP-9305', name: 'Statuario Grey', img: '/images/7152a3cd3_Screenshot2026-06-09at75047PM.png' },
+{ sku: 'KP-9306', name: 'Dramatic Vein Calacatta', img: '/images/4361945da_Screenshot2026-06-09at75108PM.png' },
+{ sku: 'KP-9307', name: 'Classic Carrara', img: '/images/cca0999b6_Screenshot2026-06-09at75146PM.png' },
+{ sku: 'KP-9308', name: 'Fine Vein White', img: '/images/a540a2b11_Screenshot2026-06-09at75203PM.png' },
+{ sku: 'KP-9309', name: 'Pure White', img: '/images/87532eefb_Screenshot2026-06-09at75238PM.png' },
+{ sku: 'KP-9310', name: 'Charcoal Stone', img: '/images/077b2c322_Screenshot2026-06-09at75410PM.png' },
+{ sku: 'KP-9311', name: 'Cloud Grey', img: '/images/71972c1b0_Screenshot2026-06-09at75432PM.png' },
+{ sku: 'KP-9313', name: 'Nero Solid', img: '/images/8f1755071_Screenshot2026-06-09at75456PM.png' },
+{ sku: 'KP-9314', name: 'Snow Terrazzo', img: '/images/a91fb4312_Screenshot2026-06-09at75604PM.png' },
+{ sku: 'KP-9315', name: 'Pebble Grey', img: '/images/e51089582_Screenshot2026-06-09at75619PM.png' },
+{ sku: 'KP-9301', name: 'Alpine White', img: '/images/5683dcbf9_Screenshot2026-06-09at75708PM.png' },
+{ sku: 'KP-9302', name: 'Misty Grey', img: '/images/222c22acd_Screenshot2026-06-09at75723PM.png' },
 ];
 
 
 const solidSurfaceSlabs = [
-  { sku: 'KP-9401', img: '/images/919916366_Screenshot2026-06-09at105010PM.png' },
-  { sku: 'KP-9402', img: '/images/b63402219_Screenshot2026-06-09at105105PM.png' },
-  { sku: 'KP-9403', img: '/images/31b72a16c_Screenshot2026-06-09at105128PM.png' },
-  { sku: 'KP-9404', img: '/images/342bbbe7d_Screenshot2026-06-09at105150PM.png' },
-  { sku: 'KP-9405', img: '/images/854dbc6b9_Screenshot2026-06-09at105249PM.png' },
-  { sku: 'KP-9406', img: '/images/140611fb4_Screenshot2026-06-09at105317PM.png' },
-  { sku: 'KP-9407', img: '/images/6e3fa32d7_Screenshot2026-06-09at105339PM.png' },
-  { sku: 'KP-9408', img: '/images/a54797b4e_Screenshot2026-06-09at105425PM.png' },
-  { sku: 'KP-9409', img: '/images/8dffd6954_Screenshot2026-06-09at105516PM.png' },
-  { sku: 'KP-9410', img: '/images/497261d5a_Screenshot2026-06-09at105615PM.png' },
-  { sku: 'KP-9411', img: '/images/e4afcc4a2_Screenshot2026-06-09at105631PM.png' },
-  { sku: 'KP-9412', img: '/images/25fd29255_Screenshot2026-06-09at105657PM.png' },
-  { sku: 'KP-9413', img: '/images/ade8fc1f5_Screenshot2026-06-09at105724PM.png' },
-  { sku: 'KP-9414', img: '/images/11e724bad_Screenshot2026-06-09at105747PM.png' },
+  { sku: 'KP-9401', name: 'Linen White', img: '/images/919916366_Screenshot2026-06-09at105010PM.png' },
+  { sku: 'KP-9402', name: 'Arctic Blue', img: '/images/b63402219_Screenshot2026-06-09at105105PM.png' },
+  { sku: 'KP-9403', name: 'Sahara Cream', img: '/images/31b72a16c_Screenshot2026-06-09at105128PM.png' },
+  { sku: 'KP-9404', name: 'Vertical Grey', img: '/images/342bbbe7d_Screenshot2026-06-09at105150PM.png' },
+  { sku: 'KP-9405', name: 'Amber Vein', img: '/images/854dbc6b9_Screenshot2026-06-09at105249PM.png' },
+  { sku: 'KP-9406', name: 'Storm Web Grey', img: '/images/140611fb4_Screenshot2026-06-09at105317PM.png' },
+  { sku: 'KP-9407', name: 'Frost Speckle', img: '/images/6e3fa32d7_Screenshot2026-06-09at105339PM.png' },
+  { sku: 'KP-9408', name: 'Soft Diagonal Grey', img: '/images/a54797b4e_Screenshot2026-06-09at105425PM.png' },
+  { sku: 'KP-9409', name: 'Ivory Solid', img: '/images/8dffd6954_Screenshot2026-06-09at105516PM.png' },
+  { sku: 'KP-9410', name: 'Cloud Marble', img: '/images/497261d5a_Screenshot2026-06-09at105615PM.png' },
+  { sku: 'KP-9411', name: 'Fine Grey', img: '/images/e4afcc4a2_Screenshot2026-06-09at105631PM.png' },
+  { sku: 'KP-9412', name: 'Nero Marquina', img: '/images/25fd29255_Screenshot2026-06-09at105657PM.png' },
+  { sku: 'KP-9413', name: 'Golden Linen', img: '/images/ade8fc1f5_Screenshot2026-06-09at105724PM.png' },
+  { sku: 'KP-9414', name: 'Warm Oak Stone', img: '/images/11e724bad_Screenshot2026-06-09at105747PM.png' },
 ];
 
 const solidSurfaceSpecs = [
@@ -84,7 +85,7 @@ export default function Countertops() {
       <section className="py-20">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
           <h2 className="text-center text-[10px] font-sans tracking-widest uppercase text-warm-grey mb-10">QUARTZ</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8">
             {quartzSlabs.map((slab, i) =>
             <motion.div
               key={slab.sku}
@@ -92,12 +93,13 @@ export default function Countertops() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.04 }}
-              className="group cursor-pointer">
-              
-                <div className={`aspect-[2/3] border border-navy/10 group-hover:border-gold transition-colors overflow-hidden ${slab.img ? '' : slab.bg}`}>
-                  {slab.img && <img src={slab.img} alt={slab.sku} className="w-full h-full object-cover" />}
+              className="group">
+
+                <div className={`relative aspect-[2/3] border border-navy/10 group-hover:border-gold transition-colors overflow-hidden ${slab.img ? '' : slab.bg}`}>
+                  {slab.img && <img src={slab.img} alt={slab.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />}
                 </div>
-                <p className="text-[10px] font-sans text-warm-grey mt-2 text-center tracking-wide">{slab.sku}</p>
+                <p className="font-serif text-sm text-navy mt-3 text-center">{slab.name}</p>
+                <p className="text-[10px] font-sans text-warm-grey mt-1 text-center tracking-wide">{slab.sku}</p>
               </motion.div>
             )}
           </div>
@@ -108,7 +110,7 @@ export default function Countertops() {
       <section className="py-20">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
           <h2 className="text-center text-[10px] font-sans tracking-widest uppercase text-warm-grey mb-10">SOLID SURFACE</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-7 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8">
             {solidSurfaceSlabs.map((slab, i) =>
               <motion.div
                 key={slab.sku}
@@ -116,11 +118,12 @@ export default function Countertops() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.04 }}
-                className="group cursor-pointer">
-                <div className="aspect-[2/3] border border-navy/10 group-hover:border-gold transition-colors overflow-hidden bg-warm-grey/10">
-                  {slab.img && <img src={slab.img} alt={slab.sku} className="w-full h-full object-cover" />}
+                className="group">
+                <div className="relative aspect-[2/3] border border-navy/10 group-hover:border-gold transition-colors overflow-hidden bg-warm-grey/10">
+                  {slab.img && <img src={slab.img} alt={slab.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />}
                 </div>
-                <p className="text-[10px] font-sans text-warm-grey mt-2 text-center tracking-wide">{slab.sku}</p>
+                <p className="font-serif text-sm text-navy mt-3 text-center">{slab.name}</p>
+                <p className="text-[10px] font-sans text-warm-grey mt-1 text-center tracking-wide">{slab.sku}</p>
               </motion.div>
             )}
           </div>
