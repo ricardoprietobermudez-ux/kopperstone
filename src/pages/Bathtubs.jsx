@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import CatalogRequestModal from '@/components/layout/CatalogRequestModal';
 
+// NOTE: names below are descriptive placeholders based on photos — swap in real product names when available
 const bathtubs = [
-  { sku: 'KS-B114',   name: 'KP-6208', dims: '1700 × 800 × 590mm', type: 'Freestanding', img: '/images/5d663b22f_Screenshot2026-06-16at80732PM.png' },
-  { sku: 'KS-B117',   name: 'KP-6207', dims: '1680 × 780 × 600mm', type: 'Freestanding', img: '/images/a98d261f2_Screenshot2026-06-16at80838PM.png' },
-  { sku: 'KS-B001A1', name: 'KP-6219', dims: '1700 × 800 × 650mm', type: 'Freestanding', img: '/images/ee022c15d_Screenshot2026-06-16at80944PM.png' },
-  { sku: 'KS-B029A',  name: 'KP-6221', dims: '1700 × 800 × 580mm', type: 'Built-In',     img: '/images/184550f7f_Screenshot2026-06-17at51713PM.png' },
+  { sku: 'KP-6208', name: 'Curved Freestanding Soaking Tub', dims: '1700 × 800 × 590mm', type: 'Freestanding', img: '/images/5d663b22f_Screenshot2026-06-16at80732PM.png' },
+  { sku: 'KP-6207', name: 'Sculpted Oval Freestanding Tub', dims: '1680 × 780 × 600mm', type: 'Freestanding', img: '/images/a98d261f2_Screenshot2026-06-16at80838PM.png' },
+  { sku: 'KP-6219', name: 'Matte Freestanding Soaking Tub', dims: '1700 × 800 × 650mm', type: 'Freestanding', img: '/images/ee022c15d_Screenshot2026-06-16at80944PM.png' },
+  { sku: 'KP-6221', name: 'Ribbed Built-In Tub', dims: '1700 × 800 × 580mm', type: 'Built-In', img: '/images/184550f7f_Screenshot2026-06-17at51713PM.png' },
 ];
 
 export default function Bathtubs() {
+  const [catalogOpen, setCatalogOpen] = useState(false);
+
   return (
     <div className="bg-cream">
 
@@ -37,16 +41,16 @@ export default function Bathtubs() {
       {/* Section header */}
       <section className="pt-20 pb-4">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
-          <div className="gold-overline mb-3">PRODUCT CATALOG</div>
+          <div className="gold-overline mb-3">STYLES</div>
           <h2 className="font-serif text-3xl text-navy">Select Models</h2>
           <div className="w-10 h-px bg-gold mt-4" />
         </div>
       </section>
 
-      {/* Product grid — navy cards, consistent with BathroomSinks / KitchenFaucets */}
-      <section className="py-10 pb-24">
+      {/* Product grid */}
+      <section className="py-10 pb-24 bg-white">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12">
             {bathtubs.map((b, i) => (
               <motion.div
                 key={b.sku}
@@ -54,26 +58,23 @@ export default function Bathtubs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.07 }}
-                className="group bg-navy border border-cream/5 overflow-hidden hover:border-gold/40 transition-colors"
+                className="group"
               >
-                {/* Gold corner accents */}
-                <div className="relative aspect-video bg-navy-light overflow-hidden">
-                  <span className="absolute top-3 left-3 w-4 h-4 border-t border-l border-gold/40 z-10" />
-                  <span className="absolute top-3 right-3 w-4 h-4 border-t border-r border-gold/40 z-10" />
-                  <span className="absolute bottom-3 left-3 w-4 h-4 border-b border-l border-gold/40 z-10" />
-                  <span className="absolute bottom-3 right-3 w-4 h-4 border-b border-r border-gold/40 z-10" />
+                <div className="relative aspect-video bg-gray-50 border border-navy/10 group-hover:border-gold transition-colors overflow-hidden">
                   {b.img && (
                     <img
                       src={b.img}
                       alt={b.name}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   )}
                 </div>
-                {/* SKU label bar */}
-                <div className="px-6 py-4 border-t border-cream/5 flex items-center justify-between">
-                  <p className="font-sans text-sm tracking-widest text-cream">{b.name}</p>
-                  <span className={`text-[9px] font-sans uppercase tracking-wide px-2 py-0.5 ${b.type === 'Freestanding' ? 'bg-gold/10 text-gold/70' : 'border border-cream/10 text-cream/30'}`}>
+                <div className="mt-3 flex items-start justify-between gap-4">
+                  <div>
+                    <h3 className="font-serif text-lg text-navy">{b.name}</h3>
+                    <p className="text-[10px] font-sans text-warm-grey mt-1 tracking-widest uppercase">{b.dims} · {b.sku}</p>
+                  </div>
+                  <span className={`text-[9px] font-sans uppercase tracking-wide px-2 py-1 whitespace-nowrap ${b.type === 'Freestanding' ? 'bg-gold/10 text-gold' : 'border border-navy/15 text-warm-grey'}`}>
                     {b.type}
                   </span>
                 </div>
@@ -83,18 +84,33 @@ export default function Bathtubs() {
         </div>
       </section>
 
+      {/* Looking for more? */}
+      <section className="bg-cream py-16 border-t border-navy/8">
+        <div className="max-w-screen-xl mx-auto px-6 lg:px-10 text-center">
+          <h3 className="font-serif text-2xl md:text-3xl text-navy mb-3">Looking for More Options?</h3>
+          <p className="text-warm-grey text-sm max-w-lg mx-auto mb-6">These are our most requested bathtub styles. We offer many more sizes, shapes, and finishes — request our full catalog and we'll send it your way.</p>
+          <button onClick={() => setCatalogOpen(true)} className="inline-flex items-center gap-3 bg-gold text-navy px-8 py-3.5 text-sm font-sans uppercase tracking-wide hover:bg-gold/90 transition-colors">
+            Request Full Catalog <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
+      </section>
+
+      <AnimatePresence>
+        {catalogOpen && <CatalogRequestModal category="Bathtubs" onClose={() => setCatalogOpen(false)} />}
+      </AnimatePresence>
+
       {/* CTA */}
       <section className="bg-navy py-14">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
-            <h3 className="font-serif text-2xl text-cream">Specify Your Bathtub Program</h3>
-            <p className="text-cream/40 text-sm mt-1 font-sans">All models available in matte white, stone grey, and custom finishes. Volume pricing for 30+ units.</p>
+            <h3 className="font-serif text-2xl text-cream">Complete Your Bathroom</h3>
+            <p className="text-cream/40 text-sm mt-1 font-sans">All bathtubs available in matte white, stone grey, and custom finishes.</p>
           </div>
           <Link
             to="/contact"
             className="inline-flex items-center gap-3 bg-gold text-navy px-8 py-3.5 text-sm font-sans uppercase tracking-wide hover:bg-gold/90 transition-colors whitespace-nowrap"
           >
-            Request Specification <ArrowRight className="w-4 h-4" />
+            Request a Consultation <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>
