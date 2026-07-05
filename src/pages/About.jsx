@@ -52,10 +52,10 @@ export default function About() {
           </h2>
           <div className="space-y-6 text-cream/60 text-base leading-relaxed font-sans">
             <p>
-              North America is facing one of the largest housing shortages in modern history. Developers are under pressure to build faster, at scale, and without compromising quality — and the supply chain hasn't kept up.
+              North America is facing one of the largest housing shortages in modern history, and developers and homeowners are often stuck choosing between rushed contractors and unreliable supply chains for the materials.
             </p>
             <p>
-              We founded Kopperstone to tackle that gap. By delivering specification-grade kitchens, bathrooms, and building materials directly to developers, we help projects move from blueprint to handover with fewer delays, predictable costs, and the reliability North American markets deserve.
+              We founded Kopperstone to close that gap. By delivering precision-crafted kitchens, bathrooms, and building materials, we help every project move from vision to reality — with fewer delays, predictable costs, and craftsmanship you can trust.
             </p>
           </div>
         </motion.div>
@@ -70,7 +70,7 @@ export default function About() {
             What we're building
           </h2>
           <p className="text-cream/60 text-base leading-relaxed font-sans">
-            Kopperstone is growing into a parent company for a family of focused, quality-driven businesses — each built to solve a real problem in construction supply. The mission stays the same: bring transparency, scale, and execution to the projects shaping the cities we live in.
+            Kopperstone is growing into a parent company for a family of focused, quality-driven businesses — each built to solve a real problem in home renovation and design. The mission stays the same: bring transparency, craftsmanship, and reliability to the homes we help build.
           </p>
         </motion.div>
       </section>

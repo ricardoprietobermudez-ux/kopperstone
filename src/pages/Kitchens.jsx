@@ -132,8 +132,8 @@ export default function Kitchens() {
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
           <div className="flex flex-col md:flex-row items-start justify-between gap-8 mb-10">
             <div>
-              <h3 className="font-serif text-3xl text-cream">Ready to specify your kitchen collection?</h3>
-              <p className="text-cream/40 text-sm mt-2">Volume pricing for 30+ units. Fully customizable to your project's specifications.</p>
+              <h3 className="font-serif text-3xl text-cream">Ready to design your kitchen?</h3>
+              <p className="text-cream/40 text-sm mt-2">Fully customizable to your exact taste — from cabinet finish to countertop material.</p>
             </div>
             <Link to="/contact" className="inline-flex items-center gap-3 bg-gold text-navy px-8 py-4 text-sm font-sans uppercase tracking-wide hover:bg-gold/90 transition-colors whitespace-nowrap">
               Request a Consultation <ArrowRight className="w-4 h-4" />

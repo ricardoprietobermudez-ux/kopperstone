@@ -8,7 +8,7 @@ const steps = [
     num: '01',
     category: 'DISCOVERY',
     title: 'Consultation',
-    body: 'An in home visit to understand the space, the style, and the goals for the project.',
+    body: 'An in-home visit to understand the space, the style, and the goals for the project.',
     detail: ['In-home visit to assess the space and layout', 'Style preferences and inspiration review', 'Project scope and goals defined', 'Budget and timeline discussion'],
     img: '/images/consultation.png',
   },
@@ -124,7 +124,7 @@ export default function Process() {
       <section className="bg-navy py-20">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
-            <h3 className="font-serif text-3xl text-cream">Ready to start your specification?</h3>
+            <h3 className="font-serif text-3xl text-cream">Ready to start your project?</h3>
             <p className="text-cream/40 text-sm mt-2">Our team responds within one business day.</p>
           </div>
           <Link to="/contact" className="inline-flex items-center gap-3 bg-gold text-navy px-8 py-4 text-sm font-sans uppercase tracking-wide hover:bg-gold/90 transition-colors whitespace-nowrap">

@@ -55,14 +55,14 @@ const translations = {
       overline: '—— CURATED FOR EXCELLENCE',
       headline1: 'Kitchen',
       headline2: 'Collections',
-      body: 'Precision crafted kitchens for residences and commercial developments. Every collection is fully customizable. From cabinet finish to countertop material. Specified to your project\'s exact vision.',
+      body: 'Precision crafted kitchens for your home. Every collection is fully customizable — from cabinet finish to countertop material — built to your exact vision.',
       cta: 'Explore Collections',
     },
     bathroomTeaser: {
       overline: '—— REFINED BY DESIGN',
       headline1: 'Bathroom',
       headline2: 'Collections',
-      body: 'Fully customizable bathroom solutions for hotels, residential developments, and commercial properties. Every detail — vanity finish, tile selection, fixture hardware — specified to your project\'s exact vision.',
+      body: 'Fully customizable bathroom solutions for your home. Every detail — vanity finish, tile selection, fixture hardware — built to your exact vision.',
       cta: 'Explore Collections',
     },
     process: {
@@ -78,13 +78,10 @@ const translations = {
       ],
     },
     cta: {
-      headline: 'Ready to specify your next project?',
+      headline: 'Ready to start your project?',
       sub: 'Our team responds within one business day.',
-      primary: 'Request a Project Consultation',
+      primary: 'Request a Consultation',
       secondary: 'Download Capabilities Deck',
-    },
-    trusted: {
-      overline: 'Trusted by leading developers & hospitality groups across North America',
     },
     trade: {
       nav: { forDevelopers: 'For Developers', backToHome: 'For Homeowners' },
@@ -176,14 +173,14 @@ const translations = {
       overline: '—— CURADO PARA LA EXCELENCIA',
       headline1: 'Colecciones de',
       headline2: 'Cocina',
-      body: 'Cocinas de precisión para residencias y desarrollos comerciales. Totalmente personalizables según su visión.',
+      body: 'Cocinas de precisión para su hogar. Totalmente personalizables según su visión.',
       cta: 'Explorar Colecciones',
     },
     bathroomTeaser: {
       overline: '—— REFINADO POR EL DISEÑO',
       headline1: 'Colecciones de',
       headline2: 'Baño',
-      body: 'Soluciones de baño totalmente personalizables para hoteles y propiedades comerciales. Especificadas según su visión exacta.',
+      body: 'Soluciones de baño totalmente personalizables para su hogar. Cada detalle diseñado según su visión exacta.',
       cta: 'Explorar Colecciones',
     },
     process: {
@@ -199,13 +196,10 @@ const translations = {
       ],
     },
     cta: {
-      headline: '¿Listo para especificar su próximo proyecto?',
+      headline: '¿Listo para comenzar su proyecto?',
       sub: 'Nuestro equipo responde en un día hábil.',
       primary: 'Solicitar Consulta',
       secondary: 'Descargar Dossier',
-    },
-    trusted: {
-      overline: 'Con la confianza de promotores líderes en América del Norte',
     },
     trade: {
       nav: { forDevelopers: 'Para Desarrolladores', backToHome: 'Para Propietarios' },
@@ -297,7 +291,7 @@ const translations = {
       overline: '—— SÉLECTIONNÉ POUR L\'EXCELLENCE',
       headline1: 'Collections',
       headline2: 'Cuisine',
-      body: 'Cuisines de précision pour résidences et développements commerciaux. Entièrement personnalisables selon votre vision.',
+      body: 'Cuisines de précision pour votre maison. Entièrement personnalisables selon votre vision.',
       cta: 'Explorer les Collections',
     },
     bathroomTeaser: {
@@ -320,13 +314,10 @@ const translations = {
       ],
     },
     cta: {
-      headline: 'Prêt à spécifier votre prochain projet?',
+      headline: 'Prêt à démarrer votre projet?',
       sub: 'Notre équipe répond dans un jour ouvrable.',
       primary: 'Demander une Consultation',
       secondary: 'Télécharger le Dossier',
-    },
-    trusted: {
-      overline: 'Approuvé par des promoteurs leaders en Amérique du Nord',
     },
     trade: {
       nav: { forDevelopers: 'Pour les Promoteurs', backToHome: 'Pour les Propriétaires' },
