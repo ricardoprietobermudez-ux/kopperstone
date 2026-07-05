@@ -76,7 +76,7 @@ export default function Countertops() {
             Countertops &amp; Solid<br />Surface<br /><em className="text-gold italic">Solutions</em>
           </h1>
           <p className="mt-6 text-cream/50 text-base leading-relaxed font-sans max-w-md">
-            Available in quartz and solid surface, both offered in custom dimensions, edge profiles, and finishes. Durable, design-forward, and specified to your project's exact requirements.
+            Available in quartz and solid surface, both offered in custom dimensions, edge profiles, and finishes. Durable, design-forward, and built to your exact vision.
           </p>
         </div>
       </section>
@@ -85,7 +85,7 @@ export default function Countertops() {
       <section className="py-20">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
           <h2 className="text-center text-[10px] font-sans tracking-widest uppercase text-warm-grey mb-10">QUARTZ</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
             {quartzSlabs.map((slab, i) =>
             <motion.div
               key={slab.sku}
@@ -93,7 +93,7 @@ export default function Countertops() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.04 }}
-              className="group">
+              className="group w-[calc(50%-12px)] sm:w-[calc(33.333%-16px)] lg:w-[calc(25%-24px)]">
 
                 <div className={`relative aspect-[2/3] border border-navy/10 group-hover:border-gold transition-colors overflow-hidden ${slab.img ? '' : slab.bg}`}>
                   {slab.img && <img src={slab.img} alt={slab.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />}
@@ -110,7 +110,7 @@ export default function Countertops() {
       <section className="py-20">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
           <h2 className="text-center text-[10px] font-sans tracking-widest uppercase text-warm-grey mb-10">SOLID SURFACE</h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div className="flex flex-wrap justify-center gap-6 lg:gap-8">
             {solidSurfaceSlabs.map((slab, i) =>
               <motion.div
                 key={slab.sku}
@@ -118,7 +118,7 @@ export default function Countertops() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.04 }}
-                className="group">
+                className="group w-[calc(50%-12px)] sm:w-[calc(33.333%-16px)] lg:w-[calc(25%-24px)]">
                 <div className="relative aspect-[2/3] border border-navy/10 group-hover:border-gold transition-colors overflow-hidden bg-warm-grey/10">
                   {slab.img && <img src={slab.img} alt={slab.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />}
                 </div>

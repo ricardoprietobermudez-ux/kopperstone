@@ -11,10 +11,9 @@ export default function Footer() {
           <div>
             <div className="mb-6">
               <span className="font-serif text-xl text-cream">Kopperstone</span>
-              <span className="block text-[9px] font-sans text-gold/60 tracking-widest uppercase mt-0.5">Developer Supply Partner</span>
             </div>
             <p className="text-cream/40 text-xs leading-relaxed max-w-xs">
-              Specification-grade kitchens, bathrooms, and building materials for developers across North America. From 30 units to multi-tower portfolios.
+              Custom kitchens, bathrooms, and building materials for homeowners across North America — designed, sourced, and installed by one team.
             </p>
             <div className="mt-6 space-y-1.5">
               <p className="text-[10px] font-sans text-gold/60 uppercase tracking-widest">General Inquiries</p>
