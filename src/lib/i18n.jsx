@@ -81,7 +81,6 @@ const translations = {
       headline: 'Ready to start your project?',
       sub: 'Our team responds within one business day.',
       primary: 'Request a Consultation',
-      secondary: 'Download Capabilities Deck',
     },
     trade: {
       nav: { forDevelopers: 'For Developers', backToHome: 'For Homeowners' },
@@ -199,7 +198,6 @@ const translations = {
       headline: '¿Listo para comenzar su proyecto?',
       sub: 'Nuestro equipo responde en un día hábil.',
       primary: 'Solicitar Consulta',
-      secondary: 'Descargar Dossier',
     },
     trade: {
       nav: { forDevelopers: 'Para Desarrolladores', backToHome: 'Para Propietarios' },
@@ -317,7 +315,6 @@ const translations = {
       headline: 'Prêt à démarrer votre projet?',
       sub: 'Notre équipe répond dans un jour ouvrable.',
       primary: 'Demander une Consultation',
-      secondary: 'Télécharger le Dossier',
     },
     trade: {
       nav: { forDevelopers: 'Pour les Promoteurs', backToHome: 'Pour les Propriétaires' },

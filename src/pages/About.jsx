@@ -125,10 +125,7 @@ export default function About() {
       <section className="max-w-screen-xl mx-auto px-6 lg:px-10 py-16">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
           <div className="gold-overline mb-4">STAY CONNECTED</div>
-          <h2 className="font-serif text-3xl text-cream tracking-tight mb-4">Follow our journey</h2>
-          <p className="text-cream/50 text-base leading-relaxed font-sans max-w-xl mb-8">
-            Project announcements, completed developments, and insights on building supply at scale — published on LinkedIn.
-          </p>
+          <h2 className="font-serif text-3xl text-cream tracking-tight mb-8">Follow our journey</h2>
           <a
             href="https://www.linkedin.com/company/kopperstone/"
             target="_blank"
@@ -145,11 +142,11 @@ export default function About() {
       <section className="border-t border-cream/8 py-16">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
-            <h3 className="font-serif text-2xl text-cream">Partner with Kopperstone</h3>
-            <p className="text-cream/40 text-sm mt-2">Specification-grade supply for projects that demand delivery.</p>
+            <h3 className="font-serif text-2xl text-cream">Start Your Project with Kopperstone</h3>
+            <p className="text-cream/40 text-sm mt-2">Precision-crafted kitchens and bathrooms, delivered with craftsmanship you can trust.</p>
           </div>
           <Link to="/contact" className="inline-flex items-center gap-3 bg-gold text-navy px-8 py-4 text-sm font-sans uppercase tracking-wide hover:bg-gold/90 transition-colors whitespace-nowrap">
-            Request a Project Quote <ArrowRight className="w-4 h-4" />
+            Request a Consultation <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>
