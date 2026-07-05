@@ -68,13 +68,17 @@ export default function Process() {
           <div className="grid grid-cols-5 gap-0 relative">
             <div className="hidden md:block absolute top-7 left-[10%] right-[10%] h-px bg-gold/20" />
             {steps.map((step) => (
-              <div key={step.num} className="flex flex-col items-center text-center px-2 relative z-10">
-                <div className="w-14 h-14 border border-gold/40 bg-navy flex items-center justify-center mb-3">
+              <a
+                key={step.num}
+                href={`#step-${step.num}`}
+                className="group flex flex-col items-center text-center px-2 relative z-10"
+              >
+                <div className="w-14 h-14 border border-gold/40 bg-navy flex items-center justify-center mb-3 group-hover:border-gold group-hover:bg-navy-light transition-colors">
                   <span className="font-serif text-xl text-gold">{step.num}</span>
                 </div>
                 <p className="text-[9px] font-sans text-gold/70 tracking-widest uppercase mb-0.5">{step.category}</p>
-                <p className="text-xs font-sans text-cream/60">{step.title}</p>
-              </div>
+                <p className="text-xs font-sans text-cream/60 group-hover:text-cream transition-colors">{step.title}</p>
+              </a>
             ))}
           </div>
         </div>
@@ -85,11 +89,12 @@ export default function Process() {
         {steps.map((step, i) => (
           <motion.section
             key={step.num}
+            id={`step-${step.num}`}
             initial={{ opacity: 0, y: 32 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className={`${i % 2 === 0 ? 'bg-cream' : 'bg-[#F0EAE1]'} py-20 border-t border-navy/8`}
+            className={`${i % 2 === 0 ? 'bg-cream' : 'bg-[#F0EAE1]'} py-20 border-t border-navy/8 scroll-mt-32`}
           >
             <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
               <div className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${i % 2 === 1 ? '' : ''}`}>
