@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import CatalogRequestModal from '@/components/layout/CatalogRequestModal';
 
 const MARBLE_IMG = 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=900&q=80';
 
@@ -62,6 +63,7 @@ const solidSurfaceTabs = [
 export default function Countertops() {
   const [activeTab, setActiveTab] = useState('seamless');
   const activeContent = solidSurfaceTabs.find((t) => t.id === activeTab);
+  const [catalogOpen, setCatalogOpen] = useState(false);
 
   return (
     <div className="bg-cream">
@@ -129,6 +131,21 @@ export default function Countertops() {
           </div>
         </div>
       </section>
+
+      {/* Looking for more? */}
+      <section className="bg-white py-16 border-t border-navy/8">
+        <div className="max-w-screen-xl mx-auto px-6 lg:px-10 text-center">
+          <h3 className="font-serif text-2xl md:text-3xl text-navy mb-3">Looking for More Options?</h3>
+          <p className="text-warm-grey text-sm max-w-lg mx-auto mb-6">These are our most requested countertop finishes. We offer many more colors, patterns, and materials — request our full catalog and we'll send it your way.</p>
+          <button onClick={() => setCatalogOpen(true)} className="inline-flex items-center gap-3 bg-gold text-navy px-8 py-3.5 text-sm font-sans uppercase tracking-wide hover:bg-gold/90 transition-colors">
+            Request Full Catalog <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
+      </section>
+
+      <AnimatePresence>
+        {catalogOpen && <CatalogRequestModal category="Countertops" onClose={() => setCatalogOpen(false)} />}
+      </AnimatePresence>
 
       {/* SOLID SURFACE features section */}
       <section className="bg-navy py-20">

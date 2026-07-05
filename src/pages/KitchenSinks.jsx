@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import CatalogRequestModal from '@/components/layout/CatalogRequestModal';
 
 const dropIn = [
   {
@@ -91,6 +92,7 @@ function SinkSection({ overline, items, showFinishes, cardWidth }) {
 }
 
 export default function KitchenSinks() {
+  const [catalogOpen, setCatalogOpen] = useState(false);
   return (
     <div className="bg-cream">
       {/* Hero */}
@@ -112,6 +114,21 @@ export default function KitchenSinks() {
       <SinkSection overline="DROP IN WORKSTATION" items={dropIn} showFinishes cardWidth="w-full sm:w-[calc(50%-24px)] lg:w-[calc(33.333%-28px)]" />
       <SinkSection overline="FARMHOUSE WORKSTATION" items={farmhouse} showFinishes cardWidth="w-full sm:w-[calc(50%-24px)] lg:w-[calc(33.333%-28px)]" />
       <SinkSection overline="STONE KITCHEN SINK" items={stoneSinks} cardWidth="w-[calc(50%-12px)] sm:w-[calc(33.333%-16px)] lg:w-[calc(25%-24px)]" />
+
+      {/* Looking for more? */}
+      <section className="bg-cream py-16 border-t border-navy/8">
+        <div className="max-w-screen-xl mx-auto px-6 lg:px-10 text-center">
+          <h3 className="font-serif text-2xl md:text-3xl text-navy mb-3">Looking for More Options?</h3>
+          <p className="text-warm-grey text-sm max-w-lg mx-auto mb-6">These are our most requested sink styles. We offer many more finishes, sizes, and models — request our full catalog and we'll send it your way.</p>
+          <button onClick={() => setCatalogOpen(true)} className="inline-flex items-center gap-3 bg-gold text-navy px-8 py-3.5 text-sm font-sans uppercase tracking-wide hover:bg-gold/90 transition-colors">
+            Request Full Catalog <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
+      </section>
+
+      <AnimatePresence>
+        {catalogOpen && <CatalogRequestModal category="Kitchen Sinks" onClose={() => setCatalogOpen(false)} />}
+      </AnimatePresence>
 
       <section className="bg-navy py-14">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-center justify-between gap-8">
