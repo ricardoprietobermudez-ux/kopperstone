@@ -61,11 +61,13 @@ function SinkCard({ sku, name, img, showFinishes, delay = 0 }) {
         {img ? (
           <img src={img} alt={name} className="w-full h-full object-contain p-6 transition-transform duration-500 group-hover:scale-105" />
         ) : (
-          <span className="text-[10px] text-warm-grey font-sans tracking-widest">{sku}</span>
+          <span className="text-[10px] text-warm-grey font-sans tracking-widest">{name}</span>
         )}
       </div>
       <p className="font-serif text-sm text-navy mt-3 text-center">{name}</p>
-      <p className="text-[10px] font-sans text-warm-grey mt-1 text-center tracking-wide">{sku}</p>
+      {!sku.startsWith('KS') && (
+        <p className="text-[10px] font-sans text-warm-grey mt-1 text-center tracking-wide">{sku}</p>
+      )}
       {showFinishes && <FinishSwatches />}
     </motion.div>
   );
