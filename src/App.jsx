@@ -18,9 +18,7 @@ import Bathrooms from '@/pages/Bathrooms';
 import BathroomSinks from '@/pages/BathroomSinks';
 import Vanities from '@/pages/Vanities';
 import Bathtubs from '@/pages/Bathtubs';
-import Mirrors from '@/pages/Mirrors';
 import BathroomFaucets from '@/pages/BathroomFaucets';
-import ShowerSystems from '@/pages/ShowerSystems';
 import Process from '@/pages/Process';
 import Projects from '@/pages/Projects';
 import Capabilities from '@/pages/Capabilities';
@@ -63,9 +61,7 @@ const AuthenticatedApp = () => {
         <Route path="/bathroom-sinks"     element={<BathroomSinks />} />
         <Route path="/vanities"           element={<Vanities />} />
         <Route path="/bathtubs"           element={<Bathtubs />} />
-        <Route path="/mirrors"            element={<Mirrors />} />
         <Route path="/bathroom-faucets"   element={<BathroomFaucets />} />
-        <Route path="/shower-systems"     element={<ShowerSystems />} />
         <Route path="/process"            element={<Process />} />
         <Route path="/projects"           element={<Projects />} />
         <Route path="/capabilities"       element={<Capabilities />} />
