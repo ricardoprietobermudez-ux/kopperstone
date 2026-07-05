@@ -10,7 +10,7 @@ const materials = [
     id: 'acrylic',
     label: 'ACRYLIC',
     desc: 'High-gloss premium finish with deep color saturation and superior moisture resistance — but shows fingerprints and scratches.',
-    tradeNote: 'Best for: luxury hotel rooms, upscale residential. Avoid in high-traffic commercial kitchens.',
+    tradeNote: 'Best for: high-end kitchens where you want a bold, reflective finish. Wipe down often if you have kids or pets — it shows every fingerprint.',
     swatch: 'bg-gray-100',
     img: '/images/fb23a07da_Screenshot2026-06-09at110524PM.png',
     heroImg: '/images/coci_2.jpg',
@@ -19,7 +19,7 @@ const materials = [
     id: 'lacquer',
     label: 'LACQUER',
     desc: 'Fully custom color matching in matte, satin, or gloss; can be refinished on-site but yellows over 8–10 years.',
-    tradeNote: 'Best for: bespoke residential, boutique hotel. Budget for touch-up in commercial leases.',
+    tradeNote: 'Best for: homeowners who want a truly custom color to match their design vision. May need a refresh after a decade of daily use.',
     swatch: 'bg-emerald-800',
     img: '/images/047543dc3_Screenshot2026-06-09at111334PM.png',
     heroImg: '/images/170a32311_Screenshot2026-06-15at95404PM.png',
@@ -27,8 +27,8 @@ const materials = [
   {
     id: 'laminate',
     label: 'LAMINATE',
-    desc: 'Highest impact, scratch, and heat resistance; the workhorse choice for commercial, rental, and high-traffic builds.',
-    tradeNote: 'Best for: multi-family rental, hotel back-of-house, healthcare. 10+ year lifecycle in heavy use.',
+    desc: 'Highest impact, scratch, and heat resistance of any finish — built to handle a busy, high-traffic household for years.',
+    tradeNote: 'Best for: busy family kitchens — any high-traffic space where durability matters more than a showroom finish.',
     swatch: 'bg-zinc-900',
     img: '/images/cde0703b7_Screenshot2026-06-09at111439PM.png',
     heroImg: '/images/6c0d868a9_Screenshot2026-06-15at95516PM.png',
@@ -36,8 +36,8 @@ const materials = [
   {
     id: 'kpvc',
     label: 'KPVC SERIES',
-    desc: 'Seamless PVC-wrapped MDF for detailed door profiles at mid-tier pricing; will delaminate near heat sources.',
-    tradeNote: 'Best for: master bath vanities, bedroom cabinetry. Keep away from range and dishwasher zones.',
+    desc: 'Seamless PVC-wrapped MDF for detailed door profiles at mid-tier pricing; keep it away from direct heat sources to avoid delaminating.',
+    tradeNote: 'Best for: vanities and bedroom cabinetry. Keep away from range and dishwasher zones.',
     swatch: 'bg-gray-50',
     img: '/images/8de464daf_Screenshot2026-06-15at94454PM.png',
     heroImg: '/images/d78887136_Screenshot2026-06-15at95648PM.png',
@@ -46,7 +46,7 @@ const materials = [
     id: 'melamine',
     label: 'MELAMINE',
     desc: 'Most economical option for closets, garages, and budget cabinet interiors; swells permanently if water penetrates the edge.',
-    tradeNote: 'Best for: closet systems, utility storage, interior cabinet boxes. Not recommended for wet zones.',
+    tradeNote: 'Best for: closets, garages, and interior cabinet boxes where budget matters most. Keep away from sinks and other wet areas.',
     swatch: 'bg-amber-800',
     img: '/images/35662b316_Screenshot2026-06-15at94616PM.png',
     heroImg: '/images/5f3c856f9_Screenshot2026-06-15at95907PM.png',
@@ -55,7 +55,7 @@ const materials = [
     id: 'veneer',
     label: 'VENEER',
     desc: 'Authentic wood grain that stains and ages like solid lumber; requires dry zones and careful handling — damage cannot be patched invisibly.',
-    tradeNote: 'Best for: premium residential, executive suites, low-humidity environments. Avoid near pool, spa.',
+    tradeNote: 'Best for: premium kitchens and living spaces in low-humidity climates. Keep away from pools, spas, or other high-moisture areas.',
     swatch: 'bg-amber-200',
     img: '/images/25bb4e811_Screenshot2026-06-15at94829PM.png',
     heroImg: '/images/4d9566eb6_Screenshot2026-06-15at100205PM.png',
@@ -77,7 +77,7 @@ export default function CabinetDoors() {
             Cabinet<br /><em className="text-gold italic">Textures</em> &amp; Finishes
           </h1>
           <p className="mt-6 text-warm-grey text-base leading-relaxed font-sans max-w-sm">
-            Every cabinet is available in a curated range of textures and finishes, from matte lacquer to wood grain laminates. Fully customizable to match your project design language and scale.
+            Every cabinet is available in a curated range of textures and finishes, from matte lacquer to wood grain laminates. Fully customizable to match your home's design and style.
           </p>
         </div>
       </section>
@@ -124,7 +124,7 @@ export default function CabinetDoors() {
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
             <h3 className="font-serif text-2xl text-cream">Request a Finish Sample Board</h3>
-            <p className="text-cream/40 text-sm mt-2">Physical sample boards available for qualified projects. Ships within 5 business days.</p>
+            <p className="text-cream/40 text-sm mt-2">Physical sample boards available for every homeowner. Ships within 5 business days.</p>
           </div>
           <Link to="/contact" className="inline-flex items-center gap-3 bg-gold text-navy px-8 py-3.5 text-sm font-sans uppercase tracking-wide hover:bg-gold/90 transition-colors whitespace-nowrap">
             Request Samples <ArrowRight className="w-4 h-4" />
