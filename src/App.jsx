@@ -14,13 +14,11 @@ import Countertops from '@/pages/Countertops';
 import CabinetDoors from '@/pages/CabinetDoors';
 import KitchenSinks from '@/pages/KitchenSinks';
 import KitchenFaucets from '@/pages/KitchenFaucets';
-import Bathrooms from '@/pages/Bathrooms';
 import BathroomSinks from '@/pages/BathroomSinks';
 import Vanities from '@/pages/Vanities';
 import Bathtubs from '@/pages/Bathtubs';
 import BathroomFaucets from '@/pages/BathroomFaucets';
 import Process from '@/pages/Process';
-import Projects from '@/pages/Projects';
 import About from '@/pages/About';
 import Contact from '@/pages/Contact';
 import Configurator from '@/pages/Configurator';
@@ -28,6 +26,7 @@ import TradeHome from '@/pages/trade/TradeHome';
 import TradeProcess from '@/pages/trade/TradeProcess';
 import Capabilities from '@/pages/trade/Capabilities';
 import Quality from '@/pages/trade/Quality';
+import Projects from '@/pages/trade/Projects';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -57,13 +56,11 @@ const AuthenticatedApp = () => {
         <Route path="/cabinet-doors"      element={<CabinetDoors />} />
         <Route path="/kitchen-sinks"      element={<KitchenSinks />} />
         <Route path="/kitchen-faucets"    element={<KitchenFaucets />} />
-        <Route path="/bathrooms"          element={<Bathrooms />} />
         <Route path="/bathroom-sinks"     element={<BathroomSinks />} />
         <Route path="/vanities"           element={<Vanities />} />
         <Route path="/bathtubs"           element={<Bathtubs />} />
         <Route path="/bathroom-faucets"   element={<BathroomFaucets />} />
         <Route path="/process"            element={<Process />} />
-        <Route path="/projects"           element={<Projects />} />
         <Route path="/about"              element={<About />} />
         <Route path="/contact"            element={<Contact />} />
         <Route path="/configurator"       element={<Configurator />} />
@@ -71,6 +68,7 @@ const AuthenticatedApp = () => {
         <Route path="/trade/process"      element={<TradeProcess />} />
         <Route path="/trade/capabilities" element={<Capabilities />} />
         <Route path="/trade/quality"      element={<Quality />} />
+        <Route path="/trade/projects"     element={<Projects />} />
       </Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>

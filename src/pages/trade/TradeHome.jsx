@@ -111,23 +111,31 @@ export default function TradeHome() {
         </div>
       </section>
 
-      {/* Capabilities & Quality teaser */}
+      {/* Capabilities, Quality & Projects teaser */}
       <section className="bg-navy py-16 lg:py-20 border-t border-white/10">
-        <div className="max-w-screen-xl mx-auto px-6 lg:px-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="border border-white/10 p-10 lg:p-14">
+        <div className="max-w-screen-xl mx-auto px-6 lg:px-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="border border-white/10 p-10 lg:p-8">
             <p className="text-xs font-sans font-medium tracking-[0.2em] uppercase text-gold mb-4">— HOW WE WORK</p>
-            <h2 className="font-serif text-2xl lg:text-3xl text-cream mb-3">Supply Chain &amp; Capabilities</h2>
+            <h2 className="font-serif text-2xl text-cream mb-3">Supply Chain &amp; Capabilities</h2>
             <p className="text-cream/45 text-sm leading-relaxed font-sans mb-6">From factory qualification to job-site delivery — see how we manage sourcing, logistics, and installation at project scale.</p>
             <Link to="/trade/capabilities" className="inline-flex items-center justify-center border border-gold text-gold text-sm font-sans tracking-wide uppercase px-8 py-4 hover:bg-gold hover:text-navy transition-colors">
               View Capabilities
             </Link>
           </div>
-          <div className="border border-white/10 p-10 lg:p-14">
+          <div className="border border-white/10 p-10 lg:p-8">
             <p className="text-xs font-sans font-medium tracking-[0.2em] uppercase text-gold mb-4">— QUALITY &amp; COMPLIANCE</p>
-            <h2 className="font-serif text-2xl lg:text-3xl text-cream mb-3">Quality Standards</h2>
+            <h2 className="font-serif text-2xl text-cream mb-3">Quality Standards</h2>
             <p className="text-cream/45 text-sm leading-relaxed font-sans mb-6">Our inspection protocol, certifications, warranty policy, and trade compliance approach.</p>
             <Link to="/trade/quality" className="inline-flex items-center justify-center border border-gold text-gold text-sm font-sans tracking-wide uppercase px-8 py-4 hover:bg-gold hover:text-navy transition-colors">
               View Quality Standards
+            </Link>
+          </div>
+          <div className="border border-white/10 p-10 lg:p-8">
+            <p className="text-xs font-sans font-medium tracking-[0.2em] uppercase text-gold mb-4">— SELECTED PROJECTS</p>
+            <h2 className="font-serif text-2xl text-cream mb-3">Projects &amp; Case Studies</h2>
+            <p className="text-cream/45 text-sm leading-relaxed font-sans mb-6">See how we've delivered specification-grade kitchens and bathrooms across hotel and multi-family residential programs.</p>
+            <Link to="/trade/projects" className="inline-flex items-center justify-center border border-gold text-gold text-sm font-sans tracking-wide uppercase px-8 py-4 hover:bg-gold hover:text-navy transition-colors">
+              View Projects
             </Link>
           </div>
         </div>

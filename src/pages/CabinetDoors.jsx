@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import CatalogRequestModal from '@/components/layout/CatalogRequestModal';
 
 const HERO_IMG = '/images/010726.jpg';
 
@@ -63,6 +64,7 @@ const materials = [
 ];
 
 export default function CabinetDoors() {
+  const [catalogOpen, setCatalogOpen] = useState(false);
   return (
     <div className="bg-cream">
       {/* Hero */}
@@ -118,6 +120,21 @@ export default function CabinetDoors() {
           </motion.section>
         ))}
       </div>
+
+      {/* Looking for more? */}
+      <section className="bg-cream py-16 border-t border-navy/8">
+        <div className="max-w-screen-xl mx-auto px-6 lg:px-10 text-center">
+          <h3 className="font-serif text-2xl md:text-3xl text-navy mb-3">Looking for More Options?</h3>
+          <p className="text-warm-grey text-sm max-w-lg mx-auto mb-6">These are our most requested cabinet finishes. We offer many more textures, colors, and materials — request our full catalog and we'll send it your way.</p>
+          <button onClick={() => setCatalogOpen(true)} className="inline-flex items-center gap-3 bg-gold text-navy px-8 py-3.5 text-sm font-sans uppercase tracking-wide hover:bg-gold/90 transition-colors">
+            Request Full Catalog <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
+      </section>
+
+      <AnimatePresence>
+        {catalogOpen && <CatalogRequestModal category="Cabinet Doors" onClose={() => setCatalogOpen(false)} />}
+      </AnimatePresence>
 
       {/* CTA */}
       <section className="bg-navy py-16">

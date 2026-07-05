@@ -53,10 +53,10 @@ const solidSurfaceSpecs = [
 ];
 
 const solidSurfaceTabs = [
-{ id: 'seamless', label: 'Seamless Surface', content: 'Seamless joints for clean, continuous design. Ideal for long kitchen runs, bathroom vanities, and commercial applications where hygiene and visual continuity are paramount. Joints are invisible after fabrication and polishing.' },
+{ id: 'seamless', label: 'Seamless Surface', content: 'Seamless joints for clean, continuous design. Ideal for long kitchen runs and bathroom vanities where a smooth, uninterrupted surface makes all the difference. Joints are invisible after fabrication and polishing.' },
 { id: 'thermoform', label: 'Thermoformable Design', content: 'Curves and custom shapes without cracking or delaminating. Solid surface can be heat-formed into radius edges, curved island fronts, and custom architectural profiles — design freedom unavailable in stone or engineered quartz.' },
-{ id: 'hygienic', label: 'Non-Porous & Hygienic', content: 'Non-porous, bacteria-resistant surface ideal for commercial kitchens, healthcare facilities, and food service environments. Meets NSF/ANSI 51 material safety standards for food-contact surfaces. No sealing required.' },
-{ id: 'repairable', label: 'Repairable & Renewable', content: 'Unlike stone or quartz, solid surface can be sanded and refinished on-site. Scratches, burns, and minor impact damage are repaired with standard woodworking tools without replacement. Significant lifecycle cost advantage for commercial operators.' },
+{ id: 'hygienic', label: 'Non-Porous & Hygienic', content: 'Non-porous, bacteria-resistant surface that’s easy to keep clean around everyday cooking and food prep. Meets NSF/ANSI 51 material safety standards for food-contact surfaces. No sealing required.' },
+{ id: 'repairable', label: 'Repairable & Renewable', content: 'Unlike stone or quartz, solid surface can be sanded and refinished on-site. Scratches, burns, and minor impact damage are repaired with standard woodworking tools without replacement — built to hold up to years of everyday life in your kitchen.' },
 { id: 'consistency', label: 'Color Through-Body', content: 'Color and pattern run through the full thickness of the sheet, ensuring uniform appearance after cutting, routing, or edge profiling. No visible brown or black substrate at cut edges — consistent finish in any fabrication scenario.' }];
 
 
@@ -201,7 +201,7 @@ export default function Countertops() {
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-center justify-between gap-8">
           <div>
             <h3 className="font-serif text-3xl text-navy">Request Material Samples</h3>
-            <p className="text-warm-grey text-sm mt-2">Full-size slab samples and solid surface test pieces available for qualified projects.</p>
+            <p className="text-warm-grey text-sm mt-2">Full-size slab samples and solid surface test pieces available for your home.</p>
           </div>
           <Link to="/contact" className="inline-flex items-center gap-3 bg-gold text-navy px-8 py-4 text-sm font-sans uppercase tracking-wide hover:bg-gold/90 transition-colors whitespace-nowrap">
             Request Samples <ArrowRight className="w-4 h-4" />
