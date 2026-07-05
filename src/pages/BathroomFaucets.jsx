@@ -11,13 +11,6 @@ const faucets = [
   { sku: 'KP-6117', name: 'Curved Lever', img: '/images/26a5eb260_Screenshot2026-06-18at70200PM.png' },
 ];
 
-const finishSwatches = [
-  { label: 'Chrome', color: 'bg-slate-300' },
-  { label: 'Brushed Gold', color: 'bg-yellow-500' },
-  { label: 'Matte Black', color: 'bg-zinc-900' },
-  { label: 'Gunmetal', color: 'bg-slate-600' },
-];
-
 export default function BathroomFaucets() {
   const [catalogOpen, setCatalogOpen] = useState(false);
 
@@ -41,9 +34,9 @@ export default function BathroomFaucets() {
       <section className="py-20 bg-white">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
           <h2 className="text-center text-[10px] font-sans tracking-widest uppercase text-gold mb-14">Bathroom Faucet Styles</h2>
-          <div className="flex flex-wrap justify-center gap-8 lg:gap-10">
+          <div className="flex flex-wrap justify-center gap-8 lg:gap-12">
             {faucets.map((f, i) => (
-              <div key={f.sku} className="w-full sm:w-[calc(50%-24px)] lg:w-[calc(33.333%-28px)]">
+              <div key={f.sku} className="w-full sm:w-[calc(50%-24px)]">
                 <motion.div
                   initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -52,9 +45,9 @@ export default function BathroomFaucets() {
                   className="group"
                 >
                   <div className="relative aspect-[4/3] bg-gray-50 border border-navy/10 group-hover:border-gold transition-colors overflow-hidden flex items-center justify-center">
-                    <img src={f.img} alt={f.name} className="w-full h-full object-contain p-6 transition-transform duration-500 group-hover:scale-105" />
+                    <img src={f.img} alt={f.name} className="w-full h-full object-contain p-3 transition-transform duration-500 group-hover:scale-105" />
                   </div>
-                  <p className="font-serif text-sm text-navy mt-3 text-center">{f.name}</p>
+                  <p className="font-serif text-base text-navy mt-3 text-center">{f.name}</p>
                   <p className="text-[10px] font-sans text-warm-grey mt-1 text-center tracking-wide">{f.sku}</p>
                 </motion.div>
               </div>
@@ -65,16 +58,9 @@ export default function BathroomFaucets() {
 
       {/* Finishes strip */}
       <section className="bg-cream py-14 border-t border-navy/10">
-        <div className="max-w-screen-xl mx-auto px-6 lg:px-10">
-          <p className="text-[10px] font-sans tracking-widest uppercase text-gold mb-8 text-center">Available Finishes</p>
-          <div className="flex flex-wrap justify-center gap-8">
-            {finishSwatches.map(f => (
-              <div key={f.label} className="flex flex-col items-center gap-2">
-                <div className={`w-10 h-10 rounded-full border border-navy/10 shadow-sm ${f.color}`} />
-                <p className="text-[9px] font-sans tracking-widest uppercase text-warm-grey">{f.label}</p>
-              </div>
-            ))}
-          </div>
+        <div className="max-w-screen-xl mx-auto px-6 lg:px-10 flex flex-col items-center">
+          <p className="text-[10px] font-sans tracking-widest uppercase text-gold mb-6 text-center">Available Finishes</p>
+          <img src="/images/bdae2337e_Screenshot2026-06-15at105351PM.png" alt="Available finishes: Steel, Gold, Gunmetal, Black" className="max-w-[320px] w-full" />
         </div>
       </section>
 
