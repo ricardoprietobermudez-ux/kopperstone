@@ -146,13 +146,12 @@ function PowderRoomPlan({ vanityColor, vanityStroke, hwColor, config }) {
         <ellipse cx="40" cy="68" rx="30" ry="26" fill="#E8E8E8" stroke="#999" strokeWidth="0.5" />
         <text x="40" y="120" textAnchor="middle" fontSize="5" fill="#AAA">WC</text>
       </g>
-      <text x="200" y="250" textAnchor="middle" fontSize="7" fill="#AAAAAA" letterSpacing="2">POWDER ROOM</text>
+      <text x="300" y="180" textAnchor="middle" fontSize="7" fill="#AAAAAA" letterSpacing="2">POWDER ROOM</text>
     </>
   );
 }
 
 function MasterSuitePlan({ vanityColor, vanityStroke, hwColor, config }) {
-  const showerFill = config.shower === 'wet-room' ? '#E0EFF5' : '#E8F4F8';
   return (
     <>
       {/* Vanity left */}
@@ -166,21 +165,38 @@ function MasterSuitePlan({ vanityColor, vanityStroke, hwColor, config }) {
       <rect x="63" y="50" width="10" height="3" rx="1" fill={hwColor} />
       <rect x="143" y="50" width="10" height="3" rx="1" fill={hwColor} />
 
-      {/* Shower right */}
-      <rect x="215" y="25" width="165" height="110" fill={showerFill} stroke="#9AB" strokeWidth="1.5" />
+      {/* Shower right — layout differs per shower type */}
       {config.shower === 'walkin-glass' && (
-        <line x1="215" y1="25" x2="215" y2="135" stroke="#87CEEB" strokeWidth="2.5" />
-      )}
-      {(config.shower === 'tub-shower' || config.shower === 'standalone') && (
         <>
-          <rect x="220" y="30" width="75" height="100" rx="4" fill="#D8EEF5" stroke="#9AB" strokeWidth="1" />
-          <text x="258" y="84" textAnchor="middle" fontSize="6" fill="#9AB">TUB</text>
+          <rect x="215" y="25" width="165" height="110" fill="#E8F4F8" stroke="#9AB" strokeWidth="1.5" />
+          <line x1="215" y1="25" x2="215" y2="135" stroke="#87CEEB" strokeWidth="2.5" />
+          <text x="297" y="83" textAnchor="middle" fontSize="6" fill="#9AB">SHOWER</text>
+        </>
+      )}
+      {config.shower === 'tub-shower' && (
+        <>
+          {/* Single combined tub/shower fixture */}
+          <rect x="215" y="25" width="165" height="110" rx="4" fill="#D8EEF5" stroke="#9AB" strokeWidth="1.5" />
+          <line x1="215" y1="25" x2="215" y2="135" stroke="#87CEEB" strokeWidth="2.5" />
+          <text x="297" y="83" textAnchor="middle" fontSize="6" fill="#9AB">TUB / SHOWER</text>
+        </>
+      )}
+      {config.shower === 'standalone' && (
+        <>
+          {/* Separate tub */}
+          <rect x="215" y="25" width="70" height="60" rx="4" fill="#D8EEF5" stroke="#9AB" strokeWidth="1" />
+          <text x="250" y="58" textAnchor="middle" fontSize="6" fill="#9AB">TUB</text>
+          {/* Separate shower stall, clearly divided from the tub */}
+          <rect x="295" y="25" width="85" height="110" fill="#E0EFF5" stroke="#9AB" strokeWidth="1.5" />
+          <text x="337" y="83" textAnchor="middle" fontSize="6" fill="#9AB">SHOWER</text>
         </>
       )}
       {config.shower === 'wet-room' && (
-        <path d="M215,25 L380,25 L380,135 L215,135 Z" fill="#D8EEF5" stroke="#9AB" strokeWidth="0.5" strokeDasharray="3,2" />
+        <>
+          <path d="M215,25 L380,25 L380,135 L215,135 Z" fill="#D8EEF5" stroke="#9AB" strokeWidth="0.5" strokeDasharray="3,2" />
+          <text x="297" y="83" textAnchor="middle" fontSize="6" fill="#9AB">WET ROOM</text>
+        </>
       )}
-      <text x="297" y="80" textAnchor="middle" fontSize="6" fill="#9AB">SHOWER</text>
 
       {/* Toilet */}
       <g transform="translate(30,130)">

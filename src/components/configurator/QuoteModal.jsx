@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { X, Check, ArrowRight } from 'lucide-react';
 
@@ -8,6 +8,12 @@ export default function QuoteModal({ mode, config, onClose }) {
   const [form, setForm] = useState({ name: '', email: '', phone: '', note: '' });
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+
+  useEffect(() => {
+    const onKeyDown = (e) => { if (e.key === 'Escape') onClose(); };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [onClose]);
 
   const handleSubmit = async () => {
     if (!form.email || !form.name) return;
@@ -35,8 +41,10 @@ export default function QuoteModal({ mode, config, onClose }) {
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+      onClick={onClose}
       className="fixed inset-0 z-50 flex items-center justify-center bg-navy/80 backdrop-blur-sm px-4">
       <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 20, opacity: 0 }}
+        onClick={(e) => e.stopPropagation()}
         className="bg-navy-light border border-cream/15 p-8 w-full max-w-lg relative">
         <button onClick={onClose} className="absolute top-4 right-4 text-cream/40 hover:text-cream transition-colors">
           <X className="w-4 h-4" />

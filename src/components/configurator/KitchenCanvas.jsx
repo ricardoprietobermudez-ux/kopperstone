@@ -136,13 +136,13 @@ function GalleyPlan({ cabColor, cabStroke, ctColor, ctStroke, hwColor, config })
 function LShapedPlan({ cabColor, cabStroke, ctColor, ctStroke, hwColor, config }) {
   return (
     <>
-      {/* Left vertical run */}
-      <rect x="25" y="30" width="45" height="190" fill={cabColor} stroke={cabStroke} strokeWidth="1" />
-      <rect x="67" y="30" width="10" height="190" fill={ctColor} stroke={ctStroke} strokeWidth="0.5" />
-      {[0,1,2,3].map(i => (
+      {/* Left vertical run — stops short of the bottom run so doors don't overlap it */}
+      <rect x="25" y="30" width="45" height="165" fill={cabColor} stroke={cabStroke} strokeWidth="1" />
+      <rect x="67" y="30" width="10" height="165" fill={ctColor} stroke={ctStroke} strokeWidth="0.5" />
+      {[0,1,2].map(i => (
         <rect key={i} x="28" y={33 + i * 46} width="36" height="42" fill="none" stroke={cabStroke} strokeWidth="0.5" strokeDasharray="2,2" />
       ))}
-      {[0,1,2,3].map(i => (
+      {[0,1,2].map(i => (
         <rect key={i} x="36" y={52 + i * 46} width="3" height="10" rx="1" fill={hwColor} />
       ))}
 
@@ -171,24 +171,39 @@ function UShapedPlan({ cabColor, cabStroke, ctColor, ctStroke, hwColor, config }
       {[0,1,2,3,4,5,6].map(i => (
         <rect key={i} x={28 + i * 50} y="33" width="46" height="32" fill="none" stroke={cabStroke} strokeWidth="0.5" strokeDasharray="2,2" />
       ))}
-
-      {/* Left */}
-      <rect x="25" y="30" width="42" height="200" fill={cabColor} stroke={cabStroke} strokeWidth="1" />
-      <rect x="64" y="75" width="8" height="152" fill={ctColor} stroke={ctStroke} strokeWidth="0.5" />
-      {[0,1,2,3].map(i => (
-        <rect key={i} x="28" y={78 + i * 46} width="34" height="42" fill="none" stroke={cabStroke} strokeWidth="0.5" strokeDasharray="2,2" />
+      {[0,1,2,3,4,5,6].map(i => (
+        <rect key={i} x={46 + i * 50} y="63" width="12" height="3" rx="1" fill={hwColor} />
       ))}
 
-      {/* Right */}
-      <rect x="333" y="30" width="42" height="200" fill={cabColor} stroke={cabStroke} strokeWidth="1" />
-      <rect x="328" y="75" width="8" height="152" fill={ctColor} stroke={ctStroke} strokeWidth="0.5" />
-      {[0,1,2,3].map(i => (
-        <rect key={i} x="336" y={78 + i * 46} width="34" height="42" fill="none" stroke={cabStroke} strokeWidth="0.5" strokeDasharray="2,2" />
+      {/* Left — stops short of the bottom run so doors don't overlap it */}
+      <rect x="25" y="30" width="42" height="165" fill={cabColor} stroke={cabStroke} strokeWidth="1" />
+      <rect x="64" y="75" width="8" height="120" fill={ctColor} stroke={ctStroke} strokeWidth="0.5" />
+      {[0,1].map(i => (
+        <rect key={i} x="28" y={78 + i * 46} width="34" height="42" fill="none" stroke={cabStroke} strokeWidth="0.5" strokeDasharray="2,2" />
+      ))}
+      {[0,1].map(i => (
+        <rect key={i} x="42" y={95 + i * 46} width="10" height="3" rx="1" fill={hwColor} />
+      ))}
+
+      {/* Right — mirrors left */}
+      <rect x="333" y="30" width="42" height="165" fill={cabColor} stroke={cabStroke} strokeWidth="1" />
+      <rect x="328" y="75" width="8" height="120" fill={ctColor} stroke={ctStroke} strokeWidth="0.5" />
+      {[0,1].map(i => (
+        <rect key={i} x="338" y={78 + i * 46} width="34" height="42" fill="none" stroke={cabStroke} strokeWidth="0.5" strokeDasharray="2,2" />
+      ))}
+      {[0,1].map(i => (
+        <rect key={i} x="348" y={95 + i * 46} width="10" height="3" rx="1" fill={hwColor} />
       ))}
 
       {/* Bottom */}
       <rect x="25" y="195" width="350" height="45" fill={cabColor} stroke={cabStroke} strokeWidth="1" />
       <rect x="25" y="188" width="350" height="10" fill={ctColor} stroke={ctStroke} strokeWidth="0.5" />
+      {[0,1,2,3,4,5,6].map(i => (
+        <rect key={i} x={28 + i * 50} y="198" width="46" height="36" fill="none" stroke={cabStroke} strokeWidth="0.5" strokeDasharray="2,2" />
+      ))}
+      {[0,1,2,3,4,5,6].map(i => (
+        <rect key={i} x={46 + i * 50} y="184" width="12" height="3" rx="1" fill={hwColor} />
+      ))}
 
       <SinkSymbol x={170} y={188} config={config} />
       <text x="200" y="145" textAnchor="middle" fontSize="7" fill="#AAAAAA" letterSpacing="2">WORK ZONE</text>

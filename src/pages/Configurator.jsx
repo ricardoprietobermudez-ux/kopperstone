@@ -28,7 +28,7 @@ const BATHROOM_DEFAULTS = {
 
 function generateCode(mode, config) {
   const keys = Object.values(config).map(v => v.slice(0, 2).toUpperCase()).join('');
-  return `KS-${mode === 'kitchen' ? 'K' : 'B'}-${keys}`;
+  return `KP-${mode === 'kitchen' ? 'K' : 'B'}-${keys}`;
 }
 
 export default function Configurator() {
@@ -337,7 +337,13 @@ function KitchenStepPanel({ step, config, setConfig }) {
         {hardware.map(h => (
           <button key={h.id} onClick={() => setConfig(c => ({ ...c, hardware: h.id }))}
             className={`flex items-center gap-3 p-4 border transition-all ${config.hardware === h.id ? 'border-gold bg-gold/5' : 'border-cream/15 hover:border-cream/30'}`}>
-            <div className="w-10 h-10 rounded-full flex-shrink-0 border-2" style={{ backgroundColor: h.color, borderColor: config.hardware === h.id ? '#C9A77C' : 'transparent' }} />
+            <div className="relative w-10 h-10 rounded-full flex-shrink-0 border-2" style={{ backgroundColor: h.color, borderColor: config.hardware === h.id ? '#C9A77C' : 'transparent' }}>
+              {config.hardware === h.id && (
+                <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-cream border border-navy flex items-center justify-center">
+                  <Check className="w-2.5 h-2.5 text-navy" />
+                </div>
+              )}
+            </div>
             <span className={`text-sm font-sans ${config.hardware === h.id ? 'text-gold' : 'text-cream/70'}`}>{h.label}</span>
           </button>
         ))}
@@ -485,7 +491,13 @@ function BathroomStepPanel({ step, config, setConfig }) {
         {hardware.map(h => (
           <button key={h.id} onClick={() => setConfig(c => ({ ...c, hardware: h.id }))}
             className={`flex items-center gap-3 p-4 border transition-all ${config.hardware === h.id ? 'border-gold bg-gold/5' : 'border-cream/15 hover:border-cream/30'}`}>
-            <div className="w-10 h-10 rounded-full flex-shrink-0 border-2" style={{ backgroundColor: h.color, borderColor: config.hardware === h.id ? '#C9A77C' : 'transparent' }} />
+            <div className="relative w-10 h-10 rounded-full flex-shrink-0 border-2" style={{ backgroundColor: h.color, borderColor: config.hardware === h.id ? '#C9A77C' : 'transparent' }}>
+              {config.hardware === h.id && (
+                <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-cream border border-navy flex items-center justify-center">
+                  <Check className="w-2.5 h-2.5 text-navy" />
+                </div>
+              )}
+            </div>
             <span className={`text-sm font-sans ${config.hardware === h.id ? 'text-gold' : 'text-cream/70'}`}>{h.label}</span>
           </button>
         ))}
