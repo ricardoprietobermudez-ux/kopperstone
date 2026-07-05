@@ -21,13 +21,13 @@ import Bathtubs from '@/pages/Bathtubs';
 import BathroomFaucets from '@/pages/BathroomFaucets';
 import Process from '@/pages/Process';
 import Projects from '@/pages/Projects';
-import Capabilities from '@/pages/Capabilities';
-import Quality from '@/pages/Quality';
 import About from '@/pages/About';
 import Contact from '@/pages/Contact';
 import Configurator from '@/pages/Configurator';
 import TradeHome from '@/pages/trade/TradeHome';
 import TradeProcess from '@/pages/trade/TradeProcess';
+import Capabilities from '@/pages/trade/Capabilities';
+import Quality from '@/pages/trade/Quality';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -64,13 +64,13 @@ const AuthenticatedApp = () => {
         <Route path="/bathroom-faucets"   element={<BathroomFaucets />} />
         <Route path="/process"            element={<Process />} />
         <Route path="/projects"           element={<Projects />} />
-        <Route path="/capabilities"       element={<Capabilities />} />
-        <Route path="/quality"            element={<Quality />} />
         <Route path="/about"              element={<About />} />
         <Route path="/contact"            element={<Contact />} />
         <Route path="/configurator"       element={<Configurator />} />
         <Route path="/trade"              element={<TradeHome />} />
         <Route path="/trade/process"      element={<TradeProcess />} />
+        <Route path="/trade/capabilities" element={<Capabilities />} />
+        <Route path="/trade/quality"      element={<Quality />} />
       </Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>
