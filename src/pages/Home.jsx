@@ -9,8 +9,8 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <WhoWeAre />
       <KitchenTeaser />
+      <WhoWeAre />
       <ProcessSection />
 
       <CtaSection />
