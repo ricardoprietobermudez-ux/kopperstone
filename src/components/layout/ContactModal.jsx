@@ -64,7 +64,7 @@ export default function ContactModal({ onClose }) {
             </div>
             <div className="flex-1">
               <p className="text-sm text-cream font-sans group-hover:text-gold transition-colors">Leadership Contact</p>
-              <p className="text-xs text-cream/40 font-sans">Reach Ricardo or Santiago directly</p>
+              <p className="text-xs text-cream/40 font-sans">Reach Ricardo, Santiago, or Cesar directly</p>
             </div>
             <span className="text-cream/25 text-xs font-sans">{expanded === 'leadership' ? '▲' : '▼'}</span>
           </button>
@@ -79,8 +79,9 @@ export default function ContactModal({ onClose }) {
               >
                 <div className="border border-t-0 border-cream/10 px-4 pb-4 space-y-3 pt-4">
                   {[
-                    { name: 'Ricardo Prieto', role: 'Co-Founder & CEO', email: 'ricardo@kopperstone.com' },
-                    { name: 'Santiago Rojas', role: 'Co-Founder & CRO', email: 'santiago@kopperstone.com' },
+                    { name: 'Ricardo Prieto', email: 'ricardo@kopperstone.com' },
+                    { name: 'Santiago Rojas', email: 'santiago@kopperstone.com' },
+                    { name: 'Cesar Padilla', email: 'cesar@kopperstone.com' },
                   ].map(p => (
                     <a key={p.name} href={`mailto:${p.email}`} className="flex items-center gap-3 group" onClick={onClose}>
                       <div className="w-7 h-7 rounded-full bg-charcoal border border-gold/30 flex items-center justify-center flex-shrink-0">
@@ -88,7 +89,7 @@ export default function ContactModal({ onClose }) {
                       </div>
                       <div>
                         <p className="text-xs text-cream font-sans group-hover:text-gold transition-colors">{p.name}</p>
-                        <p className="text-[10px] text-cream/40 font-sans">{p.role} · {p.email}</p>
+                        <p className="text-[10px] text-cream/40 font-sans">{p.email}</p>
                       </div>
                     </a>
                   ))}

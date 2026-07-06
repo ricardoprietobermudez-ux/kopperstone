@@ -366,12 +366,12 @@ export default function Contact() {
               <p className="text-[9px] font-sans tracking-widest uppercase text-gold mb-4">Leadership</p>
               <div className="space-y-4">
                 {[
-                  { name: 'Ricardo Prieto', role: 'Co-Founder & CEO', email: 'ricardo@kopperstone.com' },
-                  { name: 'Santiago Rojas', role: 'Co-Founder & CRO', email: 'santiago@kopperstone.com' },
+                  { name: 'Ricardo Prieto', email: 'ricardo@kopperstone.com' },
+                  { name: 'Santiago Rojas', email: 'santiago@kopperstone.com' },
+                  { name: 'Cesar Padilla', email: 'cesar@kopperstone.com' },
                 ].map(p => (
                   <div key={p.name}>
                     <p className="text-cream text-sm font-sans font-medium">{p.name}</p>
-                    <p className="text-cream/40 text-xs font-sans">{p.role}</p>
                     <a href={`mailto:${p.email}`} className="text-gold/70 text-xs hover:text-gold transition-colors">{p.email}</a>
                   </div>
                 ))}
