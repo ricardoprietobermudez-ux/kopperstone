@@ -6,6 +6,7 @@ import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import { LanguageProvider } from '@/lib/i18n';
+import FoundingClientPopup from '@/components/FoundingClientPopup';
 
 import SiteLayout from '@/components/layout/SiteLayout';
 import Home from '@/pages/Home';
@@ -83,6 +84,7 @@ function App() {
           <Router>
             <AuthenticatedApp />
           </Router>
+          <FoundingClientPopup />
           <Toaster />
         </LanguageProvider>
       </QueryClientProvider>
