@@ -1,5 +1,5 @@
 // To re-trigger this popup during testing, run in the browser console:
-//   localStorage.removeItem('kp_founding_popup_seen')
+//   localStorage.removeItem('kp_founding_popup_claimed')
 // then refresh the page.
 
 import React, { useEffect, useRef, useState } from 'react';
@@ -7,7 +7,9 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { X } from 'lucide-react';
 import { submitLead } from '@/lib/leads';
 
-const STORAGE_KEY = 'kp_founding_popup_seen';
+// Only set once someone actually submits — dismissing (X/overlay/Escape) does NOT
+// suppress future visits, so repeat visitors keep seeing the offer until they claim it.
+const STORAGE_KEY = 'kp_founding_popup_claimed';
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default function FoundingClientPopup() {
@@ -20,7 +22,7 @@ export default function FoundingClientPopup() {
   const modalRef = useRef(null);
   const emailInputRef = useRef(null);
 
-  // Trigger: 7s timer or 40% scroll depth, whichever happens first — skipped entirely if already seen.
+  // Trigger: 7s timer or 40% scroll depth, whichever happens first — skipped entirely if already claimed.
   useEffect(() => {
     if (localStorage.getItem(STORAGE_KEY)) return;
 
@@ -90,7 +92,7 @@ export default function FoundingClientPopup() {
     return () => clearTimeout(timer);
   }, [submitted]);
 
-  function markSeen() {
+  function markClaimed() {
     localStorage.setItem(STORAGE_KEY, 'true');
   }
 
@@ -102,7 +104,6 @@ export default function FoundingClientPopup() {
   }
 
   function handleDismiss() {
-    markSeen();
     closeAndReturnFocus();
   }
 
@@ -116,7 +117,7 @@ export default function FoundingClientPopup() {
     setSubmitting(true);
     try {
       await submitLead(email);
-      markSeen();
+      markClaimed();
       setSubmitted(true);
     } catch {
       setError('Something went wrong. Please try again.');
