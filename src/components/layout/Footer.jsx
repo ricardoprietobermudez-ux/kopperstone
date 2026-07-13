@@ -18,6 +18,7 @@ export default function Footer() {
             <div className="mt-6 space-y-1.5">
               <p className="text-[10px] font-sans text-gold/60 uppercase tracking-widest">General Inquiries</p>
               <a href="mailto:info@kopperstone.com" className="text-xs text-cream/40 hover:text-gold transition-colors">info@kopperstone.com</a>
+              <a href="tel:+14374947775" className="block text-xs text-cream/40 hover:text-gold transition-colors">+1 (437) 494-7775</a>
               <p className="text-[10px] font-sans text-gold/60 uppercase tracking-widest mt-3">Canada HQ · U.S. — Austin, TX</p>
             </div>
           </div>

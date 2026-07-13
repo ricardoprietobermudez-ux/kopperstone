@@ -211,7 +211,7 @@ export default function FoundingClientPopup() {
 
                   <h2 id="founding-client-popup-heading" className="mb-4">
                     <span className="block font-serif text-[56px] sm:text-[68px] leading-none text-gold font-semibold">
-                      25% off
+                      10% off
                     </span>
                     <span className="block font-serif text-xl sm:text-2xl leading-snug text-navy font-semibold mt-2">
                       your kitchen or bath renovation
@@ -222,7 +222,7 @@ export default function FoundingClientPopup() {
 
                   <p className="text-[14.5px] text-navy leading-relaxed mb-6">
                     We're welcoming our first 10 single-family homeowners in Ontario and BC as
-                    Founding Clients — 25% off design and installation, up to $5,000 in savings.
+                    Founding Clients — 10% off design and installation, up to $5,000 in savings.
                   </p>
 
                   <div className="mb-6">
