@@ -50,7 +50,7 @@ export default function ContactModal({ onClose }) {
             </div>
             <div>
               <p className="text-sm text-cream font-sans group-hover:text-gold transition-colors">Project Consultation</p>
-              <p className="text-xs text-cream/40 font-sans">Request a quote for your development</p>
+              <p className="text-xs text-cream/40 font-sans">Request a quote for your home</p>
             </div>
           </Link>
 

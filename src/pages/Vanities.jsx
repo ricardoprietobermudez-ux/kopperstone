@@ -9,8 +9,8 @@ const vanities = [
   { sku: 'KP-2101', name: 'Compact Powder Room Vanity', size: '610mm', desc: 'A compact floating vanity for guest bathrooms and powder rooms.', img: '/images/b5af16793_Screenshot2026-06-16at74311PM.png' },
   { sku: 'KP-2107', name: 'Classic Single-Sink Vanity', size: '1000mm', desc: 'A clean, single-sink floating vanity that fits comfortably in most bathrooms.', img: '/images/92b3393d8_Screenshot2026-06-16at73256PM.png' },
   { sku: 'KP-2110', name: 'Extended Single-Sink Vanity', size: '1200mm', desc: 'Extended single-sink vanity with extra counter space for larger bathrooms.', img: '/images/44f9153ba_Screenshot2026-06-16at73348PM.png' },
-  { sku: 'KP-2111', name: 'Classic Double-Sink Vanity', size: '1500mm', desc: 'A standard double-sink vanity, ideal for residential master bathrooms.', img: '/images/00d15ce34_Screenshot2026-06-16at73706PM.png' },
-  { sku: 'KP-2203', name: 'Double-Sink Vanity with Marble Top', size: '1600mm', desc: 'Double-sink vanity with extended storage, for a luxury residential feel.', img: '/images/a10dec276_Screenshot2026-06-16at73946PM.png' },
+  { sku: 'KP-2111', name: 'Classic Double-Sink Vanity', size: '1500mm', desc: 'A standard double-sink vanity, ideal for a primary bathroom.', img: '/images/00d15ce34_Screenshot2026-06-16at73706PM.png' },
+  { sku: 'KP-2203', name: 'Double-Sink Vanity with Marble Top', size: '1600mm', desc: 'Double-sink vanity with extended storage, for an elevated, upscale feel.', img: '/images/a10dec276_Screenshot2026-06-16at73946PM.png' },
   { sku: 'KP-2112', name: 'Double-Sink Vanity in Grey', size: '1600mm', desc: 'Double-sink vanity with a sleek, slab-front door style.', img: '/images/36b3405a8_Screenshot2026-06-16at74041PM.png' },
 ];
 
@@ -26,7 +26,7 @@ export default function Vanities() {
             Vanity<br /><em className="text-gold italic">Collections</em>
           </h1>
           <p className="mt-6 text-cream/50 text-base max-w-xl leading-relaxed font-sans">
-            Complete assemblies or individual components specified to your exact finish, material, and configuration.
+            Complete vanities or individual pieces, chosen to match your bathroom's exact finish, material, and layout.
           </p>
         </div>
         <div className="relative min-h-[350px]">

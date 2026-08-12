@@ -24,7 +24,7 @@ export default function BathroomSinks() {
             Bathroom Sink<br /><em className="text-gold italic">Collections</em>
           </h1>
           <p className="mt-6 text-warm-grey text-base leading-relaxed font-sans max-w-md">
-            Complete basins or individual components specified to your exact form, material, and finish.
+            Complete basins or individual pieces, chosen to match your bathroom's exact form, material, and finish.
           </p>
         </div>
         <div className="relative min-h-[350px]">

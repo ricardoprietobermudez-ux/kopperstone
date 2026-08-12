@@ -33,7 +33,7 @@ const steps = [
     category: 'BUILD',
     title: 'Fabrication & Install',
     body: 'Materials sourced and surfaces cut to measure, then installed by our own team.',
-    detail: ['Materials sourced and fabricated to spec', 'Surfaces cut to measure in-house', 'Installation handled by our own team', 'Progress updates throughout the build'],
+    detail: ['Materials sourced and fabricated for your kitchen', 'Surfaces cut to measure in-house', 'Installation handled by our own team', 'Progress updates throughout the build'],
     img: '/images/build.png',
   },
   {

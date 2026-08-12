@@ -11,7 +11,7 @@ const collections = [
   id: 'modern',
   name: 'Modern Collection',
   overline: 'CLEAN · CONTEMPORARY',
-  desc: 'Minimalist lines, integrated appliances, and handleless door profiles. Matte lacquer finishes in a curated palette from pure white to deep charcoal. Designed for urban multi-family and boutique hotel properties.',
+  desc: 'Minimalist lines, integrated appliances, and handleless door profiles. Matte lacquer finishes in a curated palette from pure white to deep charcoal — built for the way you actually cook.',
   components: ['Handleless base and wall cabinets', 'Solid surface or quartz countertop', 'Under-cabinet LED lighting'],
   img: '/images/kitchen_1.png'
 },
@@ -27,7 +27,7 @@ const collections = [
   id: 'american',
   name: 'American Collection',
   overline: 'CLASSIC · GRAND',
-  desc: 'Rich walnut cabinetry with glass display uppers, brass accent hardware, and a statement marble island. Designed for luxury residential towers, boutique hotels, and hospitality properties demanding timeless American craftsmanship.',
+  desc: 'Rich walnut cabinetry with glass display uppers, brass accent hardware, and a statement marble island — classic American style, built for your home.',
   components: ['Walnut cabinetry, full height', 'Marble waterfall island with seating', 'Professional range with hood'],
   img: '/images/kitchen_3.png'
 },
@@ -35,7 +35,7 @@ const collections = [
   id: 'industrial',
   name: 'Industrial Collection',
   overline: 'RAW · MODERN',
-  desc: 'Dark grey cabinetry with oak wood accents, exposed ductwork integration, concrete-look surfaces, and a breakfast bar layout. Designed for loft apartments, restaurant fit-outs, and co-living developments.',
+  desc: 'Dark grey cabinetry with oak wood accents, exposed ductwork integration, concrete-look surfaces, and a breakfast bar layout — raw, modern, built for everyday life.',
   components: ['Dark grey flat-panel cabinets', 'Concrete-look countertop', 'Matte black hardware and fixtures'],
   img: '/images/kitchen_4.png'
 },
@@ -43,7 +43,7 @@ const collections = [
   id: 'european',
   name: 'European Collection',
   overline: 'LUXURY · TRANSITIONAL',
-  desc: 'Two-tone island compositions, soft grey cabinetry with marble surfaces, and brushed gold hardware. Designed for five-star hotel properties and premium residential developments demanding specification-grade European elegance.',
+  desc: 'Two-tone island compositions, soft grey cabinetry with marble surfaces, and brushed gold hardware — quiet European elegance, built for your kitchen.',
   components: ['Soft grey Shaker upper cabinets', 'Full-height marble backsplash', 'Marble island with integrated sink'],
   img: '/images/kitchen_5.png'
 }];
