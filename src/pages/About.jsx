@@ -17,7 +17,7 @@ export default function About() {
             Where it started
           </h1>
           <p className="text-cream/60 text-base leading-relaxed font-sans">
-            Santiago Rojas, Ricardo Prieto, and Cesar Padilla shared the same way of looking at the world. That common vision became the foundation for Kopperstone a company built on trust, craftsmanship, and getting things done right.
+            Santiago Rojas, Ricardo Prieto, and Cesar Padilla shared the same way of looking at the world. That common vision became the foundation for Kopperstone, a company built on trust, craftsmanship, and getting things done right.
           </p>
         </motion.div>
 

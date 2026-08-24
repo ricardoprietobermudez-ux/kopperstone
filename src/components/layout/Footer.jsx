@@ -43,7 +43,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-cream/8 mt-12 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-cream/25">© {new Date().getFullYear()} Kopperstone Inc. All rights reserved. Kopperstone LLC — Austin, Texas, USA.</p>
+          <p className="text-xs text-cream/25">© {new Date().getFullYear()} Kopperstone Inc. (Canada) · Kopperstone LLC (Austin, TX, USA). All rights reserved.</p>
           <div className="flex gap-6">
             
             
