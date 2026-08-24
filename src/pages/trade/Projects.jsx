@@ -34,7 +34,7 @@ export default function Projects() {
             Projects &<br /><em className="text-gold italic">Case Studies</em>
           </h1>
           <p className="mt-5 text-cream/45 text-base max-w-xl font-sans">
-            From 180-key hotel programs to multi-tower residential developments — Kopperstone delivers specification-grade kitchen and bathroom packages at project scale.
+            Kopperstone supplies specification-grade kitchen and bathroom packages for hotel, multi-family residential, and commercial developments — built to handle project scale from day one.
           </p>
         </div>
       </section>
@@ -45,7 +45,7 @@ export default function Projects() {
           <p className="text-[9px] font-sans tracking-widest uppercase text-gold mb-6">COMING SOON</p>
           <h2 className="font-serif text-3xl text-cream mb-4">Case studies are being prepared.</h2>
           <p className="text-cream/40 text-sm font-sans leading-relaxed mb-10">
-            Our project portfolio is currently being documented. In the meantime, contact our team to discuss how we've delivered specification-grade kitchens and bathrooms across hotels, multi-family residential towers, and commercial developments across North America.
+            Kopperstone is a new company, and we're building our project portfolio from the ground up. Contact our team to discuss your hotel, multi-family residential, or commercial program and how we can supply and install specification-grade kitchens and bathrooms at your scale.
           </p>
 
           {/* Quick inquiry form */}
