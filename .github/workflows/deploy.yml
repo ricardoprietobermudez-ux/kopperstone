@@ -25,7 +25,13 @@ jobs:
         env:
           VITE_WEB3FORMS_KEY: ${{ secrets.WEB3FORMS_KEY }}
 
-      - name: Fix client-side routing (SPA fallback)
+      - name: Install headless Chromium for prerendering
+        run: npx playwright install --with-deps chromium
+
+      - name: Prerender each route to a real static file
+        run: npm run prerender
+
+      - name: Fix client-side routing (SPA fallback for any unlisted path)
         run: cp dist/index.html dist/404.html
 
       - name: Deploy built files to main branch
