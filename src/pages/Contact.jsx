@@ -390,12 +390,14 @@ export default function Contact() {
                 <div>
                   <p className="text-cream/60 text-xs font-sans uppercase tracking-wide mb-1">Canada — Kopperstone Inc.</p>
                   <div className="flex items-start gap-2 text-sm text-cream/40 font-sans"><MapPin className="w-3.5 h-3.5 text-gold flex-shrink-0 mt-0.5" /><span>Toronto, Ontario, Canada</span></div>
-                  <div className="flex items-center gap-2 text-sm text-cream/40 font-sans mt-1"><Phone className="w-3.5 h-3.5 text-gold" /><span>+1 (437) 494-7775</span></div>
                 </div>
                 <div>
                   <p className="text-cream/60 text-xs font-sans uppercase tracking-wide mb-1">U.S. — Kopperstone LLC</p>
                   <div className="flex items-start gap-2 text-sm text-cream/40 font-sans"><MapPin className="w-3.5 h-3.5 text-gold flex-shrink-0 mt-0.5" /><span>Austin, Texas, USA</span></div>
-                  <div className="flex items-center gap-2 text-sm text-cream/40 font-sans mt-1"><Phone className="w-3.5 h-3.5 text-gold" /><span>+1 (437) 494-7775</span></div>
+                </div>
+                <div className="pt-3 border-t border-cream/10">
+                  <div className="flex items-center gap-2 text-sm text-cream/40 font-sans"><Phone className="w-3.5 h-3.5 text-gold" /><span>+1 (437) 494-7775</span></div>
+                  <p className="text-[10px] text-cream/30 font-sans mt-1">Serves both Canada and U.S. offices</p>
                 </div>
               </div>
             </div>
