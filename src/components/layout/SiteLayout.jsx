@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
-import AnnouncementBar from './AnnouncementBar';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
@@ -14,7 +13,10 @@ export default function SiteLayout() {
   return (
     <div className="min-h-screen flex flex-col bg-cream">
       <ScrollToTop />
-      <AnnouncementBar />
+      {/* AnnouncementBar removed — was advertising an "Industrial & Loft
+          Collection launching Q3 2026" that doesn't exist. Re-add
+          <AnnouncementBar /> (still in ./AnnouncementBar.jsx) when there's
+          a real announcement to run. */}
       <Navbar />
       <main className="flex-1">
         <Outlet />
