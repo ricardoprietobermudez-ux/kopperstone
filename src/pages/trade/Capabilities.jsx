@@ -104,7 +104,7 @@ export default function Capabilities() {
                   </ul>
                 </div>
                 <div>
-                  <img src={img} alt={title} className="w-full aspect-[4/3] object-cover" />
+                  <img src={img} loading="lazy" alt={title} className="w-full aspect-[4/3] object-cover" />
                 </div>
               </div>
             </div>

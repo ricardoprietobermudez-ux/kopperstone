@@ -59,7 +59,7 @@ export default function CategoryGrid() {
             >
               <Link to={cat.path} className="group relative block aspect-[4/3] overflow-hidden bg-obsidian">
                 <img
-                  src={cat.img}
+                  src={cat.img} loading="lazy"
                   alt={cat.label}
                   className="w-full h-full object-cover opacity-55 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700"
                 />

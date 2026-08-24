@@ -117,7 +117,7 @@ export default function Process() {
                   </ul>
                 </div>
                 <div>
-                  <img src={step.img} alt={step.title} className="w-full aspect-[4/3] object-cover" />
+                  <img src={step.img} loading="lazy" alt={step.title} className="w-full aspect-[4/3] object-cover" />
                 </div>
               </div>
             </div>

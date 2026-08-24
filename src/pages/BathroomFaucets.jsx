@@ -45,7 +45,7 @@ export default function BathroomFaucets() {
                   className="group"
                 >
                   <div className="relative aspect-[4/3] bg-gray-50 border border-navy/10 group-hover:border-gold transition-colors overflow-hidden flex items-center justify-center">
-                    <img src={f.img} alt={f.name} className="w-full h-full object-contain p-3 transition-transform duration-500 group-hover:scale-105" />
+                    <img src={f.img} loading="lazy" alt={f.name} className="w-full h-full object-contain p-3 transition-transform duration-500 group-hover:scale-105" />
                   </div>
                   <p className="font-serif text-base text-navy mt-3 text-center">{f.name}</p>
                   <p className="text-[10px] font-sans text-warm-grey mt-1 text-center tracking-wide">{f.sku}</p>
@@ -60,7 +60,7 @@ export default function BathroomFaucets() {
       <section className="bg-cream py-14 border-t border-navy/10">
         <div className="max-w-screen-xl mx-auto px-6 lg:px-10 flex flex-col items-center">
           <p className="text-[10px] font-sans tracking-widest uppercase text-gold mb-6 text-center">Available Finishes</p>
-          <img src="/images/bdae2337e_Screenshot2026-06-15at105351PM.png" alt="Available finishes: Steel, Gold, Gunmetal, Black" className="max-w-[320px] w-full" />
+          <img src="/images/bdae2337e_Screenshot2026-06-15at105351PM.png" alt="Available finishes: Steel, Gold, Gunmetal, Black" width="772" height="196" loading="lazy" className="max-w-[320px] w-full" />
         </div>
       </section>
 

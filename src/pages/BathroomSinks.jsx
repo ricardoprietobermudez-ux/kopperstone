@@ -45,7 +45,7 @@ export default function BathroomSinks() {
                   className="group"
                 >
                   <div className="relative aspect-[4/3] bg-gray-50 border border-navy/10 group-hover:border-gold transition-colors overflow-hidden">
-                    <img src={s.img} alt={s.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <img src={s.img} loading="lazy" alt={s.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                   </div>
                   <p className="font-serif text-sm text-navy mt-3 text-center">{s.name}</p>
                   <p className="text-[10px] font-sans text-warm-grey mt-1 text-center tracking-wide">{s.sku}</p>

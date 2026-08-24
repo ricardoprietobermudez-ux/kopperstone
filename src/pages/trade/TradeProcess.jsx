@@ -115,7 +115,7 @@ export default function TradeProcess() {
                   </ul>
                 </div>
                 <div className={i % 2 === 1 ? '' : 'lg:order-last'}>
-                  <img src={step.img} alt={step.title} className="w-full aspect-[4/3] object-cover" />
+                  <img src={step.img} loading="lazy" alt={step.title} className="w-full aspect-[4/3] object-cover" />
                 </div>
               </div>
             </div>

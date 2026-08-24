@@ -1,3 +1,4 @@
+import { MotionConfig } from 'framer-motion';
 import { Toaster } from "@/components/ui/toaster"
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClientInstance } from '@/lib/query-client'
@@ -81,11 +82,15 @@ function App() {
     <AuthProvider>
       <QueryClientProvider client={queryClientInstance}>
         <LanguageProvider>
-          <Router>
-            <AuthenticatedApp />
-          </Router>
-          <FoundingClientPopup />
-          <Toaster />
+          {/* Respects the OS-level prefers-reduced-motion setting for every
+              framer-motion animation in the app (whileInView fades, etc.) */}
+          <MotionConfig reducedMotion="user">
+            <Router>
+              <AuthenticatedApp />
+            </Router>
+            <FoundingClientPopup />
+            <Toaster />
+          </MotionConfig>
         </LanguageProvider>
       </QueryClientProvider>
     </AuthProvider>

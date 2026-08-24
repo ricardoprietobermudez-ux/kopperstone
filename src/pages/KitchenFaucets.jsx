@@ -54,7 +54,7 @@ export default function KitchenFaucets() {
                   className="group"
                 >
                   <div className="relative aspect-[4/3] bg-gray-50 border border-navy/10 group-hover:border-gold transition-colors overflow-hidden flex items-center justify-center">
-                    <img src={f.img} alt={f.name} className="w-full h-full object-contain p-6 transition-transform duration-500 group-hover:scale-105" />
+                    <img src={f.img} loading="lazy" alt={f.name} className="w-full h-full object-contain p-6 transition-transform duration-500 group-hover:scale-105" />
                   </div>
                   <p className="font-serif text-sm text-navy mt-3 text-center">{f.name}</p>
                   <p className="text-[10px] font-sans text-warm-grey mt-1 text-center tracking-wide">{f.sku}</p>

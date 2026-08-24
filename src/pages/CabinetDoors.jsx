@@ -100,7 +100,7 @@ export default function CabinetDoors() {
               <p className="text-[10px] font-sans tracking-widest uppercase text-gold mb-4">{mat.label}</p>
               {/* Swatch */}
               <div className="w-16 h-20 border border-navy/10 mb-6 overflow-hidden">
-                <img src={mat.img} alt={mat.label} className="w-full h-full object-cover" />
+                <img src={mat.img} loading="lazy" alt={mat.label} className="w-full h-full object-cover" />
               </div>
               <ul className="space-y-2">
                 <li className="flex items-start gap-3 text-sm text-charcoal font-sans">
@@ -115,7 +115,7 @@ export default function CabinetDoors() {
 
             {/* Image */}
             <div className={`relative aspect-[4/3] ${i % 2 === 1 ? 'order-first lg:order-last' : ''}`}>
-              <img src={mat.heroImg || mat.img} alt={mat.label} className="absolute inset-0 w-full h-full object-cover object-center" />
+              <img src={mat.heroImg || mat.img} loading="lazy" alt={mat.label} className="absolute inset-0 w-full h-full object-cover object-center" />
             </div>
           </motion.section>
         ))}

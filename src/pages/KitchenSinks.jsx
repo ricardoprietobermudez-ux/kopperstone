@@ -44,7 +44,7 @@ function FinishSwatches() {
   return (
     <div className="mt-4 pt-4 border-t border-navy/10">
       <p className="text-[9px] font-sans tracking-widest uppercase text-charcoal mb-3">Available Finishes</p>
-      <img src="/images/bdae2337e_Screenshot2026-06-15at105351PM.png" alt="Available finishes: Steel, Gold, Gunmetal, Black" className="max-w-[220px] w-full" />
+      <img src="/images/bdae2337e_Screenshot2026-06-15at105351PM.png" alt="Available finishes: Steel, Gold, Gunmetal, Black" width="772" height="196" loading="lazy" className="max-w-[220px] w-full" />
     </div>
   );
 }
@@ -60,7 +60,7 @@ function SinkCard({ sku, name, img, showFinishes, delay = 0 }) {
     >
       <div className="relative aspect-[4/3] bg-gray-50 border border-navy/10 group-hover:border-gold transition-colors overflow-hidden flex items-center justify-center">
         {img ? (
-          <img src={img} alt={name} className="w-full h-full object-contain p-6 transition-transform duration-500 group-hover:scale-105" />
+          <img src={img} loading="lazy" alt={name} className="w-full h-full object-contain p-6 transition-transform duration-500 group-hover:scale-105" />
         ) : (
           <span className="text-[10px] text-warm-grey font-sans tracking-widest">{name}</span>
         )}

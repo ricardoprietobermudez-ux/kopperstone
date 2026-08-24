@@ -63,7 +63,7 @@ export default function Bathtubs() {
                 <div className="relative aspect-video bg-gray-50 border border-navy/10 group-hover:border-gold transition-colors overflow-hidden">
                   {b.img && (
                     <img
-                      src={b.img}
+                      src={b.img} loading="lazy"
                       alt={b.name}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />

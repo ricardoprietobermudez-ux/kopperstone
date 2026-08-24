@@ -5,6 +5,10 @@ import pluginReactHooks from "eslint-plugin-react-hooks";
 import pluginUnusedImports from "eslint-plugin-unused-imports";
 
 export default [
+  // Generated/vendored output — not hand-authored, shouldn't be linted against
+  // this project's rules (its inline directive comments reference rules from
+  // plugins we don't have installed, which otherwise surfaces as noise).
+  { ignores: ["ds-bundle/**", "dist/**"] },
   {
     files: [
       "src/components/**/*.{js,mjs,cjs,jsx}",

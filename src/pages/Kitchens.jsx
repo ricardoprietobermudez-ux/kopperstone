@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import ArchitecturalDrawing from '@/components/kitchens/ArchitecturalDrawing';
 
 const HERO_IMG = '/images/kitchen_1.png';
 

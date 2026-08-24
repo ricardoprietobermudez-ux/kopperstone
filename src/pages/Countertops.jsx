@@ -98,7 +98,7 @@ export default function Countertops() {
               className="group w-[calc(50%-12px)] sm:w-[calc(33.333%-16px)] lg:w-[calc(25%-24px)]">
 
                 <div className={`relative aspect-[2/3] border border-navy/10 group-hover:border-gold transition-colors overflow-hidden ${slab.img ? '' : slab.bg}`}>
-                  {slab.img && <img src={slab.img} alt={slab.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />}
+                  {slab.img && <img src={slab.img} loading="lazy" alt={slab.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />}
                 </div>
                 <p className="font-serif text-sm text-navy mt-3 text-center">{slab.name}</p>
                 <p className="text-[10px] font-sans text-warm-grey mt-1 text-center tracking-wide">{slab.sku}</p>
@@ -122,7 +122,7 @@ export default function Countertops() {
                 transition={{ delay: i * 0.04 }}
                 className="group w-[calc(50%-12px)] sm:w-[calc(33.333%-16px)] lg:w-[calc(25%-24px)]">
                 <div className="relative aspect-[2/3] border border-navy/10 group-hover:border-gold transition-colors overflow-hidden bg-warm-grey/10">
-                  {slab.img && <img src={slab.img} alt={slab.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />}
+                  {slab.img && <img src={slab.img} loading="lazy" alt={slab.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />}
                 </div>
                 <p className="font-serif text-sm text-navy mt-3 text-center">{slab.name}</p>
                 <p className="text-[10px] font-sans text-warm-grey mt-1 text-center tracking-wide">{slab.sku}</p>

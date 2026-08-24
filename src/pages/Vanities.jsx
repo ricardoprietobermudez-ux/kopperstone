@@ -47,7 +47,7 @@ export default function Vanities() {
                 className="group"
               >
                 <div className="relative aspect-[4/3] bg-gray-50 border border-navy/10 group-hover:border-gold transition-colors overflow-hidden">
-                  <img src={v.img} alt={v.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  <img src={v.img} loading="lazy" alt={v.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 <div className="mt-3 text-center">
                   <h3 className="font-serif text-lg text-navy">{v.name}</h3>

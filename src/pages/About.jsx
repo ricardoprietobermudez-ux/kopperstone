@@ -31,7 +31,7 @@ export default function About() {
           ].map((p) => (
             <div key={p.name} className="flex flex-col items-center gap-4">
               <div className="w-36 h-36 rounded-full overflow-hidden ring-2 ring-gold/40 flex-shrink-0 bg-navy">
-                <img src={p.src} alt={p.name} className="w-full h-full object-cover" style={{ objectPosition: `center ${p.pos}`, transform: p.zoom ? 'scale(1.1)' : 'scale(1)' }} />
+                <img src={p.src} loading="lazy" alt={p.name} className="w-full h-full object-cover" style={{ objectPosition: `center ${p.pos}`, transform: p.zoom ? 'scale(1.1)' : 'scale(1)' }} />
               </div>
               <div className="text-center">
                 <p className="font-serif text-lg text-cream">{p.name}</p>
