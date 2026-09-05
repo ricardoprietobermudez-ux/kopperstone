@@ -8,6 +8,7 @@ export default function EmailSpecModal({ mode, config, onClose }) {
   const [form, setForm] = useState({ name: '', email: '', notes: '' });
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   useEffect(() => {
     const onKeyDown = (e) => { if (e.key === 'Escape') onClose(); };
@@ -18,11 +19,12 @@ export default function EmailSpecModal({ mode, config, onClose }) {
   const handleSubmit = async () => {
     if (!form.email || !form.name) return;
     setSubmitting(true);
+    setSubmitError(false);
     const configSummary = Object.entries(config).map(([k, v]) => `${k}: ${v}`).join(', ');
     try {
-      await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
           subject: `Email My Design — ${mode === 'kitchen' ? 'Kitchen' : 'Bathroom'} Design — ${form.name}`,
@@ -33,9 +35,17 @@ export default function EmailSpecModal({ mode, config, onClose }) {
           configuration: configSummary,
         }),
       });
-    } catch (_) {}
-    setSubmitted(true);
-    setSubmitting(false);
+      const result = await res.json();
+      if (result.success) {
+        setSubmitted(true);
+      } else {
+        setSubmitError(true);
+      }
+    } catch {
+      setSubmitError(true);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -100,6 +110,10 @@ export default function EmailSpecModal({ mode, config, onClose }) {
                   ))}
                 </div>
               </div>
+
+              {submitError && (
+                <p className="text-xs text-red-400 font-sans">Something went wrong sending your request. Please try again or email info@kopperstone.com directly.</p>
+              )}
 
               <button
                 onClick={handleSubmit}

@@ -5,13 +5,17 @@ import { Input } from '@/components/ui/input';
 
 export default function Projects() {
   const [form, setForm] = useState({ company: '', email: '', project_type: '' });
+  const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   const handleInquiry = async () => {
+    setSubmitting(true);
+    setSubmitError(false);
     try {
-      await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           access_key: import.meta.env.VITE_WEB3FORMS_KEY,
           subject: `Project Inquiry — ${form.company}`,
@@ -20,8 +24,17 @@ export default function Projects() {
           project_type: form.project_type,
         }),
       });
-    } catch (_) {}
-    setSubmitted(true);
+      const result = await res.json();
+      if (result.success) {
+        setSubmitted(true);
+      } else {
+        setSubmitError(true);
+      }
+    } catch {
+      setSubmitError(true);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -61,9 +74,12 @@ export default function Projects() {
                   className="bg-navy border-cream/15 text-cream placeholder:text-cream/30 text-sm" />
                 <Input placeholder="Project type" value={form.project_type} onChange={e => setForm(p => ({ ...p, project_type: e.target.value }))}
                   className="bg-navy border-cream/15 text-cream placeholder:text-cream/30 text-sm" />
-                <button onClick={handleInquiry} disabled={!form.company || !form.email}
+                {submitError && (
+                  <p className="text-xs text-red-400 font-sans">Something went wrong sending your request. Please try again or email info@kopperstone.com directly.</p>
+                )}
+                <button onClick={handleInquiry} disabled={!form.company || !form.email || submitting}
                   className="w-full bg-gold text-navy text-xs font-sans uppercase tracking-wide py-3 hover:bg-gold/90 transition-colors disabled:opacity-40">
-                  Submit Inquiry
+                  {submitting ? 'Submitting...' : 'Submit Inquiry'}
                 </button>
               </div>
             )}

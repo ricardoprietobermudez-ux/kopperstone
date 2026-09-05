@@ -8,6 +8,7 @@ export default function QuoteModal({ mode, config, onClose }) {
   const [form, setForm] = useState({ name: '', email: '', phone: '', note: '' });
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   useEffect(() => {
     const onKeyDown = (e) => { if (e.key === 'Escape') onClose(); };
@@ -18,11 +19,12 @@ export default function QuoteModal({ mode, config, onClose }) {
   const handleSubmit = async () => {
     if (!form.email || !form.name) return;
     setSubmitting(true);
+    setSubmitError(false);
     const configSummary = Object.entries(config).map(([k, v]) => `${k}: ${v}`).join(', ');
     try {
-      await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
           subject: `Consultation Request — ${mode === 'kitchen' ? 'Kitchen' : 'Bathroom'} Design — ${form.name}`,
@@ -34,9 +36,17 @@ export default function QuoteModal({ mode, config, onClose }) {
           configuration: configSummary,
         }),
       });
-    } catch (_) {}
-    setSubmitted(true);
-    setSubmitting(false);
+      const result = await res.json();
+      if (result.success) {
+        setSubmitted(true);
+      } else {
+        setSubmitError(true);
+      }
+    } catch {
+      setSubmitError(true);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -102,6 +112,10 @@ export default function QuoteModal({ mode, config, onClose }) {
                   ))}
                 </div>
               </div>
+
+              {submitError && (
+                <p className="text-xs text-red-400 font-sans">Something went wrong sending your request. Please try again or email info@kopperstone.com directly.</p>
+              )}
 
               <button onClick={handleSubmit} disabled={!form.email || !form.name || submitting}
                 className="w-full bg-gold text-navy text-xs font-sans uppercase tracking-wide py-3.5 hover:bg-gold/90 transition-colors disabled:opacity-40 flex items-center justify-center gap-2">

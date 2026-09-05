@@ -11,14 +11,16 @@ export default function CatalogRequestModal({ category, onClose }) {
   const [email, setEmail] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
+    setSubmitError(false);
     try {
-      await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           access_key: WEB3FORMS_KEY,
           subject: `Catalog Request — ${category}`,
@@ -27,9 +29,17 @@ export default function CatalogRequestModal({ category, onClose }) {
           category,
         }),
       });
-    } catch (_) {}
-    setSubmitting(false);
-    setSubmitted(true);
+      const result = await res.json();
+      if (result.success) {
+        setSubmitted(true);
+      } else {
+        setSubmitError(true);
+      }
+    } catch {
+      setSubmitError(true);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -70,6 +80,9 @@ export default function CatalogRequestModal({ category, onClose }) {
               <Label className="text-xs uppercase tracking-wide text-cream/50">Email Address</Label>
               <Input required type="email" className="mt-1.5 border-cream/20 bg-transparent text-cream" value={email} onChange={e => setEmail(e.target.value)} placeholder="you@email.com" />
             </div>
+            {submitError && (
+              <p className="text-xs text-red-400 font-sans">Something went wrong sending your request. Please try again or email info@kopperstone.com directly.</p>
+            )}
             <button type="submit" disabled={submitting}
               className="w-full inline-flex items-center justify-center gap-3 bg-gold text-navy px-8 py-3.5 text-sm font-sans uppercase tracking-wide hover:bg-gold/90 transition-colors disabled:opacity-40">
               {submitting ? 'Sending...' : 'Send Me the Catalog'}
