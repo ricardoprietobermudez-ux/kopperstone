@@ -8,6 +8,7 @@ import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import { LanguageProvider } from '@/lib/i18n';
 import FoundingClientPopup from '@/components/FoundingClientPopup';
+import SEO from '@/components/SEO';
 
 import SiteLayout from '@/components/layout/SiteLayout';
 import Home from '@/pages/Home';
@@ -50,30 +51,33 @@ const AuthenticatedApp = () => {
   }
 
   return (
-    <Routes>
-      <Route element={<SiteLayout />}>
-        <Route path="/"                   element={<Home />} />
-        <Route path="/kitchens"           element={<Kitchens />} />
-        <Route path="/countertops"        element={<Countertops />} />
-        <Route path="/cabinet-doors"      element={<CabinetDoors />} />
-        <Route path="/kitchen-sinks"      element={<KitchenSinks />} />
-        <Route path="/kitchen-faucets"    element={<KitchenFaucets />} />
-        <Route path="/bathroom-sinks"     element={<BathroomSinks />} />
-        <Route path="/vanities"           element={<Vanities />} />
-        <Route path="/bathtubs"           element={<Bathtubs />} />
-        <Route path="/bathroom-faucets"   element={<BathroomFaucets />} />
-        <Route path="/process"            element={<Process />} />
-        <Route path="/about"              element={<About />} />
-        <Route path="/contact"            element={<Contact />} />
-        <Route path="/configurator"       element={<Configurator />} />
-        <Route path="/trade"              element={<TradeHome />} />
-        <Route path="/trade/process"      element={<TradeProcess />} />
-        <Route path="/trade/capabilities" element={<Capabilities />} />
-        <Route path="/trade/quality"      element={<Quality />} />
-        <Route path="/trade/projects"     element={<Projects />} />
-      </Route>
-      <Route path="*" element={<PageNotFound />} />
-    </Routes>
+    <>
+      <SEO />
+      <Routes>
+        <Route element={<SiteLayout />}>
+          <Route path="/"                   element={<Home />} />
+          <Route path="/kitchens"           element={<Kitchens />} />
+          <Route path="/countertops"        element={<Countertops />} />
+          <Route path="/cabinet-doors"      element={<CabinetDoors />} />
+          <Route path="/kitchen-sinks"      element={<KitchenSinks />} />
+          <Route path="/kitchen-faucets"    element={<KitchenFaucets />} />
+          <Route path="/bathroom-sinks"     element={<BathroomSinks />} />
+          <Route path="/vanities"           element={<Vanities />} />
+          <Route path="/bathtubs"           element={<Bathtubs />} />
+          <Route path="/bathroom-faucets"   element={<BathroomFaucets />} />
+          <Route path="/process"            element={<Process />} />
+          <Route path="/about"              element={<About />} />
+          <Route path="/contact"            element={<Contact />} />
+          <Route path="/configurator"       element={<Configurator />} />
+          <Route path="/trade"              element={<TradeHome />} />
+          <Route path="/trade/process"      element={<TradeProcess />} />
+          <Route path="/trade/capabilities" element={<Capabilities />} />
+          <Route path="/trade/quality"      element={<Quality />} />
+          <Route path="/trade/projects"     element={<Projects />} />
+        </Route>
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </>
   );
 };
 

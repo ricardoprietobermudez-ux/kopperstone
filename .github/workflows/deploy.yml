@@ -25,14 +25,18 @@ jobs:
         env:
           VITE_WEB3FORMS_KEY: ${{ secrets.WEB3FORMS_KEY }}
 
+      # Captured now, before prerendering overwrites dist/index.html with the fully-rendered
+      # homepage DOM — 404.html needs to stay the empty-#root SPA shell so real browsers boot
+      # the app fresh against the actual (bad) URL and land on the * -> PageNotFound route,
+      # instead of a non-JS client seeing a full homepage body under a 404 status.
+      - name: Fix client-side routing (SPA fallback for any unlisted path)
+        run: cp dist/index.html dist/404.html
+
       - name: Install headless Chromium for prerendering
         run: npx playwright install --with-deps chromium
 
       - name: Prerender each route to a real static file
         run: npm run prerender
-
-      - name: Fix client-side routing (SPA fallback for any unlisted path)
-        run: cp dist/index.html dist/404.html
 
       - name: Deploy built files to main branch
         run: |
