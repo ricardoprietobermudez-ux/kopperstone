@@ -111,6 +111,23 @@ async function triggerScrollAnimations(page) {
   await page.waitForTimeout(1200); // longest transition (~0.9s) + stagger delay
 }
 
+// The scroll in triggerScrollAnimations can cross a scroll-depth popup trigger (e.g. the
+// Founding Client promo), opening a modal that locks body scroll via
+// document.body.style.overflow = 'hidden'. If that got captured into the static file, every
+// real visitor would load a permanently unscrollable page — hydration starts each modal's
+// isOpen state back at false, so the effect that would normally restore the lock never runs.
+// Dismiss any open dialog and force-clear the lock before snapshotting, so a promo popup can
+// never freeze the site even if a future one forgets to clean up after itself.
+async function settleOpenModals(page) {
+  await page.evaluate(() => {
+    document.querySelectorAll('[role="dialog"] [aria-label="Close" i]').forEach((btn) => btn.click());
+  });
+  await page.waitForSelector('[role="dialog"]', { state: 'detached', timeout: 2000 }).catch(() => {});
+  await page.evaluate(() => {
+    document.body.style.overflow = '';
+  });
+}
+
 async function prerenderRoute(browser, route) {
   const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
   const url = `http://localhost:${PORT}${route}`;
@@ -118,6 +135,7 @@ async function prerenderRoute(browser, route) {
   await page.goto(url, { waitUntil: 'domcontentloaded' });
   await page.waitForFunction(() => document.getElementById('root')?.children.length > 0);
   await triggerScrollAnimations(page);
+  await settleOpenModals(page);
 
   const html = await page.evaluate(() => '<!DOCTYPE html>\n' + document.documentElement.outerHTML);
   await page.close();
