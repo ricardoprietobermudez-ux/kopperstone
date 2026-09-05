@@ -16,7 +16,7 @@ const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const SPOTS_TOTAL = 10;
 const SPOTS_REMAINING = 7;
 
-const OFFER_DEADLINE = new Date(2026, 7, 31, 23, 59, 59); // August 31, 2026, end of day
+const OFFER_DEADLINE = new Date(2026, 9, 31, 23, 59, 59); // October 31, 2026, end of day
 
 function getTimeLeft() {
   const diff = OFFER_DEADLINE.getTime() - Date.now();
@@ -228,7 +228,7 @@ export default function FoundingClientPopup() {
                   <div className="mb-6">
                     <p className="flex items-center gap-1.5 text-[11px] tracking-[1.5px] uppercase text-warm-grey mb-2">
                       <Clock className="w-3 h-3" />
-                      Offer ends August 31
+                      Offer ends October 31
                     </p>
                     <div className="flex gap-2">
                       {[
