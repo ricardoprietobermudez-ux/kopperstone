@@ -39,9 +39,12 @@ export default function FoundingClientPopup() {
   const modalRef = useRef(null);
   const emailInputRef = useRef(null);
 
-  // Trigger: 7s timer or 40% scroll depth, whichever happens first — skipped entirely if already claimed.
+  // Trigger: 7s timer or 40% scroll depth, whichever happens first — skipped entirely if
+  // already claimed, or if the offer deadline has passed (so a stale date can't leave a
+  // dead-countdown popup showing to every visitor).
   useEffect(() => {
     if (localStorage.getItem(STORAGE_KEY)) return;
+    if (Date.now() >= OFFER_DEADLINE.getTime()) return;
 
     function open() {
       clearTimeout(timerId);
